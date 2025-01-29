@@ -8,9 +8,9 @@ public class Utilidades {
     public static byte cifras(int numero) {
         byte tamanoNum = 1;
 
-        do {
+        while (numero >= Math.pow(10, tamanoNum)){
             tamanoNum++;
-        } while (numero >= Math.pow(10, tamanoNum));
+        };
 
         return tamanoNum;
     }
@@ -22,6 +22,21 @@ public class Utilidades {
 
         digito = (byte) (numero / Math.pow(10, (tamanoNum - pos)) % 10);
         return digito;
+    }
+
+    public static int invierte(int numero) {
+        int invertido = 0;
+        byte tamano = cifras(numero);
+        if (tamano == 1) {
+            invertido = numero;
+        } else {
+            for (byte i = 1; i <= tamano; i++) {
+                invertido = invertido + 
+                        (sacaDigito(numero, i) * (int) Math.pow(10, i - 1));
+            }
+        }
+
+        return invertido;
     }
 
     public static byte datoByte() {
@@ -43,52 +58,59 @@ public class Utilidades {
     public static boolean esBisiesto(short ano) {
         return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
     }
-    
-    public static boolean esFechaValida(byte dia, byte mes, short ano){
+
+    public static boolean esFechaValida(byte dia, byte mes, short ano) {
         boolean valido;
         byte diasMax = 0;
-        if (mes < 1 || mes > 12){
+        if (mes < 1 || mes > 12) {
             valido = false;
         } else {
-            switch (mes){
-                case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            switch (mes) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
                     diasMax = 31;
                     break;
-                case 4: case 6: case 9: case 11:
+                case 4:
+                case 6:
+                case 9:
+                case 11:
                     diasMax = 30;
                     break;
                 case 2:
                     diasMax = 28;
-                    if(esBisiesto(ano)){
+                    if (esBisiesto(ano)) {
                         diasMax = 29;
                     }
             }
             valido = !(dia < 1 || dia > diasMax);
         }
-        
+
         return valido;
     }
-    
-    
-    public static boolean continuar(){
+
+    public static boolean continuar() {
         boolean seguir;
         char intro;
-        do{
+        do {
             System.out.print("¿Desea continuar? (S/N)");
             intro = Leer.datoChar();
-        } while (!(intro == 's' || intro == 'S' || intro == 'n' || intro == 'N' ));
-        
-       
-        if (intro == 's' || intro == 'S'){
+        } while ((intro != 's'||intro != 'S'||intro != 'n'||intro != 'N'));
+
+
+        if (intro == 's' || intro == 'S') {
             seguir = true;
         } else {
             seguir = false;
         }
-        
+
         return seguir;
-        
+
     }
-    
 
     public static void nombreMes(byte mes) {
         if (mes < 1 || mes > 12) {
@@ -134,5 +156,54 @@ public class Utilidades {
         }
     }
     
-   
+    public static void Ud6Ej6(){
+        byte alumnos = 35;
+        float media = 0;
+        byte aprobados = 0;
+        char introducido;
+        float numIntro = 0;
+                
+        for(byte i=1; i <= alumnos; i++){
+            do{
+                System.out.println("Introduzca nota del alumno " + i +": ");
+                introducido = Leer.datoChar();
+            }
+            while (introducido != 's' || introducido != 'S' || 
+                    introducido != 'n' || introducido != 'N' ||
+                    introducido != 'b' || introducido != 'B' ||
+                    introducido != 'f' || introducido != 'F' ||
+                    introducido != 'i' || introducido != 'I' ||
+                    introducido != 'm' || introducido != 'M'||
+                    introducido != ' ');
+            
+            switch(introducido){
+                case 's': case 'S':
+                    numIntro = 9.5f;
+                    break;
+                case 'n': case 'N':
+                    numIntro = 7.5f;
+                    break;
+                case 'b': case 'B':
+                    numIntro = 6f;
+                    break;
+                case 'f': case 'F':
+                    numIntro = 5f;
+                    break;
+                case 'i': case 'I':
+                    numIntro = 4f;
+                    break;
+                case 'm': case 'M':
+                    numIntro = 2.5f;
+                    break;
+                case ' ':
+                    numIntro = 0f;
+                    break;
+            }
+            media += numIntro;
+            if (numIntro >= 5){
+                aprobados++;
+            } //falta terminar
+            
+        }
+    }
 }
