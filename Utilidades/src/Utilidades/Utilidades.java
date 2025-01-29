@@ -69,6 +69,26 @@ public class Utilidades {
         return valido;
     }
     
+    
+    public static boolean continuar(){
+        boolean seguir;
+        char intro;
+        do{
+            System.out.print("¿Desea continuar? (S/N)");
+            intro = Leer.datoChar();
+        } while (!(intro == 's' || intro == 'S' || intro == 'n' || intro == 'N' ));
+        
+       
+        if (intro == 's' || intro == 'S'){
+            seguir = true;
+        } else {
+            seguir = false;
+        }
+        
+        return seguir;
+        
+    }
+    
 
     public static void nombreMes(byte mes) {
         if (mes < 1 || mes > 12) {
