@@ -43,6 +43,32 @@ public class Utilidades {
     public static boolean esBisiesto(short ano) {
         return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
     }
+    
+    public static boolean esFechaValida(byte dia, byte mes, short ano){
+        boolean valido;
+        byte diasMax = 0;
+        if (mes < 1 || mes > 12){
+            valido = false;
+        } else {
+            switch (mes){
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                    diasMax = 31;
+                    break;
+                case 4: case 6: case 9: case 11:
+                    diasMax = 30;
+                    break;
+                case 2:
+                    diasMax = 28;
+                    if(esBisiesto(ano)){
+                        diasMax = 29;
+                    }
+            }
+            valido = !(dia < 1 || dia > diasMax);
+        }
+        
+        return valido;
+    }
+    
 
     public static void nombreMes(byte mes) {
         if (mes < 1 || mes > 12) {
