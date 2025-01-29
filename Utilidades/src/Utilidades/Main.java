@@ -15,10 +15,12 @@ public class Main {
         prueba = Utilidades.esFechaValida(dia, mes, ano);
         System.out.println(prueba);
         */
-        System.out.println(Utilidades.invierte(1));
-        System.out.println(Utilidades.cifras(1));
+        //System.out.println(Utilidades.invierte(1));
+        //System.out.println(Utilidades.cifras(1));
+       
+       //Utilidades.Ud6Ej6();
         
         
-        
+       
     }
 }

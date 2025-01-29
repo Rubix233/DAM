@@ -8,7 +8,7 @@ public class Utilidades {
     public static byte cifras(int numero) {
         byte tamanoNum = 1;
 
-        while (numero >= Math.pow(10, tamanoNum)){
+        while (numero >= Math.pow(10, tamanoNum)) {
             tamanoNum++;
         };
 
@@ -31,8 +31,8 @@ public class Utilidades {
             invertido = numero;
         } else {
             for (byte i = 1; i <= tamano; i++) {
-                invertido = invertido + 
-                        (sacaDigito(numero, i) * (int) Math.pow(10, i - 1));
+                invertido = invertido
+                        + (sacaDigito(numero, i) * (int) Math.pow(10, i - 1));
             }
         }
 
@@ -99,7 +99,7 @@ public class Utilidades {
         do {
             System.out.print("¿Desea continuar? (S/N)");
             intro = Leer.datoChar();
-        } while ((intro != 's'||intro != 'S'||intro != 'n'||intro != 'N'));
+        } while ((intro != 's' || intro != 'S' || intro != 'n' || intro != 'N'));
 
 
         if (intro == 's' || intro == 'S') {
@@ -155,55 +155,5 @@ public class Utilidades {
                 break;
         }
     }
-    
-    public static void Ud6Ej6(){
-        byte alumnos = 35;
-        float media = 0;
-        byte aprobados = 0;
-        char introducido;
-        float numIntro = 0;
-                
-        for(byte i=1; i <= alumnos; i++){
-            do{
-                System.out.println("Introduzca nota del alumno " + i +": ");
-                introducido = Leer.datoChar();
-            }
-            while (introducido != 's' || introducido != 'S' || 
-                    introducido != 'n' || introducido != 'N' ||
-                    introducido != 'b' || introducido != 'B' ||
-                    introducido != 'f' || introducido != 'F' ||
-                    introducido != 'i' || introducido != 'I' ||
-                    introducido != 'm' || introducido != 'M'||
-                    introducido != ' ');
-            
-            switch(introducido){
-                case 's': case 'S':
-                    numIntro = 9.5f;
-                    break;
-                case 'n': case 'N':
-                    numIntro = 7.5f;
-                    break;
-                case 'b': case 'B':
-                    numIntro = 6f;
-                    break;
-                case 'f': case 'F':
-                    numIntro = 5f;
-                    break;
-                case 'i': case 'I':
-                    numIntro = 4f;
-                    break;
-                case 'm': case 'M':
-                    numIntro = 2.5f;
-                    break;
-                case ' ':
-                    numIntro = 0f;
-                    break;
-            }
-            media += numIntro;
-            if (numIntro >= 5){
-                aprobados++;
-            } //falta terminar
-            
-        }
-    }
+
 }
