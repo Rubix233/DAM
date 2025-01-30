@@ -1,15 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
- * @author Administrador
+ * @author Andy Jan
  */
 public class Ud6Ej6 {
     public static void main(String[] args){
-        byte alumnos = 10;
+        final byte ALUMNOS = 35;
         float media = 0;
         byte aprobados = 0;
         byte suspensos;
@@ -18,7 +13,7 @@ public class Ud6Ej6 {
         char charIntro;
         float numIntro = 0;
 
-        for (byte i = 1; i <= alumnos; i++) {
+        for (byte i = 1; i <= ALUMNOS; i++) {
             do {
                 System.out.print("Introduzca nota del alumno " + i + ": ");
                 charIntro = Leer.datoChar();
@@ -65,17 +60,17 @@ public class Ud6Ej6 {
             }
         }
         //Calculos finales
-        suspensos = (byte) (alumnos - aprobados);
+        suspensos = (byte) (ALUMNOS - aprobados);
         //Porcentaje aprobados con 2 decimales
-        porcentajeA = (float)aprobados / alumnos * 100;
+        porcentajeA = (float)aprobados / ALUMNOS * 100;
         porcentajeA = Math.round(porcentajeA * 100f) / 100f;
         //porcentaje suspensos
         porcentajeS = 100 - porcentajeA;
         //media
-        media = media / alumnos;
+        media = media / ALUMNOS;
 
         //Mostrar por pantalla
-        System.out.println("De los " + alumnos + " alumnos: ");
+        System.out.println("De los " + ALUMNOS + " ALUMNOS: ");
         System.out.println("Han aprobado " + aprobados + "(" + porcentajeA + "%)");
         System.out.println("Han suspendido " + suspensos + "(" + porcentajeS + "%)");
         System.out.println("La nota media del curso es de: " + media);

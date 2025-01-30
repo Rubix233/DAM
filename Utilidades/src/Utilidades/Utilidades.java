@@ -99,7 +99,7 @@ public class Utilidades {
         do {
             System.out.print("¿Desea continuar? (S/N)");
             intro = Leer.datoChar();
-        } while ((intro != 's' || intro != 'S' || intro != 'n' || intro != 'N'));
+        } while ((intro != 's' && intro != 'S' && intro != 'n' && intro != 'N'));
 
 
         if (intro == 's' || intro == 'S') {
