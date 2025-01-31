@@ -5,6 +5,22 @@
  */
 public class Utilidades {
 
+    public static byte datoByte() {
+        byte dato;
+        short numero;
+
+        System.out.print("Introduzca numero: ");
+        numero = Leer.datoShort();
+
+        while (numero < -128 || numero > 127) {
+            System.out.print("Dato incorrecto, introduzca otro: ");
+            numero = Leer.datoShort();
+        }
+
+        dato = (byte) numero;
+        return dato;
+    }
+
     public static byte cifras(int numero) {
         byte tamanoNum = 1;
 
@@ -39,20 +55,26 @@ public class Utilidades {
         return invertido;
     }
 
-    public static byte datoByte() {
-        byte dato;
-        short numero;
+    public static boolean capicua(int num) {
+        boolean esCapi;
+        byte cifras;
+        byte i = 1;
 
-        System.out.print("Introduzca numero: ");
-        numero = Leer.datoShort();
-
-        while (numero < -128 || numero > 127) {
-            System.out.print("Dato incorrecto, introduzca otro: ");
-            numero = Leer.datoShort();
+        cifras = cifras(num);
+        if (cifras == 1) {
+            esCapi = true;
+        } else {
+            while (i <= cifras / 2 && sacaDigito(num, i)
+                    == sacaDigito(num, (byte) (cifras - i + 1))) {
+                i++;
+            }
+            if (i > cifras / 2) {
+                esCapi = true;
+            } else {
+                esCapi = false;
+            }
         }
-
-        dato = (byte) numero;
-        return dato;
+        return esCapi;
     }
 
     public static boolean esBisiesto(short ano) {
@@ -91,25 +113,6 @@ public class Utilidades {
         }
 
         return valido;
-    }
-
-    public static boolean continuar() {
-        boolean seguir;
-        char intro;
-        do {
-            System.out.print("¿Desea continuar? (S/N)");
-            intro = Leer.datoChar();
-        } while ((intro != 's' && intro != 'S' && intro != 'n' && intro != 'N'));
-
-
-        if (intro == 's' || intro == 'S') {
-            seguir = true;
-        } else {
-            seguir = false;
-        }
-
-        return seguir;
-
     }
 
     public static void nombreMes(byte mes) {
@@ -156,4 +159,22 @@ public class Utilidades {
         }
     }
 
+    public static boolean continuar() {
+        boolean seguir;
+        char intro;
+        do {
+            System.out.print("¿Desea continuar? (S/N)");
+            intro = Leer.datoChar();
+        } while ((intro != 's' && intro != 'S' && intro != 'n' && intro != 'N'));
+
+
+        if (intro == 's' || intro == 'S') {
+            seguir = true;
+        } else {
+            seguir = false;
+        }
+
+        return seguir;
+
+    }
 }
