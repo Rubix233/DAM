@@ -5,6 +5,10 @@
  */
 public class Utilidades {
 
+    public static boolean numeroEnRango(int num, int min, int max){
+        return (num >= min && num <= max);
+    }
+    
     public static byte datoByte() {
         byte dato;
         short numero;

@@ -6,7 +6,7 @@
 public class Main {
     public static void main(String[] args){
         
-        System.out.println(Utilidades.capicua(105601));
+        System.out.println(Utilidades.numeroEnRango(110, 0, 100));
         
         
         
