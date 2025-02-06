@@ -5,26 +5,6 @@
  */
 public class Utilidades {
 
-    public static boolean numeroEnRango(int num, int min, int max){
-        return (num >= min && num <= max);
-    }
-    
-    public static byte datoByte() {
-        byte dato;
-        short numero;
-
-        System.out.print("Introduzca numero: ");
-        numero = Leer.datoShort();
-
-        while (numero < -128 || numero > 127) {
-            System.out.print("Dato incorrecto, introduzca otro: ");
-            numero = Leer.datoShort();
-        }
-
-        dato = (byte) numero;
-        return dato;
-    }
-
     public static byte cifras(int numero) {
         byte tamanoNum = 1;
 
