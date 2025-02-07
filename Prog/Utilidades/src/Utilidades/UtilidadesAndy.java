@@ -27,7 +27,7 @@ public class UtilidadesAndy {
         byte dato;
         short numero;
 
-        System.out.print("Introduzca numero: ");
+        //System.out.print("Introduzca numero: ");
         numero = Leer.datoShort();
 
         while (numero < -128 || numero > 127) {
