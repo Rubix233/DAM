@@ -73,8 +73,15 @@ public class Prueba {
                 primosEntre(anexoDelante(numeroIntro, digitoIntro),
                         anexoDetras(numeroIntro, digitoIntro));
             } else {
-                primosEntre(anexoDetras(numeroIntro, digitoIntro),
-                        anexoDelante(numeroIntro, digitoIntro));
+                if(anexoDelante(numeroIntro, digitoIntro)
+                    > anexoDetras(numeroIntro, digitoIntro)){
+                   primosEntre(anexoDetras(numeroIntro, digitoIntro),
+                        anexoDelante(numeroIntro, digitoIntro)); 
+                } else {
+                    System.out.println("Son el mismo numero");
+                }
+                
+                
             }
 
             continuar = Utilidades.continuar();
