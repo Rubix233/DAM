@@ -13,29 +13,25 @@ public class Prueba {
             for (int i = 3; i <= Math.sqrt(num); i++) {
                 if (num % i == 0) {
                     primo = false;
-                }
-            }
-        }
+                }//Fin Si
+            }//Fin Para
+        }//Fin Si
 
         return primo;
-    }
+    }//Fin Funcion
 
     public static void primosEntre(int a, int b) {
         int i = a;
-        int j = b;
 
         if (a % 2 == 0) {
             i++;
-        }
-        if (b % 2 == 0) {
-            j--;
-        }
+        }//Fin Si
         for (; i <= b; i = i + 2) {
             if (esPrimo(i)) {
                 System.out.println(i);
-            }
-        }
-    }
+            }//Fin Si
+        }//Fin Para
+    }//Fin Funcion
 
     public static int anexoDelante(int numero, byte digito) {
         int numeroFinal;
@@ -44,7 +40,7 @@ public class Prueba {
                 (digito*(int) Math.pow(10, Utilidades.cifras(numero)));
 
         return numeroFinal;
-    }
+    }//Fin Funcion
 
     public static int anexoDetras(int numero, byte digito) {
         int numeroFinal;
@@ -52,7 +48,7 @@ public class Prueba {
         numeroFinal = (numero * 10) + digito;
 
         return numeroFinal;
-    }
+    }//Fin Funcion
 
     public static void main(String[] args) {
         // TODO code application logic here
@@ -79,13 +75,13 @@ public class Prueba {
                         anexoDelante(numeroIntro, digitoIntro)); 
                 } else {
                     System.out.println("Son el mismo numero");
-                }
+                }//Fin Si
                 
                 
-            }
+            }//Fin Si
 
             continuar = Utilidades.continuar();
-        } while (continuar);
+        } while (continuar);//Fin Mientras
 
-    }
+    }//Fin Programa
 }
