@@ -9,6 +9,7 @@
  */
 public class Recursivas {
 
+    short x = 200;
     public static int potencia(int b, int e) {
         int f;
 
