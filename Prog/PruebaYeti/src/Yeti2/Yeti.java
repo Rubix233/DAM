@@ -21,23 +21,12 @@ public class Yeti {
     public Yeti (){
         
     }
-    public Yeti(char color, boolean hambriento, char sexo, byte zona){
-        this.color = color;
-        this.hambriento = hambriento;
-        if(sexo == 'h' ||sexo == 'H'){
-            this.sexo = sexo;
-        }
-        Yeti.zona = zona;
-    }
-    public Yeti(char color, boolean hambriento, char sexo){
-        this.color = color;
-        this.hambriento = hambriento;
+    public Yeti(char sexo){
         if(sexo == 'h' ||sexo == 'H'){
             this.sexo = sexo;
         }
     }
-    public Yeti(char color, boolean hambriento){
-        this.color = color;
+    public Yeti(boolean hambriento){
         this.hambriento = hambriento;
     }
     public Yeti(char color, char sexo){
@@ -46,25 +35,34 @@ public class Yeti {
             this.sexo = sexo;
         }
     }
-    public Yeti(boolean hambriento, char sexo){
+    public Yeti(char color, char sexo, boolean hambriento, byte zona){
+        this.color = color;
+        this.hambriento = hambriento;
+        if(sexo == 'h' ||sexo == 'H'){
+            this.sexo = sexo;
+        }
+        Yeti.zona = zona;
+    }
+    public Yeti(char sexo, boolean hambriento){
         this.hambriento = hambriento;
         if(sexo == 'h' ||sexo == 'H'){
             this.sexo = sexo;
         }
     }
-    public Yeti(boolean hambriento){
+    public Yeti(char color, char sexo, boolean hambriento){
+        this.color = color;
         this.hambriento = hambriento;
-    }
-    public Yeti(char sexo){
         if(sexo == 'h' ||sexo == 'H'){
             this.sexo = sexo;
         }
     }
+ 
+         
     
     //Metodos
     public void alimentarYeti(){
-        if (!this.hambriento){
-            this.hambriento = true;
+        if (this.hambriento){
+            this.hambriento = false;
         } else {
             System.out.println("No tiene hambre");
         }
