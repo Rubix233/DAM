@@ -21,6 +21,11 @@ public class Yeti {
     public Yeti (){
         
     }
+    public Yeti(Yeti j){
+        this.color = j.color;
+        this.sexo = j.sexo;
+        this.hambriento = j.hambriento;
+    }
     public Yeti(char sexo){
         if(sexo == 'h' ||sexo == 'H'){
             this.sexo = sexo;
@@ -56,9 +61,35 @@ public class Yeti {
             this.sexo = sexo;
         }
     }
- 
-         
-    
+    //Getters
+    public char getColor(){
+        return this.color;
+    }
+    public char getSexo(){
+        return this.sexo;
+    }
+    public boolean getHambriento(){
+        return this.hambriento;
+    }
+    public static byte getZona(){
+        return Yeti.zona;
+    }
+    //Setters
+    public void setColor(char color){
+        this.color = color;
+    }
+    public void setSexo(char sexo){
+        if(sexo == 'h' ||sexo == 'H'){
+            this.sexo = sexo;
+        }
+    }
+    public void setHambriento(boolean hambriento){
+        this.hambriento = hambriento;
+    }
+    public static void setZona(byte zona){
+        Yeti.zona = zona;
+    }
+
     //Metodos
     public void alimentarYeti(){
         if (this.hambriento){
@@ -75,4 +106,20 @@ public class Yeti {
         
     }
     
+    //Clonar
+    public void copia(Yeti original){
+        this.color = original.color;
+        this.sexo = original.sexo;
+        this.hambriento = original.hambriento;
+    }
+    public Yeti copia(){
+        Yeti j = new Yeti(this.color,this.sexo,this.hambriento);
+        
+        return j;
+    }
+    public static void copia(Yeti original, Yeti distinto){
+        distinto.color = original.color;
+        distinto.sexo = original.sexo;
+        distinto.hambriento = original.hambriento;
+    }
 }

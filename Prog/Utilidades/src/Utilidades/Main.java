@@ -6,6 +6,8 @@
 public class Main {
     public static void main(String[] args){
         
+        boolean bisiesto;
+        
         System.out.println(UtilidadesAndy.esPrimo(4));
         System.out.println(UtilidadesAndy.esPrimo(6));
         System.out.println(UtilidadesAndy.esPrimo(7));
@@ -13,6 +15,8 @@ public class Main {
         System.out.println(UtilidadesAndy.esPrimo(11));
         System.out.println(UtilidadesAndy.esPrimo(15));
         System.out.println(UtilidadesAndy.esPrimo(168));
+
+        
     
     }
 }
