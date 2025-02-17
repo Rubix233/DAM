@@ -79,7 +79,7 @@ public class Yeti {
         this.color = color;
     }
     public void setSexo(char sexo){
-        if(sexo == 'h' ||sexo == 'H'){
+        if(sexo == 'h' ||sexo == 'H'|| sexo == 'm'|| sexo == 'M'){
             this.sexo = sexo;
         }
     }
@@ -106,6 +106,11 @@ public class Yeti {
         
     }
     
+    @Override
+    public boolean equals(Object obj){
+        return (obj instanceof Yeti && ((Yeti)obj).color == this.color && 
+                ((Yeti)obj).sexo == this.sexo);
+    }
     //Clonar
     public void copia(Yeti original){
         this.color = original.color;
