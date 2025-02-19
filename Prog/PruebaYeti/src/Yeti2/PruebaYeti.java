@@ -14,16 +14,12 @@ package Yeti2;
 public class PruebaYeti {
         
     public static void main(String[] args){
-        Yeti jeff;
-        Yeti andres;
+        Yeti yetiA;
+        Yeti yetiB;
         
         //Crear yeti A
-        jeff = new Yeti('R', 'H');
-        jeff.mostrarAtributos();
+        yetiA = new Yeti();
         
-        andres = new Yeti(jeff);
-        andres.mostrarAtributos();
-        /*
         //Mostrar yeti A
         System.out.println("Nuestro Yeti A: ");
         yetiA.mostrarAtributos();
@@ -52,7 +48,7 @@ public class PruebaYeti {
         //Volver a ver el yeti A
         System.out.println("Nuestro Yeti A: ");
         yetiA.mostrarAtributos();
-        */
+        
         
         
         

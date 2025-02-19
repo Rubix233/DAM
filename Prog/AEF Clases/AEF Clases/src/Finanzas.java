@@ -8,19 +8,19 @@
  * @author Andy Jan
  */
 public class Finanzas {
-    private double importeCambio = 1.37;
+    private static double importeCambio = 1.37;
     
     
     public Finanzas(){
         
     }
     public Finanzas(double valorEur){
-        this.importeCambio = valorEur;
+        Finanzas.importeCambio = valorEur;
     }
     public double dolaresToEuros(double euros){
-        return euros * this.importeCambio;
+        return euros * Finanzas.importeCambio;
     }
     public double eurosToDolares(double dolares){
-        return dolares * 1/this.importeCambio;
+        return dolares * 1/Finanzas.importeCambio;
     }
 }

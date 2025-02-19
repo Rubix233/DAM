@@ -56,6 +56,6 @@ public class Prueba {
         
         System.out.println(finanzasPrueba.dolaresToEuros(10));
         System.out.println(finanzasPrueba.eurosToDolares(15));
-        
+
     }
 }
