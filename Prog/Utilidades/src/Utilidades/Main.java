@@ -8,14 +8,9 @@ public class Main {
         
         boolean bisiesto;
         
-        System.out.println(UtilidadesAndy.esPrimo(4));
-        System.out.println(UtilidadesAndy.esPrimo(6));
-        System.out.println(UtilidadesAndy.esPrimo(7));
-        System.out.println(UtilidadesAndy.esPrimo(9));
-        System.out.println(UtilidadesAndy.esPrimo(11));
-        System.out.println(UtilidadesAndy.esPrimo(15));
-        System.out.println(UtilidadesAndy.esPrimo(168));
-
+       
+        System.out.println(Utilidades.sacaDigito(123456, (byte)6));
+        System.out.println(UtilidadesAndy.sacaDigito(123456, (byte)6));
         
     
     }

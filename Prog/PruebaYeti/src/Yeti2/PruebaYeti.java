@@ -15,10 +15,14 @@ public class PruebaYeti {
         
     public static void main(String[] args){
         Yeti jeff;
-        Yeti yetiB;
+        Yeti andres;
         
         //Crear yeti A
-        jeff = new Yeti();
+        jeff = new Yeti('R', 'H');
+        jeff.mostrarAtributos();
+        
+        andres = new Yeti(jeff);
+        andres.mostrarAtributos();
         /*
         //Mostrar yeti A
         System.out.println("Nuestro Yeti A: ");
@@ -49,10 +53,6 @@ public class PruebaYeti {
         System.out.println("Nuestro Yeti A: ");
         yetiA.mostrarAtributos();
         */
-        
-        jeff.setColor('V');
-        
-        Yeti.setZona((byte)3);
         
         
         

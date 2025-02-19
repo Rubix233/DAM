@@ -1,3 +1,6 @@
+
+
+
 /**
  *
  * @author Andy Jan
@@ -37,5 +40,21 @@ public class UtilidadesAndy {
 
         dato = (byte) numero;
         return dato;
+    }
+    public static byte cifras(int numero) {
+        byte tamanoNum = 1;
+
+        while (numero >= Math.pow(10, tamanoNum)) {
+            tamanoNum++;
+        };
+
+        return tamanoNum;
+    }
+    public static byte sacaDigito(int num, byte pos) {
+        byte digito;
+        int numero = Math.abs(num);
+
+        digito = (byte) (numero / Math.pow(10, (pos-1)) % 10);
+        return digito;
     }
 }
