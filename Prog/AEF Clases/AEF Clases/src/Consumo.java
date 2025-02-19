@@ -34,7 +34,7 @@ public class Consumo {
         return kms / vmed;
     }
     public float consumoMedio(){
-        return litros *(100/kms);
+        return litros *100/kms;
     }
     public float consumoEuros(){
         return litros * precio;

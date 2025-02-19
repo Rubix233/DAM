@@ -17,11 +17,11 @@ public class Numero {
     public Numero(int numero){
         this.valor = numero;
     }    
-    public int aniade(int numero){
-        return this.valor + numero;
+    public void aniade(int numero){
+        this.valor += numero;
     }
-    public int resta(int numero){
-        return this.valor - numero;
+    public void resta(int numero){
+         this.valor -= numero;
     }    
     public int getValor(){
         return this.valor;

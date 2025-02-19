@@ -17,10 +17,10 @@ public class Finanzas {
     public Finanzas(double valorEur){
         this.importeCambio = valorEur;
     }
-    public double dolaresToEuros(double dolares){
-        return dolares * this.importeCambio;
+    public double dolaresToEuros(double euros){
+        return euros * this.importeCambio;
     }
-    public double eurosToDolares(double euros){
-        return euros * 1/this.importeCambio;
+    public double eurosToDolares(double dolares){
+        return dolares * 1/this.importeCambio;
     }
 }
