@@ -5,7 +5,7 @@
 
 /**
  *
- * @author Administrador
+ * @author Adndy Jan
  */
 public class Prueba {
     public static void main(String[] args){
@@ -14,9 +14,9 @@ public class Prueba {
         Finanzas finanzasPrueba;
         
         //Prueba de Numero:
-        /*
-        numeroPrueba = new Numero(10);
         
+        numeroPrueba = new Numero(10);
+        /*
         System.out.println(numeroPrueba.getValor());
         numeroPrueba.aniade(5);
         System.out.println(numeroPrueba.getValor());
@@ -40,7 +40,8 @@ public class Prueba {
         
         //Cambiar precio
         consumoPrueba.setPrecio(3f);
-        System.out.println("3Eur/L en total: "+consumoPrueba.consumoEuros()+"Eur");
+        System.out.println("3Eur/L en total: "
+                +consumoPrueba.consumoEuros()+"Eur");
         
         //Cambiar datos del viaje
         consumoPrueba.setKms(100f);
