@@ -38,4 +38,14 @@ public class Numero {
     public void setValor(int numero){
         this.valor = numero;
     }
+    
+    @Override
+    public boolean equals(Object obj){
+        return (obj instanceof Numero && ((Numero)obj).valor == this.valor);
+    }
+    
+    @Override
+    public String toString(){
+        return Integer.toString(this.valor);
+    }
 }

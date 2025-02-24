@@ -9,11 +9,13 @@
  */
 public class NumeroPrueba {
     public static void main(String[] args){
-        Numero numeroPrueba;
+        Numero n1;
+        Numero n2;
         
         //PRUEBA NUMERO
-        numeroPrueba = new Numero(10);
-        
+        n1 = new Numero(10);
+        n2 = new Numero(5);
+        /*
         System.out.println(numeroPrueba.getValor());
         numeroPrueba.aniade(5);
         System.out.println(numeroPrueba.getValor());
@@ -25,5 +27,10 @@ public class NumeroPrueba {
         System.out.println(numeroPrueba.getDoble());
         System.out.println(numeroPrueba.getTriple());
         System.out.println(numeroPrueba.getCuadruple());
+        * */
+        System.out.println(n1.toString());
+        System.out.println(n1.equals(n2));
+        n2.aniade(5);
+        System.out.println(n1.equals(n2));
     }
 }

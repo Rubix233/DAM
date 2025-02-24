@@ -39,4 +39,16 @@ public class Consumo {
     public float consumoEuros(){
         return litros * precio;
     }
+    @Override
+    public boolean equals(Object obj){
+        return (obj instanceof Consumo && ((Consumo)obj).kms == this.kms
+                && ((Consumo)obj).litros == this.litros
+                && ((Consumo)obj).vmed == this.vmed
+                && ((Consumo)obj).precio == this.precio);
+    }
+    
+    @Override
+    public String toString(){
+        return Float.toString(this.kms);
+    }
 }
