@@ -117,10 +117,8 @@ public class Yeti {
         this.sexo = original.sexo;
         this.hambriento = original.hambriento;
     }
-    public Yeti copia(){
-        Yeti j = new Yeti(this.color,this.sexo,this.hambriento);
-        
-        return j;
+    public Yeti copia(){        
+        return new Yeti(this.color,this.sexo,this.hambriento);
     }
     public static void copia(Yeti original, Yeti distinto){
         distinto.color = original.color;

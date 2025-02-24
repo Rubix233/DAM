@@ -26,7 +26,7 @@ public class Contador {
         this.incremento = referencia.incremento;
     }
     public void incrementaCuenta(){
-        valor = valor + incremento;
+        this.valor = this.valor + this.incremento;
     }
     public void iniciaCuenta(int valor){
         this.valor = valor;
