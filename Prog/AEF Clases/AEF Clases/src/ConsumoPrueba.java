@@ -32,5 +32,7 @@ public class ConsumoPrueba {
         System.out.println(""+consumoPrueba.getTiempo()+" Horas");
         System.out.println("" + consumoPrueba.consumoMedio()+"L/100Km");
         System.out.println(""+consumoPrueba.consumoEuros()+"Eur");
+        
+        System.out.println(consumoPrueba.toString());
     }
 }

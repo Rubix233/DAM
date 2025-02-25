@@ -22,7 +22,8 @@ public class PruebaYeti {
         yetiA = new Yeti('R', 'H');
         System.out.println("Color yeti A: "+yetiA.getColor());
         System.out.println("Sexo yeti A: "+yetiA.getSexo());
-        
+        System.out.println(yetiA.toString());
+        /*
         //Crear yeti usando otro yeti como parametro
         yetiB = new Yeti(yetiA);
         System.out.println("Color yeti B: "+yetiB.getColor());

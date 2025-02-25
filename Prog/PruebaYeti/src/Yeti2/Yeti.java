@@ -111,6 +111,11 @@ public class Yeti {
         return (obj instanceof Yeti && ((Yeti)obj).color == this.color && 
                 ((Yeti)obj).sexo == this.sexo);
     }
+    
+    public String toString(){
+        return "Este Yeti es de color "+this.color+" \nDe sexo "+this.sexo+
+                " \nY vive en la zona "+Yeti.zona;
+    }
     //Clonar
     public void copia(Yeti original){
         this.color = original.color;
@@ -125,4 +130,6 @@ public class Yeti {
         distinto.sexo = original.sexo;
         distinto.hambriento = original.hambriento;
     }
+    
+    
 }

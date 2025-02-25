@@ -15,11 +15,15 @@ public class Contador {
         
     }
     public Contador(byte incremento){
-        this.incremento = incremento;
+        if(incremento != 0){
+            this.incremento = incremento;
+        }
     }
     public Contador(int valor, byte incremento){
         this.valor = valor;
-        this.incremento = incremento;
+        if(incremento != 0){
+            this.incremento = incremento;
+        }
     }
     public Contador(Contador referencia){
         this.valor = referencia.valor;
@@ -33,5 +37,18 @@ public class Contador {
     }
     public int obtenerCuenta(){
         return this.valor;
+    }
+    @Override
+    public boolean equals(Object obj){
+        return (obj instanceof Contador && ((Contador)obj).valor == this.valor 
+                &&((Contador)obj).incremento == this.incremento );
+    }
+    
+    @Override
+    public String toString(){
+        return "El valor de este contador en este momento es: "+
+                Integer.toString(this.valor)+
+                "\nSu incremento es de: "+
+                Byte.toString(this.incremento);
     }
 }

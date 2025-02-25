@@ -23,4 +23,13 @@ public class Finanzas {
     public double eurosToDolares(double dolares){
         return dolares * 1/Finanzas.importeCambio;
     }
+    @Override
+    public boolean equals(Object obj){
+        return obj instanceof Finanzas;
+    }
+    
+    @Override
+    public String toString(){
+        return Double.toString(importeCambio);
+    }
 }

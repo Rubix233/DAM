@@ -49,6 +49,9 @@ public class Consumo {
     
     @Override
     public String toString(){
-        return Float.toString(this.kms);
+        return "Los kilometros viajados: "+Float.toString(this.kms)+
+                "\nLos litros gastados: "+Float.toString(this.litros)+
+                "\nLa velocidad media: "+Float.toString(vmed)+
+                "\nEl precio de combustible: "+Float.toString(precio);
     }
 }

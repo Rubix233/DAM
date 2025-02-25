@@ -20,7 +20,8 @@ public class ContadorPrueba {
         System.out.println("Prueba constructor sin parámetros:");
         System.out.println("Valor inicial esperado: 0, obtenido: " 
                 + c1.obtenerCuenta());
-
+        System.out.println(c1.toString());
+        /*
         // Constructor con incremento
         c2 = new Contador((byte) 5);
         System.out.println("Prueba constructor con incremento:");
@@ -62,5 +63,6 @@ public class ContadorPrueba {
         System.out.println("Prueba incremento después de reiniciar:");
         System.out.println("Valor esperado: 55, obtenido: " 
                 + c2.obtenerCuenta());
+                * */
     }
 }
