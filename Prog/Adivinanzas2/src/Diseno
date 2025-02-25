@@ -1,0 +1,20 @@
+→ Pedir el número que se debe adivinar 
+
+→ Comprobar que el número no tiene 
+    más de 5 cifras (0-100,000 no incluidos)
+
+→ Pedir el numero para intentar adivinar el anterior 
+
+→ Mirar si los números son iguales. Si no, 
+    comparar los dígitos de menos a más significativos. 
+    Si alguno es igual sumar al contador de dígitos correctos. 
+    Repetir esto hasta la cantidad de cifras del número más 
+    pequeño entre los dos.
+
+→ Mostrar el número de dígitos correctos.
+
+→ Volver a pedir el número para intentar adivinar el secreto y 
+    realizar de nuevo todo el procedimiento anterior 
+    (hasta que se acaben los intentos o ambos números sean iguales).
+
+
