@@ -9,8 +9,11 @@
  */
 public class ConsumoPrueba {
     public static void main(String[] args){
+        //Entorno
         Consumo consumoPrueba;
-
+        
+        //Algoritmo
+        
         //PRUEBA CONSUMO
         consumoPrueba = new Consumo(200f,20f,100f);
         

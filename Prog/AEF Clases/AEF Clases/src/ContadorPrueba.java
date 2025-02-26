@@ -9,11 +9,12 @@
  */
 public class ContadorPrueba {
     public static void main(String[] args){
+        //Entorno
         Contador c1;
         Contador c2;
         Contador c3;
         Contador c4;
-        
+        //Algoritmo
         //PRUEBA CONTADOR
         // Constructor sin parámetros
         c1 = new Contador();
