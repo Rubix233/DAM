@@ -114,6 +114,5 @@ public class Adivinanzas2 {
             System.out.println("Te has quedado sin intentos. El numero era: "
                     + numSecreto);
         }
-
     }
 }
