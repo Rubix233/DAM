@@ -19,7 +19,8 @@ public class StringPrueba4 {
         entero = Leer.datoInt();
 
         enteroString = Integer.toString(entero);
-        System.out.println(enteroString.replace('2', 'A').replace('5', 'Z'));
+        enteroString = enteroString.replace('2', 'A').replace('5', 'Z');
+        System.out.println(enteroString);
 
     }//Fin Programa
 }
