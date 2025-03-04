@@ -13,22 +13,6 @@ public class Adivinanzas2 {
         return (num >= min && num <= max);
     }
 
-    public static byte datoByte() {
-        byte dato;
-        short numero;
-
-        //System.out.print("Introduzca numero: ");
-        numero = Leer.datoShort();
-
-        while (numero < -128 || numero > 127) {
-            System.out.print("Dato incorrecto, introduzca otro: ");
-            numero = Leer.datoShort();
-        }
-
-        dato = (byte) numero;
-        return dato;
-    }
-
     public static byte cifras(int numero) {
         byte tamanoNum = 1;
 
@@ -44,6 +28,7 @@ public class Adivinanzas2 {
     }
 
     public static void main(String[] args) {
+        //Entorno
         final int MAX = 99999;
         final int MIN = 0;
 
@@ -52,19 +37,19 @@ public class Adivinanzas2 {
         int introducido;
         byte digitosCorrectos;
 
+        //Algoritmo
         //Pedir numero al jugador 1
         System.out.println("Jugador 1 introduzca numero: ");
         do {
             numSecreto = Leer.datoInt();
             if (!numeroEnRango(numSecreto, MIN, MAX)) {
                 System.out.println("Un numero entre " + MIN + " y " + (MAX));
-            }
-        } while (!numeroEnRango(numSecreto, MIN, MAX));
+            }//Fin Si
+        } while (!numeroEnRango(numSecreto, MIN, MAX));//Fin Repetir
 
         //Limpiar consola
-        for (int i = 0; i <= 10; i++) {
-            System.out.println();
-        }
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
 
         //Jugador 2
         System.out.println("Jugador 2. Tienes " + intentos + " intentos.");
@@ -75,7 +60,7 @@ public class Adivinanzas2 {
                 introducido = Leer.datoInt();
                 if (!numeroEnRango(introducido, MIN, MAX)) {
                     System.out.println("Un numero entre " + MIN + " y " + MAX);
-                }
+                }//Fin Si
             } while (!numeroEnRango(introducido, MIN, MAX));
             //Comprobar si son iguales
             if (introducido != numSecreto) {
@@ -87,8 +72,8 @@ public class Adivinanzas2 {
                         if (sacaDigito(introducido, i)
                                 == sacaDigito(numSecreto, i)) {
                             digitosCorrectos++;
-                        }
-                    }
+                        }//Fin Si
+                    }//Fin Para
                 } //Si el introducido es mayor o igual al secreto
                 else if (cifras(introducido) >= cifras(numSecreto)) {
                     //Comprobar cada digito derecha a izquierda
@@ -96,9 +81,9 @@ public class Adivinanzas2 {
                         if (sacaDigito(introducido, i)
                                 == sacaDigito(numSecreto, i)) {
                             digitosCorrectos++;
-                        }
-                    }
-                }
+                        }//Fin Si
+                    }//Fin Para
+                }//Fin Si
                 //Mostrar en caso de fallar el intento
                 System.out.println("Digitos correctos: " + digitosCorrectos);
                 intentos--;
@@ -113,6 +98,6 @@ public class Adivinanzas2 {
         } else {
             System.out.println("Te has quedado sin intentos. El numero era: "
                     + numSecreto);
-        }
-    }
+        }//Fin Si
+    }//Fin Programa
 }
