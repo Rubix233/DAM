@@ -12,16 +12,18 @@ public class Act2Cad {
     public static boolean palindromo(String string) {
         int i = 0;
         int length;
-        string = string.trim().replaceAll("\\s+", "");
+        int reps;
+        string = string.trim().replaceAll("  +", "");
         length = string.length() - 1;
+        reps = length /2;
         if (!string.isEmpty()) {
-            while (i <= length / 2 && 
+            while (i <= reps && 
                     string.charAt(i) == string.charAt(length - i)) {
                 i++;
             }//Fin Mientras
         }//Fin Si
 
-        return i > length / 2;
+        return i > reps;
     }
     
     public static void main(String[] args) {

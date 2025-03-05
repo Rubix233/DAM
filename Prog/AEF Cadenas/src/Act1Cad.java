@@ -16,9 +16,9 @@ public class Act1Cad {
         do {
             System.out.print("Introduce tu cadena: ");
             introducido = Leer.dato();
-        } while (!introducido.matches("^.{1,25}$"));
+        } while (!introducido.matches(".{1,25}"));
 
-        introducido = introducido.trim().replaceAll("\\s+", " ");
+        introducido = introducido.trim().replaceAll("  +", " ");
 
         System.out.println("*" + introducido + "*");
 

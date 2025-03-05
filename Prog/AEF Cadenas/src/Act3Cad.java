@@ -49,7 +49,7 @@ public class Act3Cad {
         do {
             System.out.print("Introduce tu cadena: ");
             introducido = Leer.dato();
-        } while (!introducido.matches("^.{1,256}$"));
+        } while (!introducido.matches(".{1,256}"));
         codificado = codificado(introducido);
         System.out.println("Codificado: " + codificado);
         System.out.println("Version descodificada: " + codificado(codificado));
