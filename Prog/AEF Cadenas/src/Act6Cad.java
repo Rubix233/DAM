@@ -16,32 +16,32 @@ public class Act6Cad {
         //Recorer todos los caracteres
         for (int i = 0; i <= length; i++) {
             //Establecer codigo ASCII y el objetivo
-            int charInt = (int) intro.charAt(i);
+            int charInt = intro.charAt(i);
             int target = charInt + clave;//Por si se cuelan
             
             //Si es letra
-            if (charInt >= 65 && charInt <= 90 
-                    || charInt >= 97 && charInt <= 122) {
+            if (charInt >= 'A' && charInt <= 'Z' 
+                    || charInt >= 'a' && charInt <= 'z') {
                 
                 //Si es minuscula y se sale de rango
-                if (charInt >= 97) {
-                    if (target < 97) {
-                        target = 123 - (97 - target);
+                if (charInt >= 'a') {
+                    if (target < 'a') {
+                        target = ('z'+1) - ('a' - target);
                     }//Fin Si
-                    if (target > 122) {
-                        target = (target - 122) + 96;
+                    if (target > 'z') {
+                        target = (target - 'z') + ('a'-1);
                     }//Fin Si
                 } else { //Si es mayus y se sale de rango
-                    if (target < 65) {
-                        target = 91 - (65 - target);
+                    if (target < 'A') {
+                        target = ('Z'+1) - ('A' - target);
                     }//Fin Si
-                    if (target > 90) {
-                        target = (target - 90) + 64;
+                    if (target > 'Z') {
+                        target = (target - 'Z') + ('A'-1);
                     }//Fin Si
                 }//Fin Si
                 codificado += (char) target;
             } else {//Si no es letra se deja igual
-                codificado += intro.charAt(i);
+                codificado += intro.substring(i, i+1);
             }//Fin Si
         }
         return codificado;
