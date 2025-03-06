@@ -12,12 +12,17 @@ public class Act5Cad {
     public static String monoAlf(int clave, String intro) {
         String codificado = "";
         int length = intro.length() - 1;
-
+        clave = clave%26;
         //Recorer todos los caracteres
         for (int i = 0; i <= length; i++) {
             //Establecer codigo ASCII y el objetivo
             int charInt = (int) intro.charAt(i);
-            int target = charInt + clave%26;//Por si se cuelan
+            int target = charInt + clave;//Por si se cuelan
+            
+            
+            
+            
+            //NO USAR NUMEROS
             
             //Si es letra
             if (charInt >= 65 && charInt <= 90 
@@ -46,9 +51,7 @@ public class Act5Cad {
         }
         return codificado;
     }
-    public static String monoAlfDecode(int clave, String intro){
-        return monoAlf(clave*-1,intro);
-    }
+
     
     public static void main(String[] args) {
         //Entorno
@@ -62,8 +65,7 @@ public class Act5Cad {
         clave = Leer.datoInt();
         System.out.println("Su mensaje codificado:");
         System.out.println(monoAlf(clave,introducido));
-        System.out.println("Decodificado:");
-        System.out.println(monoAlfDecode(clave,monoAlf(clave,introducido)));
+
 
     }//Fin Programa
 }

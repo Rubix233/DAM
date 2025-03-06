@@ -20,6 +20,7 @@ public class Act7Cad {
             count = 0;
             intro2 = intro;
             
+            //Se puede reemplazar y contar la diferencia, se necesita un string auxiliar para ir guardando la combinacion que se han mirado
             while (intro2.indexOf(intro.substring(i, i + 2)) >= i
                     && intro.substring(i, i + 2).matches("[a-z]{2}")) {
                 

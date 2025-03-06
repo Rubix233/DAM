@@ -10,14 +10,14 @@
 public class Act6Cad {
     public static String monoAlfDecode(int clave, String intro) {
         String codificado = "";
-        clave = clave*-1;
+        clave = (clave%26)*-1;
         int length = intro.length() - 1;
 
         //Recorer todos los caracteres
         for (int i = 0; i <= length; i++) {
             //Establecer codigo ASCII y el objetivo
             int charInt = (int) intro.charAt(i);
-            int target = charInt + clave%26;//Por si se cuelan
+            int target = charInt + clave;//Por si se cuelan
             
             //Si es letra
             if (charInt >= 65 && charInt <= 90 
