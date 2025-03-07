@@ -18,7 +18,7 @@ public class Act7Cad {
             String pareja = intro.substring(i, i + 2);
             count = 0;
 
-            if (pareja.matches("[a-z]{2}") && !pareja.matches(visto)) {
+            if (pareja.matches("[a-z]{2}") && visto.indexOf(pareja) == -1) {
 
                 for (int j = 0; j < length; j++) {
                     if (intro.substring(j, j + 2).equals(pareja)) {

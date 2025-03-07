@@ -9,8 +9,9 @@
  */
 public class Act10Cad {
     public static void contarLetras(String intro){
-        intro = intro.trim().toUpperCase();
+        intro = intro.trim().toUpperCase().replaceAll(" +", "");
         int length = intro.length();
+        
         
         while (!intro.isEmpty()){
             System.out.print(intro.substring(0, 1));
@@ -28,7 +29,7 @@ public class Act10Cad {
         System.out.print("Introduzca su cadena: ");
         introducido = Leer.dato();
         contarLetras(introducido);
-
+        
     }//Fin Programa
     
 }
