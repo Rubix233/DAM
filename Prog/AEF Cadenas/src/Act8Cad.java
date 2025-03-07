@@ -34,6 +34,6 @@ public class Act8Cad {
             introducido = Leer.dato();
         } while (!introducido.matches("[a-zA-Z]{1,10}"));
         rotacionStr(introducido);
-    }
+    }//Fin Programa
     
 }
