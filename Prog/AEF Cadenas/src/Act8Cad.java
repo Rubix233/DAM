@@ -30,6 +30,7 @@ public class Act8Cad {
             introducido = rotarStr(introducido);
             System.out.println(introducido);
         }//Fin Si
+        
     }//Fin Programa
     
 }

@@ -13,12 +13,13 @@ public class Act3Cad {
 
         if (intro.matches(".*[.!?,;:]$")) {
             for (int i = intro.length() - 2; i >= 0; i--) {
-                invertido += intro.charAt(i);
+                invertido += intro.substring(i, i+1);
             }//Fin Para
-            invertido += intro.charAt(intro.length() - 1);
+            //invertido += intro.charAt(intro.length() - 1);
+            invertido += intro.substring(intro.length()-1, intro.length());
         } else {
             for (int i = intro.length() - 1; i >= 0; i--) {
-                invertido += intro.charAt(i);
+                invertido += intro.substring(i, i+1);
             }//Fin Para
         }//Fin Si
         return invertido;
