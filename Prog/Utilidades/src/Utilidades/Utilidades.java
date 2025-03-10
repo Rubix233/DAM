@@ -10,7 +10,7 @@ public class Utilidades {
 
         while (numero >= Math.pow(10, tamanoNum)) {
             tamanoNum++;
-        };
+        };//Fin Mientras
 
         return tamanoNum;
     }
@@ -33,8 +33,8 @@ public class Utilidades {
             for (byte i = 1; i <= tamano; i++) {
                 invertido = invertido
                         + (sacaDigito(numero, i) * (int) Math.pow(10, i - 1));
-            }
-        }
+            }//Fin Para
+        }//Fin Si
 
         return invertido;
     }
@@ -56,8 +56,8 @@ public class Utilidades {
                 esCapi = true;
             } else {
                 esCapi = false;
-            }
-        }
+            }//Fin Si
+        }//Fin Si
         return esCapi;
     }
 
@@ -91,10 +91,10 @@ public class Utilidades {
                     diasMax = 28;
                     if (esBisiesto(ano)) {
                         diasMax = 29;
-                    }
-            }
+                    }//Fin Si
+            }//Fin Si
             valido = !(dia < 1 || dia > diasMax);
-        }
+        }//Fin Si
 
         return valido;
     }
@@ -156,7 +156,7 @@ public class Utilidades {
             seguir = true;
         } else {
             seguir = false;
-        }
+        }//Fin Si
 
         return seguir;
 
