@@ -1,0 +1,13 @@
+1. Se crea objeto adivinanza con el numero aleatorio con new Adivinanza()
+
+2. Se muestra el numero de cifras con * con meteAsteriscos() y de parametro lo que devuelve cifras()
+
+3. se pide un numero y se pasa por juega()
+
+4. se comprueba que no tenga mas digitos que el numero a adivinar con getCifrasIncognita()
+
+5. se usa haGanado() para ver si ha acertado comparando el numero introducido con getIncognita()
+
+6. muestra los numeros acertados con getPista() y los intentos que quedan con getIntentos()
+
+7. se vuelve a intentar hasta fin programa
