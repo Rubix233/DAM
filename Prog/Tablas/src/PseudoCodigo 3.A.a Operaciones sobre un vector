@@ -1,0 +1,48 @@
+//Buscar Ultimo Desordenado
+...
+i <-- n - 1
+Mientras i > 0 y v(i)<> x hacer
+	i <-- i-1
+Fin Mientras
+
+Si v(i) = x entonces
+	Escribir "encontrado"
+Sino
+	Escribir "no existe"
+Fin Si
+
+//Buscar todas desordenado
+...
+Para i de 0 a N hacer
+	si v(i) = x entonces
+		Escribir v(i)
+	Fin Si
+Fin Para
+
+//Buscar primero Ascendente
+...
+i <-- N / 2
+j <-- N
+k <-- 0
+
+Mientras v(i) <> x y i <> j y i <> k hacer
+	Si v(i) < x entonces
+		k <-- i
+		i <-- i + (j-i)/2
+	Sino
+		j <-- i
+		i <-- i - (i-k)/2
+	Fin Si
+Fin Mientras
+
+Si v(i) = x entonces
+	Mientras i-1 = x hacer 	//Si es el ultimo i+1
+		i <-- i-1 	//Si es el ultimo i+1
+	Fin Mientras
+	
+	Escribir "Aqui esta" + i
+Sino
+	Escribir "No esta"
+Fin Si
+
+
