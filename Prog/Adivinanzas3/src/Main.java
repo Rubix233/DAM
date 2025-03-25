@@ -15,10 +15,13 @@ public class Main {
         game = new Adivinanza();
         //System.out.println(game.getIncognita());
         do{
-            System.out.print("-------------------------- "
+            do{
+                System.out.print("-------------------------- "
                     + "\nIntroduzca su intento: ");
             intro = Leer.datoInt();
+            }while(!(intro > 0));
             game.juega(intro);
+            
         }while(!game.haGanado() && game.getIntentos() > 0);
         
         if(game.haGanado()){
