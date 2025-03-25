@@ -5,23 +5,27 @@
 
 /**
  *
- * @author Administrador
+ * @author Andy Jan
  */
 public class Main {
     public static void main(String[] args){
-        System.out.println((int)Math.round(Math.random() * 1000000));
+        Adivinanza game;
+        int intro;
         
-        String inco = "123456";
-        String intento = "224466";
-        String out= "";
+        game = new Adivinanza();
+        //System.out.println(game.getIncognita());
+        do{
+            System.out.print("-------------------------- "
+                    + "\nIntroduzca su intento: ");
+            intro = Leer.datoInt();
+            game.juega(intro);
+        }while(!game.haGanado() && game.getIntentos() > 0);
         
-        for(byte i = 0; i<inco.length();i++){
-            if(inco.charAt(i) == intento.charAt(i)){
-                out += inco.charAt(i);
-            }else {
-                out += "*";
-            }
+        if(game.haGanado()){
+            System.out.println("Has ganado!");
+        } else {
+            System.out.println("Has perdido, el numero secreto era: "+
+                    game.getIncognita());
         }
-        System.out.println(out);
     }
 }
