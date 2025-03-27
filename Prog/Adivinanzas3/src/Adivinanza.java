@@ -20,8 +20,7 @@ public class Adivinanza {
         }
         this.intentos = 10;
         this.cifrasIncognita = Adivinanza.cifras(this.incognita);
-        System.out.println("El numero a adivinar es: "+ 
-                Adivinanza.meteAsteriscos(this.cifrasIncognita));
+        //System.out.println("El numero a adivinar es: " +Adivinanza.meteAsteriscos(this.cifrasIncognita));
     }
     
     public void juega(int num) {
@@ -37,7 +36,7 @@ public class Adivinanza {
                     System.out.println("Le quedan "+getIntentos()+ " intentos.");
                 }
             } else {
-                System.out.println("Numero de cifras no coinciden.");
+                System.out.println("Demasiadas cifras");
             }
         }  
     }
@@ -50,22 +49,25 @@ public class Adivinanza {
     public int getIncognita(){
         return this.incognita;
     }
-    public String getPista(){
+    public String getPista() {
+
         String inco = Integer.toString(this.incognita);
         String intento = Integer.toString(this.numeroPrueba);
-        String out= "";
-        
-        while(inco.length() > intento.length()){
-            intento = "." + intento;
-        }
-        for(byte i = 0; i<inco.length();i++){
-            if(inco.charAt(i) == intento.charAt(i)){
-                out += inco.charAt(i);
-            }else {
-                out += "*";
+        String out = "";
+        if (this.intentos == 10) {
+            out = Adivinanza.meteAsteriscos(this.cifrasIncognita);
+        } else {
+            while (inco.length() > intento.length()) {
+                intento = "." + intento;
+            }
+            for (byte i = 0; i < inco.length(); i++) {
+                if (inco.charAt(i) == intento.charAt(i)) {
+                    out += inco.charAt(i);
+                } else {
+                    out += "*";
+                }
             }
         }
-        
         return out;
     }
     public byte getIntentos(){

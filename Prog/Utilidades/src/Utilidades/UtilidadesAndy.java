@@ -18,7 +18,6 @@ public class UtilidadesAndy {
                 }
             }
         }
-
         return primo;
     }
     

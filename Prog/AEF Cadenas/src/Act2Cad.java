@@ -15,6 +15,7 @@ public class Act2Cad {
         int reps;
         string = string.trim().replaceAll("  +", "");
         length = string.length() - 1;
+        
         reps = length /2;
         if (!string.isEmpty()) {
             while (i <= reps && 

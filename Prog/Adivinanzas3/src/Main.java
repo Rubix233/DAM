@@ -13,7 +13,8 @@ public class Main {
         int intro;
         
         game = new Adivinanza();
-        //System.out.println(game.getIncognita());
+        System.out.println(game.getIncognita());
+        System.out.println("Pista: "+game.getPista());
         do{
             do{
                 System.out.print("-------------------------- "

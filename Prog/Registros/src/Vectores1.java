@@ -1,3 +1,6 @@
+
+import java.util.Arrays;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -13,6 +16,7 @@ public class Vectores1 {
         int[] tabla = {5,23,8,12,7};
         
         //Algoritmo
+        
         for (int i = 0; i<tabla.length; i++){
             System.out.println(tabla[i]);
         }//Fin Para
