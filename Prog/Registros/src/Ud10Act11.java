@@ -17,12 +17,14 @@ public class Ud10Act11 {
         //Entorno
         int[] tabla;
         int tamTabla, intro, j;
+        String out;
         
         //Algoritmo
         tamTabla = 10;
         tabla = new int[tamTabla];
         System.out.print("Introduzca el primer dato: ");
         tabla[0] = Leer.datoInt();
+        out = "";
         
         for(int i = 1; i < tamTabla;i++){
             System.out.print("Introduzca el dato "+(i+1)+": ");
@@ -34,7 +36,11 @@ public class Ud10Act11 {
                 j--;
             }//Fin Mientras
             tabla[j] = intro;
-            System.out.println(Arrays.toString(tabla));
+            //System.out.println(Arrays.toString(tabla));
         }//Fin Para    
+        for(int i = 0; i <tamTabla;i++){
+           out += tabla[i] + " ";
+        }//Fin Para
+        System.out.println(out.trim());
     }//Fin Programa
 }

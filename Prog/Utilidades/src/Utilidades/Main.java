@@ -8,9 +8,8 @@ public class Main {
         
         boolean bisiesto;
         
-       
-        System.out.println(Utilidades.sacaDigito(123456, (byte)6));
-        System.out.println(UtilidadesAndy.sacaDigito(123456, (byte)6));
+        System.out.println(1 % 2);
+        
         
     
     }
