@@ -16,24 +16,24 @@
 public class Ud10Act5 {
     public static void main(String[] args) {
         //Entorno
-        int[] tabla;
-        byte datos, pos;
+        final byte datos = 5;
+        int intro;
+        byte pos;
         int min;
        
         //Algoritmo
-        datos = 10;
-        tabla = new int[datos];
+
         
         System.out.println("Introduzca el primer dato: ");
-        tabla[0] = Leer.datoInt();
-        min = tabla[0];
+        intro = Leer.datoInt();
+        min = intro;
         pos = 0;
         
         for(byte i = 1; i < datos; i++){
             System.out.println("Introduzca el dato "+(i+1)+" : ");
-            tabla[i] = Leer.datoInt();
-            if(tabla[i] <= min){
-                min = tabla[i];
+            intro = Leer.datoInt();
+            if(intro <= min){
+                min = intro;
                 pos = i;
                 pos++;
             }//Fin Si
