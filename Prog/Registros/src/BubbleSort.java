@@ -15,15 +15,18 @@ public class BubbleSort {
         //Entorno
         int[] tabla = {10,50,25,5,29};
         int aux,limite,i,j;
+        boolean cambia = true;
         
         //Algoritmo
         //Ascendente
         limite = tabla.length - 1;
         
-        while (limite > 0) {
+        while (cambia && limite > 0) {
             j = 1;
+            cambia = false;
             for (i = 0; i < limite; i++) {
                 if (tabla[i] > tabla[j]) {
+                    cambia = true;
                     aux = tabla[j];
                     tabla[j] = tabla[i];
                     tabla[i] = aux;

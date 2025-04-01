@@ -22,13 +22,12 @@ public class IntercambioSort {
         //Ascendente
         for (i = 0; i < limite; i++) {
             pos = i;
-            aux = tabla[i];
             for (j = i + 1; j <= limite; j++) {
-                if (tabla[j] < aux) {
-                    aux = tabla[j];
+                if (tabla[j] < tabla[pos]) {
                     pos = j;
                 }//Fin Si
             }//Fin Para
+            aux = tabla[pos];
             tabla[pos] = tabla[i];
             tabla[i] = aux;
         }//Fin Para
