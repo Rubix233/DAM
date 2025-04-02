@@ -15,8 +15,8 @@ public class Notas {
     public static void main(String[] args) {
         //Entorno
         float[][] tabla;
-        byte asignaturas = 2;
-        byte alumnos = 2;
+        byte asignaturas = 3;
+        byte alumnos = 10;
         float media;
 
         //Algoritmo

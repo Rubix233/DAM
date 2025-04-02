@@ -19,7 +19,7 @@ public class IntercambioSort {
         //Algoritmo
         limite = tabla.length - 1;
 
-        //Ascendente
+        //Ascendente nuevo
         for (i = 0; i < limite; i++) {
             pos = i;
             for (j = i + 1; j <= limite; j++) {
@@ -31,10 +31,13 @@ public class IntercambioSort {
             tabla[pos] = tabla[i];
             tabla[i] = aux;
         }//Fin Para
+        for(i = 0; i<tabla.length;i++){
+            System.out.println(tabla[i]);
+        }
 
-        System.out.println(Arrays.toString(tabla));
+        //System.out.println(Arrays.toString(tabla));
 
-        //Descendiente
+        //Descendiente antiguo
         for (i = 0; i < limite; i++) {
             pos = i;
             aux = tabla[i];
@@ -47,6 +50,6 @@ public class IntercambioSort {
             tabla[pos] = tabla[i];
             tabla[i] = aux;
         }//Fin Para
-        System.out.println(Arrays.toString(tabla));
+        //System.out.println(Arrays.toString(tabla));
     }//Fin Programa
 }

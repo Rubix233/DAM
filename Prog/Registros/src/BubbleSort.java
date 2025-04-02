@@ -35,8 +35,11 @@ public class BubbleSort {
             }//Fin Para
             limite--;
         }//Fin Mientras
-        System.out.println(Arrays.toString(tabla));
-        
+        for(i = 0; i<tabla.length;i++){
+            System.out.println(tabla[i]);
+        }
+        //System.out.println(Arrays.toString(tabla));
+        System.out.println("-------------------------");
         //Descentente
         limite = tabla.length - 1;
 
@@ -52,7 +55,10 @@ public class BubbleSort {
             }//Fin Para
             limite--;
         }//Fin Mientras
-        System.out.println(Arrays.toString(tabla));
+        for(i = 0; i<tabla.length;i++){
+            System.out.println(tabla[i]);
+        }
+        //System.out.println(Arrays.toString(tabla));
         
     }//Fin Programa
 }
