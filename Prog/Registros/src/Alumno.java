@@ -36,4 +36,8 @@ public class Alumno {
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
+    
+    public String mostrarAlumno(){
+        return "El alumno: "+this.codigo+" | con nota: "+this.nota;
+    }
 }

@@ -28,6 +28,9 @@ public class TablaAlumnos {
             alumnos[i] = new Alumno(codigo, nota);
         }
         
+        for (int i = 0; i < alumnos.length; i++){
+            System.out.println(alumnos[i].mostrarAlumno());
+        }
         
         
     }
