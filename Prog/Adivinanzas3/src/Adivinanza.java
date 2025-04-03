@@ -1,3 +1,6 @@
+
+import java.util.Random;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -12,9 +15,12 @@ public class Adivinanza {
     private int numeroPrueba;
     private byte intentos;
     private byte cifrasIncognita;
+    private Random rnd;
     
     public Adivinanza(){
-        this.incognita = (int)Math.round(Math.random() * 1000000);
+        //this.incognita = (int)Math.round(Math.random() * 1000000);
+        rnd = new Random();
+        this.incognita = rnd.nextInt(1000000)+1;
         if(this.incognita == 0){
             this.incognita++;
         }
