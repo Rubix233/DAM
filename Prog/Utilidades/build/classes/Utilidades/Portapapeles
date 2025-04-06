@@ -1,0 +1,41 @@
+switch (bIntro) {
+                case 1:
+                    pos = 0;
+                    sIntro = "";
+                    System.out.println("Quien buscas?");
+                    sIntro = Leer.dato();
+                    pos = buscar(agenda, sIntro, pos);
+                    break;
+                case 2:
+                    if (!sIntro.isEmpty()) {
+                        pos = buscar(agenda, sIntro, pos);
+                    } else {
+                        System.out.println("No hay datos");
+                    }
+                    break;
+                case 3:
+                    System.out.print("Introduzca nombre: ");
+                    nombre = Leer.dato();
+                    System.out.print("Introduzca direccion: ");
+                    direccion = Leer.dato();
+                    System.out.print("Introduzca nº Tlf: ");
+                    tlf = Leer.datoLong();
+                    pIntro = new Persona(nombre, direccion, tlf);
+                    agenda.aniadir(pIntro);
+                    break;
+                case 4:
+
+                    if (agenda.longitud() != 0) {
+                        System.out.print("Introduzca Tlf a eliminar: ");
+                        tlf = Leer.datoLong();
+
+                        if (agenda.eliminar(tlf)) {
+                            System.out.println("Registro eliminado");
+                        } else {
+                            System.out.println("Teléfono no encontrado");
+                        }
+
+                    } else {
+                        System.out.println("Agenda vacía");
+                    }
+            }
