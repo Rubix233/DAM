@@ -17,6 +17,7 @@ public class ListaTelefonos {
         nElementos = 0;
     }
     
+    //Cambiar el uso de variable aux por listaActual
     private void unElementoMas(Persona[] listaActual){
         //Entorno
         int longitudVieja = this.nElementos;
