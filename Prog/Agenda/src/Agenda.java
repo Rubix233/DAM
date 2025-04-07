@@ -91,9 +91,10 @@ public class Agenda {
                     nombre = Leer.dato();
                     System.out.print("Introduzca direccion: ");
                     direccion = Leer.dato();
-                    System.out.print("Introduzca nº Tlf: ");
-                    tlf = Leer.datoLong();
-                    
+                    do {
+                        System.out.print("Introduzca nº Tlf: ");
+                        tlf = Leer.datoLong();
+                    } while (tlf < 0);//Fin Mientras
                     pIntro = new Persona(nombre, direccion, tlf);
                     agenda.aniadir(pIntro);
                     break;
@@ -112,7 +113,7 @@ public class Agenda {
                     } else {
                         System.out.println("Agenda vacía");
                     }//Fin Si
-            }
+            }//Fin segun sea
     }
 
     public static void main(String[] args) {
@@ -123,6 +124,69 @@ public class Agenda {
             operar(bIntro);
 
         } while (bIntro != 5);//Fin Repetir
+        
+        /*
+        byte bIntro;
+        String sIntro = "";
+        String nombre, direccion;
+        long tlf = 0;
+        int pos = 0;
+        ListaTelefonos agenda = new ListaTelefonos();
+        Persona pIntro;
+        
+        do {
+            mostrarMenu();
+            bIntro = datoByte();
+            switch (bIntro) {
+                case 1:
+                    pos = 0;
+                    sIntro = "";
+                    if (agenda.longitud() != 0) {
+                        System.out.println("Quien buscas?");
+                        sIntro = Leer.dato();
+                        pos = buscar(agenda, sIntro, pos) + 1;
+                    } else {
+                        System.out.println("Agenda Vacía");
+                    }//Fin Si
+                    break;
+                case 2:
+                    if (!sIntro.isEmpty()) {
+                        pos = buscar(agenda, sIntro, pos) + 1;
+                    } else {
+                        System.out.println("No hay datos");
+                    }//Fin Si
+                    break;
+                case 3:
+                    System.out.print("Introduzca nombre: ");
+                    nombre = Leer.dato();
+                    System.out.print("Introduzca direccion: ");
+                    direccion = Leer.dato();
+                    do {
+                        System.out.print("Introduzca nº Tlf: ");
+                        tlf = Leer.datoLong();
+                    } while (tlf < 0);//Fin Mientras
+                    pIntro = new Persona(nombre, direccion, tlf);
+                    agenda.aniadir(pIntro);
+                    break;
+                case 4:
+
+                    if (agenda.longitud() != 0) {
+                        System.out.print("Introduzca Tlf a eliminar: ");
+                        tlf = Leer.datoLong();
+
+                        if (agenda.eliminar(tlf)) {
+                            System.out.println("Registro eliminado");
+                        } else {
+                            System.out.println("Teléfono no encontrado");
+                        }//Fin Si
+
+                    } else {
+                        System.out.println("Agenda vacía");
+                    }//Fin Si
+            }//Fin Segun Sea
+
+        } while (bIntro != 5);//Fin Repetir
+        */
 
     }//Fin Programa
 }
