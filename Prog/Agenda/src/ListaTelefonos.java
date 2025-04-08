@@ -20,31 +20,27 @@ public class ListaTelefonos {
     //Cambiar el uso de variable aux por listaActual
     private void unElementoMas(Persona[] listaActual){
         //Entorno
-        int longitudVieja = this.nElementos;
         this.nElementos++;
-        Persona[] aux = new Persona[this.nElementos];
+        this.listaTelefonos = new Persona[this.nElementos];
         
         //Algoritmo
-        for(int i=0;i < longitudVieja; i++){
-            aux[i] = listaActual[i];
+        for(int i=0;i < listaActual.length; i++){
+            this.listaTelefonos[i] = listaActual[i];
         }//Fin Para
-        this.listaTelefonos = aux;
     }
     private void unElementoMenos(Persona[] listaActual) {
         if (listaActual.length > 0) {
-            int longitudVieja = this.nElementos;
             this.nElementos--;
-            Persona[] aux = new Persona[this.nElementos];
+            this.listaTelefonos = new Persona[this.nElementos];
             int iViejo;
             int iNuevo = 0;
 
-            for (iViejo = 0; iViejo < longitudVieja; iViejo++) {
+            for (iViejo = 0; iViejo < listaActual.length; iViejo++) {
                 if (listaActual[iViejo] != null) {
-                    aux[iNuevo] = listaActual[iViejo];
+                    this.listaTelefonos[iNuevo] = listaActual[iViejo];
                     iNuevo++;
                 }//Fin Si
             }//Fin Para
-            this.listaTelefonos = aux;
         }//Fin Si
 
 
