@@ -20,6 +20,6 @@ public class Main {
         
         System.out.println(jose.getNombre());
         System.out.println(jose.getApellido());
-        System.out.println(jose.getSueldo());
+        System.out.println(jose.getSueldo());  
     }
 }
