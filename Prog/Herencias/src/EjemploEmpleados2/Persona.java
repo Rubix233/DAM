@@ -2,7 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Ejemplo;
+package EjemploEmpleados2;
+
+
 
 /**
  *
@@ -16,6 +18,10 @@ public class Persona {
     
     public Persona(){
         
+    }
+    public Persona(String nombre, String apellidos){
+        this.nombre = nombre;
+        this.apellido = apellidos;
     }
     
     public String getNombre(){

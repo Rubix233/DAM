@@ -2,7 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Ejemplo;
+package EjemploEmpleados2;
+
+
 
 /**
  *
@@ -12,11 +14,9 @@ public class Main {
     public static void main(String[] args){
         Encargado jose;
         
-        jose = new Encargado();
+        jose = new Encargado("Jose", "Jama", 1000);
         
-        jose.Setnombre("Jose");
-        jose.setApellido("Jama");
-        jose.setSueldo(10000f);
+
         
         System.out.println(jose.getNombre());
         System.out.println(jose.getApellido());
