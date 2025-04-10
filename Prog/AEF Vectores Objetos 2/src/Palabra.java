@@ -16,6 +16,7 @@ public class Palabra {
     }
     public Palabra(String palabra){
         this.palabra = palabra;
+        this.contador = 1;
     }
     public String obtenerPalabra(){
         return this.palabra;
