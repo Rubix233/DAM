@@ -8,9 +8,6 @@
  * @author Andy Jan
  */
 public class Main {
-    private static void contarPalabras(String texto){
-        
-    }
     
     
     public static void main(String[] args){
