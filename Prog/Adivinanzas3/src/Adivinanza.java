@@ -16,7 +16,9 @@ public class Adivinanza {
     private byte intentos;
     private byte cifrasIncognita;
     private Random rnd;
-    
+    /**
+     * Constructor por defecto que crea un numero aleatorio
+     */
     public Adivinanza(){
         //this.incognita = (int)Math.round(Math.random() * 1000000);
         rnd = new Random();
@@ -28,7 +30,10 @@ public class Adivinanza {
         this.cifrasIncognita = Adivinanza.cifras(this.incognita);
         //System.out.println("El numero a adivinar es: " +Adivinanza.meteAsteriscos(this.cifrasIncognita));
     }
-    
+    /**
+     * 
+     * @param num Comprueba si el numero introducido es el acertado y si no, muestra la pista.
+     */
     public void juega(int num) {
         this.numeroPrueba = num;
         if (!haGanado()) {
@@ -46,15 +51,31 @@ public class Adivinanza {
             }
         }  
     }
+    /**
+     * 
+     * @return Si ha acertado al adivinar el numero
+     */
     public boolean haGanado(){
         return this.numeroPrueba == this.incognita;
     }
+    /**
+     * 
+     * @return Cantidad de cifras que tiene el numero a adivinar
+     */
     public byte getCifrasIncognita(){
         return this.cifrasIncognita;
     }
+    /**
+     * 
+     * @return La incognita
+     */
     public int getIncognita(){
         return this.incognita;
     }
+    /**
+     * 
+     * @return Construye una cadena mostrando los digitos acertados o asteriscos en caso contrario
+     */
     public String getPista() {
 
         String inco = Integer.toString(this.incognita);
@@ -76,10 +97,18 @@ public class Adivinanza {
         }
         return out;
     }
+    /**
+     * 
+     * @return Intentos restantes
+     */
     public byte getIntentos(){
         return this.intentos;
     }
-    
+    /**
+     * 
+     * @param n Numero de asteriscos por meter
+     * @return El numero a adivinar en formato asteriscos
+     */
     private static String meteAsteriscos(byte n){
         String out="";
         for(byte i = 0; i<n;i++){
@@ -87,6 +116,11 @@ public class Adivinanza {
         }
         return out;
     }
+    /**
+     * 
+     * @param n Numero para ver sus cifras
+     * @return El numero de cifras que tenga
+     */
     private static byte cifras(int n){
         byte cifras = 1;
         while (n >= Math.pow(10, cifras)) {
