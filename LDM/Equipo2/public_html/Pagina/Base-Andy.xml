@@ -1,0 +1,297 @@
+<?xml version='1.0' encoding='utf-8'?>
+<?xml-stylesheet type="text/xsl" href="XSLT.xsl"?>
+<Centro_FP>
+    <Modulo cod="0655" nombre="Gestión logística y comercial" creditos="6" horas_anuales="140"
+        horas_semanales="4" curso="2º">
+        
+        <Resultados_de_Aprendizaje cod="1" nombre="Elabora planes de aprovisionamiento, analizando información de las distintas áreas de la organización o empresa.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se han definido las fases que componen un programa de aprovisionamiento desde la detección de necesidades hasta la recepción de la mercancía."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se han determinado los principales parámetros que configuran un programa de aprovisionamiento que garantice la calidad y el cumplimiento del nivel de servicio establecido."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se ha calculado el coste del programa de aprovisionamiento, diferenciando los elementos que lo componen."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se han obtenido las previsiones de venta y/o demanda del periodo de cada departamento implicado."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se han contrastado los consumos históricos, lista de materiales y/o pedidos realizados, en función del cumplimiento de los objetivos del plan de ventas y/o producción previsto por la empresa/organización."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se ha determinado la capacidad óptima de almacenamiento de la organización, teniendo en cuenta la previsión de stocks."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se han elaborado las órdenes de suministro de materiales con fecha, cantidad y lotes, indicando el momento y destino/ubicación del suministro al almacén y/o a las unidades productivas precedentes."/>
+            <Criterio_de_Evaluacion cod="H" nombre="Se ha previsto con tiempo suficiente el reaprovisionamiento de la cadena de suministro para ajustar los volúmenes de stock al nivel de servicio, evitando los desabastecimientos."/>
+            <Criterio_de_Evaluacion cod="I" nombre="Se han realizado las operaciones anteriores mediante una aplicación informática de gestión de stocks y aprovisionamiento."/>
+            <Criterio_de_Evaluacion cod="J" nombre="Se ha asegurado la calidad del proceso de aprovisionamiento, estableciendo procedimientos normalizados de gestión de pedidos y control del proceso."/>
+        </Resultados_de_Aprendizaje>
+
+        <Resultados_de_Aprendizaje cod="2" nombre="Realiza procesos de selección de proveedores, analizando las condiciones técnicas y los parámetros habituales.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se han identificado las fuentes de suministro y búsqueda de proveedores."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se ha confeccionado un fichero con los proveedores potenciales, de acuerdo con los criterios de búsqueda “on-line” y “off-line”."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se han realizado solicitudes de ofertas y pliego de condiciones de aprovisionamiento."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se han recopilado las ofertas de proveedores que cumplan con las condiciones establecidas, para su posterior evaluación."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se han definido los criterios esenciales en la selección de ofertas de proveedores: económicos, plazo de aprovisionamiento, calidad, condiciones de pago y servicio, entre otros."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se ha establecido un baremo de los criterios de selección en función del peso específico que, sobre el total, representa cada una de las variables consideradas."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se han comparado las ofertas de varios proveedores de acuerdo con los parámetros de precio, calidad y servicio."/>
+            <Criterio_de_Evaluacion cod="H" nombre="Se han realizado las operaciones anteriores mediante una aplicación informática de gestión de proveedores."/>
+        </Resultados_de_Aprendizaje> 
+
+        <Resultados_de_Aprendizaje cod="3" nombre="Planifica la gestión de las relaciones con los proveedores, aplicando técnicas de negociación y comunicación.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se han relacionado las técnicas más utilizadas en la comunicación con proveedores."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se han detectado las ventajas, los costes y los requerimientos técnicos y comerciales de implantación de un sistema de intercambio electrónico de datos, en la gestión del aprovisionamiento."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se han identificado los distintos tipos de documentos utilizados para el intercambio de información con proveedores."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se han elaborado escritos de forma clara y concisa de las solicitudes de información a los proveedores."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se han preparado previamente las conversaciones personales o telefónicas con los proveedores."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se han explicado las diferentes etapas en un proceso de negociación de condiciones de aprovisionamiento."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se han descrito las técnicas de negociación más utilizadas en la compra, venta y aprovisionamiento."/>
+            <Criterio_de_Evaluacion cod="H" nombre="Se ha elaborado un informe que recoja los acuerdos de la negociación, mediante el uso de los programas informáticos adecuados."/>
+        </Resultados_de_Aprendizaje> 
+
+        <Resultados_de_Aprendizaje cod="4" nombre="Programa el seguimiento documental y los controles del proceso de aprovisionamiento, aplicando los mecanismos previstos en el programa y utilizando aplicaciones informáticas.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se han determinado los flujos de información, relacionando los departamentos de una empresa y los demás agentes logísticos que intervienen en la actividad de aprovisionamiento."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se han enlazado las informaciones de aprovisionamiento, logística y facturación con otras áreas de información de la empresa, como contabilidad y tesorería."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se han definido los aspectos que deben figurar en los documentos internos de registro y control del proceso de aprovisionamiento."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se ha secuenciado el proceso de control que deben seguir los pedidos realizados a un proveedor en el momento de recepción en el almacén."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se han definido los indicadores de calidad y eficacia operativa en la gestión de proveedores."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se han detectado las incidencias más frecuentes del proceso de aprovisionamiento."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se han establecido las posibles medidas que se deben adoptar ante las anomalías en la recepción de un pedido."/>
+            <Criterio_de_Evaluacion cod="H" nombre="Se han elaborado informes de evaluación de proveedores de manera clara y estructurada."/>
+            <Criterio_de_Evaluacion cod="I" nombre="Se ha elaborado la documentación relativa al control, registro e intercambio de información con proveedores, siguiendo los procedimientos de calidad y utilizando aplicaciones informáticas."/>
+        </Resultados_de_Aprendizaje> 
+
+        <Resultados_de_Aprendizaje cod="5" nombre="Define las fases y operaciones que deben realizarse dentro de la cadena logística, asegurándose la trazabilidad y calidad en el seguimiento de la mercancía.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se han descrito las características básicas de la cadena logística, identificando las actividades, fases y agentes que participan y las relaciones entre ellos."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se han interpretado los diagramas de flujos físicos de mercancías, de información y económicos en las distintas fases de la cadena logística."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se han descrito los costes logísticos directos e indirectos, fijos y variables, considerando todos los elementos de una operación logística y las responsabilidades imputables a cada uno de los agentes de la cadena logística."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se han valorado las distintas alternativas en los diferentes modelos o estrategias de distribución de mercancías."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se han establecido las operaciones sujetas a la logística inversa y se ha determinado el tratamiento que se debe dar a las mercancías retornadas, para mejorar la eficiencia de la cadena logística."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se ha asegurado la satisfacción del cliente resolviendo imprevistos, incidencias y reclamaciones en la cadena logística."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se han realizado las operaciones anteriores mediante una aplicación informática de gestión de proveedores."/>
+            <Criterio_de_Evaluacion cod="H" nombre="Se ha valorado la responsabilidad corporativa en la gestión de residuos, desperdicios, devoluciones caducadas y embalajes, entre otros."/>
+        </Resultados_de_Aprendizaje> 
+
+
+
+    </Modulo>
+
+
+
+
+
+    <Modulo cod="0656" nombre="Simulación empresarial" creditos="8" horas_anuales="175"
+        horas_semanales="5" curso="2º">
+        <Resultados_de_Aprendizaje cod="1" nombre="Determina los factores de la innovación empresarial, relacionándolos con la actividad de creación de empresas.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se han examinado las diversas facetas de la innovación empresarial (técnicas, materiales, de organización interna y externa, entre otras), relacionándolas como fuentes de desarrollo económico y creación de empleo."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se han relacionado la innovación y la iniciativa emprendedora con las implicaciones que tiene para la competitividad empresarial."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se han valorado los aspectos inherentes a la asunción de riesgo empresarial como motor económico y social."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se han determinado las diferentes facetas del carácter emprendedor desde el punto de vista empresarial."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se han seleccionado diferentes experiencias de innovación empresarial, describiendo y valorando los factores de riesgo asumidos en cada una de ellas."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se han propuesto posibilidades de internacionalización de algunas empresas como factor de innovación de las mismas."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se han definido ayudas y herramientas, públicas y privadas, para la innovación, creación e internacionalización de empresas, relacionándolas estructuradamente en un informe"/>
+        </Resultados_de_Aprendizaje> 
+
+        <Resultados_de_Aprendizaje cod="2" nombre="Selecciona una idea de negocio, analizando el mercado.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se han evaluado las implicaciones que conlleva la elección de una idea de negocio."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se ha diferenciado entre lo que puede ser una simple idea de una idea de negocio factible."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se han señalado las ventajas e inconvenientes de las propuestas de negocio."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se ha determinado el producto o servicio que se quiere proporcionar con la idea de negocio."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se han concretado las necesidades que satisface y el valor añadido de la idea de negocio propuesta."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se han identificado los clientes potenciales, atendiendo a los objetivos del proyecto de empresa."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se han identificado y analizado las principales características del sector empresarial en el que se desenvuelve la idea de negocio."/>
+            <Criterio_de_Evaluacion cod="H" nombre="Se ha efectuado un análisis de mercado para comprobar si existe un nicho en el mismo."/>
+            <Criterio_de_Evaluacion cod="I" nombre="Se ha efectuado un análisis de la competencia para posicionar nuestro producto."/>
+        </Resultados_de_Aprendizaje> 
+
+        <Resultados_de_Aprendizaje cod="3" nombre="Determina la organización interna de la empresa, la forma jurídica y los recursos necesarios, analizando las alternativas disponibles y los objetivos marcados con el proyecto.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se han reconocido los distintos tipos de empresas que existen."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se han establecido claramente los objetivos de la empresa."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se ha relacionado la organización establecida por la empresa con el tipo y fines de esta."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se han identificado las diferentes funciones dentro de la empresa."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se ha seleccionado la forma jurídica adecuada."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se ha efectuado una asignación eficiente de los recursos necesarios."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se han reconocido y seleccionado las posibles fuentes de financiación."/>
+            <Criterio_de_Evaluacion cod="H" nombre="Se ha valorado la importancia de dotar a la empresa de la estructura adecuada para su pervivencia."/>
+        </Resultados_de_Aprendizaje> 
+
+        <Resultados_de_Aprendizaje cod="4" nombre="Comprueba la viabilidad de la empresa mediante diferentes tipos de análisis, verificando los diversos factores que pueden influir en la misma.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se ha efectuado un estudio de la viabilidad técnica del negocio."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se ha contrastado el cumplimiento de la normativa legal del futuro negocio."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se ha comprobado la accesibilidad de las fuentes de financiación para la puesta en marcha del negocio."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se ha efectuado un análisis sobre la capacitación profesional para llevar a cabo las actividades derivadas del tipo de negocio elegido."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se ha realizado un análisis del impacto ambiental de proyecto de empresa."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se ha realizado un análisis de los riesgos laborales de proyecto de empresa."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se ha comprobado la viabilidad económica por medio del análisis de proyectos de inversión."/>
+            <Criterio_de_Evaluacion cod="H" nombre="Se ha elaborado un plan de viabilidad a largo plazo para poder efectuar una mejor planificación en la empresa."/>
+        </Resultados_de_Aprendizaje> 
+
+        <Resultados_de_Aprendizaje cod="5" nombre="Gestiona la documentación necesaria para la puesta en marcha de una empresa, analizando los trámites legales y las actuaciones necesarias que conllevan la realización del proyecto empresarial.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se ha reconocido la exigencia de la realización de diversos trámites legales exigibles antes de la puesta en marcha de un negocio."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se han diferenciado los trámites que se seguirían en función de la forma jurídica elegida."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se han identificado los organismos ante los cuales han de presentarse los trámites."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se ha cumplimentado la documentación necesaria para la constitución de la empresa."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se han realizado los trámites fiscales para la puesta en marcha."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se han realizado los trámites necesarios ante la autoridad laboral y la Seguridad Social."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se han realizado los trámites necesarios en otras administraciones públicas a la hora de abrir un negocio"/>
+            <Criterio_de_Evaluacion cod="H" nombre="Se ha reconocido la existencia de trámites de carácter específico para determinado tipos de negocios."/>
+            <Criterio_de_Evaluacion cod="I" nombre="Se ha valorado la importancia del cumplimiento de los plazos legales para la tramitación y puesta en marcha de un negocio."/>
+
+        </Resultados_de_Aprendizaje> 
+
+        <Resultados_de_Aprendizaje cod="6" nombre="Realiza la gestión de la empresa-proyecto en sus diversos departamentos.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se ha efectuado una planificación sobre las necesidades de aprovisionamiento de la empresa."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se ha gestionado el proceso de comercialización de los productos de la empresa."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se ha planificado la gestión de los recursos humanos."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se ha confeccionado y verificado la contabilidad de la empresa."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se han planificado las necesidades financieras de la empresa."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se ha analizado la normativa fiscal vigente y se ha cumplido con las obligaciones fiscales."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se ha valorado la organización de la propia tarea."/>
+            <Criterio_de_Evaluacion cod="H" nombre="Se ha realizado el trabajo entre los miembros del grupo."/>
+            <Criterio_de_Evaluacion cod="I" nombre="Se ha realizado cada tarea con rigurosidad y corrección para obtener un resultado global satisfactorio."/>
+            <Criterio_de_Evaluacion cod="J" nombre="Se ha materializado en un dossier el proyecto empresarial y se ha expuesto en público."/>
+        </Resultados_de_Aprendizaje> 
+    </Modulo>
+
+
+    <Modulo cod="0657" nombre="Proyecto Intermodular de Administración y Finanzas" creditos="5"
+        horas_anuales="70" horas_semanales="2" curso="2º">
+        <Resultados_de_Aprendizaje cod="1" nombre="Identifica necesidades del sector productivo, relacionándolas con proyectos tipo que las puedan satisfacer.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se han clasificado las empresas del sector por sus características organizativas y el tipo de producto o servicio que ofrecen."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se han caracterizado las empresas tipo indicando la estructura organizativa y las funciones de cada departamento."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se han identificado las necesidades más demandadas a las empresas."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se han valorado las oportunidades de negocio previsibles en el sector."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se ha identificado el tipo de proyecto requerido para dar respuesta a las demandas previstas."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se han determinado las características específicas requeridas en el proyecto."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se han determinado las obligaciones fiscales, laborales y de prevención de riesgos y sus condiciones de aplicación."/>
+            <Criterio_de_Evaluacion cod="H" nombre="Se han identificado posibles ayudas o subvenciones para la incorporación de nuevas tecnologías de producción o de servicio que se proponen."/>
+            <Criterio_de_Evaluacion cod="I" nombre="Se ha elaborado el guión de trabajo que se va a seguir para la elaboración del proyecto."/>
+        </Resultados_de_Aprendizaje> 
+
+        <Resultados_de_Aprendizaje cod="2" nombre="Diseña proyectos relacionados con las competencias expresadas en el título, incluyendo y desarrollando las fases que lo componen.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se ha recopilado información relativa a los aspectos que van a ser tratados en el proyecto."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se ha realizado el estudio de viabilidad técnica del mismo."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se han identificado las fases o partes que componen el proyecto y su contenido."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se han establecido los objetivos que se pretenden conseguir identificando su alcance."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se han previsto los recursos materiales y personales necesarios para realizarlo."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se ha realizado el presupuesto económico correspondiente."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se han identificado las necesidades de financiación para la puesta en marcha del mismo."/>
+            <Criterio_de_Evaluacion cod="H" nombre="Se ha definido y elaborado la documentación necesaria para su diseño."/>
+            <Criterio_de_Evaluacion cod="I" nombre="Se han identificado los aspectos que se deben controlar para garantizar la calidad del proyecto."/>
+        </Resultados_de_Aprendizaje> 
+
+        <Resultados_de_Aprendizaje cod="3" nombre="Planifica la ejecución del proyecto, determinando el plan de intervención y la documentación asociada.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se han secuenciado las actividades, ordenándolas en función de las necesidades de implementación."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se han determinado los recursos y la logística necesaria para cada actividad."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se han identificado las necesidades de permisos y autorizaciones para llevar a cabo las actividades."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se han determinado los procedimientos de actuación o ejecución de las actividades."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se han identificado los riesgos inherentes a la ejecución definiendo el plan de prevención de riesgos y los medios y equipos necesarios."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se ha planificado la asignación de recursos materiales y humanos y los tiempos de ejecución."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se ha hecho la valoración económica que da respuesta a las condiciones de la implementación."/>
+            <Criterio_de_Evaluacion cod="H" nombre="Se ha definido y elaborado la documentación necesaria para la ejecución."/>
+        </Resultados_de_Aprendizaje> 
+
+        <Resultados_de_Aprendizaje cod="4" nombre="Define los procedimientos para el seguimiento y control en la ejecución del proyecto, justificando la selección de variables e instrumentos empleados.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se ha definido el procedimiento de evaluación de las actividades o intervenciones."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se han definido los indicadores de calidad para realizar la evaluación."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se ha definido el procedimiento para la evaluación de las incidencias que puedan presentarse durante la realización de las actividades, su posible solución y registro."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se ha definido el procedimiento para gestionar los posibles cambios en los recursos y en las actividades, incluyendo el sistema de registro de los mismos."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se ha definido y elaborado la documentación necesaria para la evaluación de las actividades y del proyecto."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se ha establecido el procedimiento para la participación en la evaluación de los usuarios o clientes y se han elaborado los documentos específicos."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se ha establecido un sistema para garantizar el cumplimiento del pliego de condiciones del proyecto cuando este existe."/>
+        </Resultados_de_Aprendizaje> 
+    </Modulo>
+    <Modulo cod="1710" nombre="Itinerario personal para la empleabilidad II" creditos="5"
+        horas_anuales="105" horas_semanales="3" curso="2º">
+        <Resultados_de_Aprendizaje cod="1" nombre="Planifica y pone en marcha estrategias en los diferentes procesos selectivos de empleo que le permiten mejorar sus posibilidades de inserción laboral.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se han determinado las técnicas utilizadas actualmente en el sector para el proceso de selección de personal."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se han desarrollado estrategias para la búsqueda de empleo relacionadas con las técnicas actuales más utilizadas contextualizadas al sector."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se han valorado las actitudes y aptitudes que permiten superar procesos selectivos en el sector privado y en el sector público."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se ha construido una marca personal identificando las necesidades del mercado actual, sus habilidades, destrezas y su aporte de valor."/>
+        </Resultados_de_Aprendizaje> 
+
+        <Resultados_de_Aprendizaje cod="2" nombre="Aplica estrategias relacionadas con las competencias personales, sociales y emocionales para el empleo en búsqueda de la mejora de su empleabilidad.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se ha valorado la importancia de las competencias personales y sociales en la empleabilidad en el sector de referencia."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se ha participado activamente en el establecimiento de los objetivos del equipo y en la toma de decisiones del mismo y asumido la responsabilidad de las acciones y decisiones del grupo, participando activamente en el logro de unos objetivos compartidos cooperando con otras personas y compartiendo el liderazgo."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se han incorporado al propio proceso de aprendizaje las técnicas y recursos de presentación y comunicación, tanto orales como escritos, adecuados para una comunicación efectiva y afectiva siendo capaz de adaptarlos a cada situación y circunstancias, valorando las oportunidades y dificultades que ofrece cada una de ellas."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se han aplicado técnicas y estrategias para la gestión del tiempo disponible para alcanzar los objetivos tanto individuales como del equipo y programado las actividades necesarias."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se han aplicado estrategias para canalizar las emociones mostrando una actitud flexible en las relaciones con otras personas."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se han desarrollado estrategias para la programación de actividades atendiendo a criterios de organización eficiente y previendo las posibles dificultades."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se ha reaccionado de forma flexible y positiva ante conflictos y situaciones nuevas, aprovechando las oportunidades y gestionando las dificultades haciendo uso de estrategias relacionadas con la inteligencia emocional."/>
+        </Resultados_de_Aprendizaje> 
+
+        <Resultados_de_Aprendizaje cod="3" nombre="Pone en práctica las habilidades emprendedoras necesarias para el desarrollo de procesos de innovación e investigación aplicadas que promuevan la modernización del sector productivo hacia un modelo sostenible.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se ha identificado el concepto de innovación y su relación con la construcción de una sociedad más sostenible que mejore en el bienestar de los individuos."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se han analizado las distintas metodologías para emprender y su importancia para favorecer la innovación y como fuente de creación de empleo y bienestar social."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se han aplicado las habilidades emprendedoras necesarias para promover el emprendimiento y el intraemprendimiento."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se ha puesto en práctica el trabajo colaborativo como requisito para el desarrollo de procesos de innovación."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se ha desarrollado la competencia digital necesaria para la mejora de los procesos de innovación e investigación aplicadas que promuevan la modernización del sector productivo."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se han incorporado los objetivos de las políticas e iniciativas relacionadas con la sostenibilidad y el medio ambiente a la estrategia empresarial enfocada al desarrollo de un modelo económico y social sostenible."/>
+        </Resultados_de_Aprendizaje> 
+
+        <Resultados_de_Aprendizaje cod="4" nombre="Identifica, define y valida ideas de emprendimiento generadoras de nuevas oportunidades a partir de estrategias de análisis del entorno socio productivo utilizando metodologías ágiles para el emprendimiento.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se han identificado los problemas de las personas destinatarias potenciales del proyecto emprendedor como paso previo a la propuesta de soluciones que se conviertan en oportunidades."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se ha puesto en práctica el proceso creativo con el fin de conseguir una idea emprendedora que aporte valor económico, social y/o cultural."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se ha diseñado un modelo de negocio y/o gestión derivado de la idea emprendedora."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se han incorporado valores éticos y sociales a la idea emprendedora analizando modelos de balance social."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se ha analizado la contribución de la Economía Circular y la Economía del Bien Común al desarrollo de un modelo económico y social basado en la equidad, la justicia social y la sostenibilidad."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se han analizado los principales componentes del entorno general y específico, y su impacto en la idea emprendedora."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se han realizado entrevistas de problema para validar el perfil y el problema de las personas destinatarias de la idea emprendedora."/>
+            <Criterio_de_Evaluacion cod="H" nombre="Se ha validado la solución mediante la creación de prototipos buscando el encaje problema-solución."/>
+            <Criterio_de_Evaluacion cod="I" nombre="Se ha experimentado con la puesta en práctica de estrategias de marketing para desarrollar destrezas en técnicas de comunicación y venta."/>
+        </Resultados_de_Aprendizaje> 
+
+        <Resultados_de_Aprendizaje cod="5" nombre="Desarrolla un proyecto emprendedor de innovación social y/o tecnológica aplicada en colaboración con el entorno.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se han analizado los conceptos básicos del emprendimiento y la innovación social."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se ha reflexionado sobre la necesidad del liderazgo ético y sostenible en las organizaciones."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se ha reflexionado sobre la tecnología como base para el cambio del modelo productivo."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se han puesto en marcha las estrategias propias del pensamiento de diseño para detectar necesidades sociales y medioambientales."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se han analizado los elementos del diseño de modelos de negocio ecosociales y/o de base tecnológica."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se han alineado metas de desarrollo sostenible con el diseño de modelos de negocio ecosociales y/o de base tecnológica."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se han aplicado las estrategias necesarias para analizar la viabilidad del proyecto emprendedor."/>
+            <Criterio_de_Evaluacion cod="H" nombre="Se han investigado las opciones financieras socialmente responsables."/>
+            <Criterio_de_Evaluacion cod="I" nombre="Se han definido los agentes implicados en el proyecto, así como su participación en el mismo."/>
+        </Resultados_de_Aprendizaje> 
+    </Modulo>
+    <Modulo cod="0660" nombre="Formación en centros de trabajo" creditos="22" horas_anuales="360"
+        horas_semanales="nan" curso="2º">
+        <Resultados_de_Aprendizaje cod="1" nombre="Identifica la estructura y organización de la empresa, relacionándolas con el tipo de servicio que presta.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se ha identificado la estructura organizativa de la empresa y las funciones de cada área de la misma."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se ha comparado la estructura de la empresa con las organizaciones empresariales tipo existentes en el sector."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se han relacionado las características del servicio y el tipo de clientes con el desarrollo de la actividad empresarial."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se han identificado los procedimientos de trabajo en el desarrollo de la prestación de servicio."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se han valorado las competencias necesarias de los recursos humanos para el desarrollo óptimo de la actividad."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se ha valorado la idoneidad de los canales de difusión más frecuentes en esta actividad."/>
+        </Resultados_de_Aprendizaje> 
+
+        <Resultados_de_Aprendizaje cod="2" nombre="Aplica hábitos éticos y laborales en el desarrollo de su actividad profesional, de acuerdo con las características del puesto de trabajo y con los procedimientos establecidos en la empresa.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se han reconocido y justificado:
+                                                    - La disponibilidad personal y temporal necesarias en el puesto de trabajo.
+                                                    - Las actitudes personales (puntualidad y empatía, entre otras) y profesionales (orden, limpieza y responsabilidad, entre otras) necesarias para el puesto de trabajo.
+                                                    - Los requerimientos actitudinales ante la prevención de riesgos en la actividad profesional.
+                                                    - Los requerimientos actitudinales referidos a la calidad en la actividad profesional.
+                                                    - Las actitudes relacionadas con el propio equipo de trabajo y con las jerarquías establecidas en la empresa.
+                                                    - Las actitudes relacionadas con la documentación de las actividades realizadas en el ámbito laboral.
+                                                    - Las necesidades formativas para la inserción y reinserción laboral en el ámbito científico y técnico del buen hacer del profesional."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se han identificado las normas de prevención de riesgos laborales y los aspectos fundamentales de la Ley de Prevención de Riesgos Laborales de aplicación en la actividad profesional."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se han puesto en marcha los equipos de protección individual según los riesgos de la actividad profesional y las normas de la empresa."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se ha mantenido una actitud de respeto al medio ambiente en las actividades desarrolladas."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se ha mantenido organizado, limpio y libre de obstáculos el puesto de trabajo o el área correspondiente al desarrollo de la actividad."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se ha responsabilizado del trabajo asignado, interpretando y cumpliendo las instrucciones recibidas."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se ha establecido una comunicación eficaz con la persona responsable en cada situación y con los miembros del equipo."/>
+            <Criterio_de_Evaluacion cod="H" nombre="Se ha coordinado con el resto del equipo, comunicando las incidencias relevantes que se presenten."/>
+            <Criterio_de_Evaluacion cod="I" nombre="Se ha valorado la importancia de su actividad y la necesidad de adaptación a los cambios de tareas."/>
+            <Criterio_de_Evaluacion cod="J" nombre="Se ha responsabilizado de la aplicación de las normas y procedimientos en el desarrollo de su trabajo."/>
+        </Resultados_de_Aprendizaje> 
+
+        <Resultados_de_Aprendizaje cod="3" nombre="Elabora y tramita todo tipo de documentos relacionados con las áreas administrativas de la empresa, empleando medios, equipos e instrumentos de control, según los procedimientos de la empresa y el sector.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se han detectado las necesidades de comunicación de los diferentes procesos de trabajo."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se ha verificado el cumplimiento de la normativa aplicable."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se ha verificado el cumplimiento de la petición de compra y los requisitos establecidos para las materias primas solicitadas."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se ha verificado el cumplimiento de la normativa aplicable."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se ha verificado el cumplimiento de la petición de compra y los requisitos establecidos para las materias primas solicitadas."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se ha acomodado el estilo y medio de la comunicación y la documentación al cliente o instancia demandante del producto o servicio."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se han tenido en cuenta los aspectos relacionados con la atención al cliente y la gestión de la calidad"/>
+        </Resultados_de_Aprendizaje> 
+
+        <Resultados_de_Aprendizaje cod="4" nombre="Realiza la gestión de procesos administrativos de todos los ámbitos de la empresa, proponiendo líneas de actuación y supervisando las tareas del equipo a su cargo.">
+            <Criterio_de_Evaluacion cod="A" nombre="Se han deducido las necesidades de actuación con respecto a los procesos periódicos y no periódicos relacionados con la administración de la empresa u organismo."/>
+            <Criterio_de_Evaluacion cod="B" nombre="Se han tenido en cuenta las posibles necesidades de coordinación con el resto del equipo de administración y otros departamentos."/>
+            <Criterio_de_Evaluacion cod="C" nombre="Se han determinado los procedimientos intermedios de documentación y tramitación, teniendo en cuenta las necesidades de los procesos administrativos."/>
+            <Criterio_de_Evaluacion cod="D" nombre="Se han determinado los procesos, buscando una utilización racional de los recursos materiales y energéticos."/>
+            <Criterio_de_Evaluacion cod="E" nombre="Se han relacionado y determinado las necesidades previas al desarrollo de las diversas fases y técnicas propias de la gestión integral de la administración."/>
+            <Criterio_de_Evaluacion cod="F" nombre="Se han determinado las posibles medidas de corrección en función de los resultados obtenidos."/>
+            <Criterio_de_Evaluacion cod="G" nombre="Se han caracterizado y realizado las valoraciones de costes de las diferentes actuaciones administrativas para decidir o proponer a sus superiores entre varias alternativas."/>
+        </Resultados_de_Aprendizaje> 
+    </Modulo>
+</Centro_FP>

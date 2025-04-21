@@ -1,0 +1,40 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 21 abr 2025, 9:45:47
+    Author     : Andy Jan
+*/
+body {
+    font-family: sans-serif;
+    padding: 1em;
+}
+
+details {
+    margin-bottom: 1em;
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+ul {
+    margin-left: 1em;
+}
+.Header{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.Titulos{
+    flex: 1 1 auto;
+    min-width:  100px;
+    text-align: center;
+    padding: 10px;
+    background-color: lightgrey;
+}
+
+
