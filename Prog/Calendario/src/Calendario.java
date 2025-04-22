@@ -1,7 +1,6 @@
 
 
 import java.util.GregorianCalendar;
-import java.util.Locale;
 
 /*
  * To change this template, choose Tools | Templates
@@ -36,10 +35,16 @@ public class Calendario {
         GregorianCalendar calendario;
         int anio;
         byte mes,j,primerDia;
+        String out = "";
+        String[] meses = {"Enero","Febrero","Marzo","Abril","Mayo","Junio",
+            "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"};
 
         //Pedimos datos
-        System.out.print("Introduce año: ");
-        anio = Leer.datoInt();
+        do{
+            System.out.print("Introduce año: ");
+            anio = Leer.datoInt();
+        } while (anio < 1583);
+        
         System.out.print("Introduce mes: ");
         mes = datoByte();
         mes--;
@@ -53,31 +58,29 @@ public class Calendario {
             primerDia = (byte) (calendario.get(GregorianCalendar.DAY_OF_WEEK) -1);
         }
         
-        System.out.println("Mon\tTue\tWed\tThu\tFri\tSat\tSun");
         
         //Rellenamos los dias vacios el principio del mes
         for (byte i = 1 ; i < primerDia; i++){
-            System.out.print("\t");
+            out += "\t";
         }
         
         //Construimos el output
-        j=primerDia;
+        j = primerDia;
         for (byte i = 1; i <= calendario.getActualMaximum(GregorianCalendar.DAY_OF_MONTH); i++) {
-            System.out.print(i);
+            out += i;
             if(j % 7 != 0){
-                System.out.print("\t");
+                out += "\t";
             } else {
-                System.out.print("\n");
+                out += "\n";
             }
             j++;
         }
-        /*
-        System.out.println(calendario.getActualMaximum(Calendar.DAY_OF_MONTH));
-        System.out.println(calendario.get(Calendar.DAY_OF_WEEK));
-        System.out.println(primerDia);
-
-        */
-        //System.out.println(Locale.getDefault());
         
+        //Mostramos
+        System.out.println("***************************************************");
+        System.out.println("\t\t"+meses[calendario.get(GregorianCalendar.MONTH)]+" del "+ anio);
+        System.out.println("***************************************************");
+        System.out.println("Lun\tMar\tMie\tJue\tVie\tSab\tDom");
+        System.out.println(out);        
     }
 }
