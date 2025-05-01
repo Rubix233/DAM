@@ -27,7 +27,8 @@ public class Rectangulo implements FiguraGeometrica{
     
     @Override
     public String toString(){
-        return "Cuadrado";
+        return "Rectángulo de base: " + base + ", altura: " + altura +
+           " Area: " + area() + " Perimetro: " + perimetro();
     }
     
     @Override

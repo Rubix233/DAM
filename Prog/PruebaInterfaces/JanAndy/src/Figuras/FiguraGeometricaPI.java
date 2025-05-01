@@ -9,5 +9,5 @@ package Figuras;
  * @author Andy Jan
  */
 public interface FiguraGeometricaPI extends FiguraGeometrica {
-    public final float PI = 3.1416f;
+    float PI = 3.1416f;
 }

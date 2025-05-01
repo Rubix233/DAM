@@ -6,9 +6,10 @@ package Figuras;
 
 /**
  *
- * @author Administrador
+ * @author Andy Jan
  */
 public interface FiguraGeometrica {
     public double area();
     public String getTipoFigura();
+    public double perimetro();
 }

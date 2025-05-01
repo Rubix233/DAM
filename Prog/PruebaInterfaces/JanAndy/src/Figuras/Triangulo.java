@@ -6,7 +6,7 @@ package Figuras;
 
 /**
  *
- * @author Administrador
+ * @author Andy Jan
  */
 public class Triangulo implements FiguraGeometricaPI {
 
@@ -39,7 +39,7 @@ public class Triangulo implements FiguraGeometricaPI {
     
     @Override
     public double area() {
-        return (lado1 * lado2 * Math.sin(angulo))/2;
+        return (lado1 * lado2 * Math.sin(Math.toRadians(angulo)))/2;
     }
 
     @Override
