@@ -49,7 +49,7 @@ public class Triangulo implements FiguraGeometricaPI {
 
     @Override
     public double perimetro() {
-        return lado1 + lado2 + (Math.sqrt( Math.pow(lado1, 2) + Math.pow(lado2, 2) - lado1 * lado2 * Math.cos(angulo) ));
+        return lado1 + lado2 + (Math.sqrt( Math.pow(lado1, 2) + Math.pow(lado2, 2) - lado1 * lado2 * Math.cos(Math.toRadians(angulo)) ));
     }
     
 }

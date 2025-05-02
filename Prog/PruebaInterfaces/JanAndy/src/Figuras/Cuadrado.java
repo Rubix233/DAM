@@ -18,5 +18,9 @@ public class Cuadrado extends Rectangulo {
     public String getTipoFigura() {
         return "Cuadrado";
     }
-    
+    @Override
+    public String toString(){
+        return "Cuadrado de lados: " + this.getBase() +
+           " Area: " + area() + " Perimetro: " + perimetro();
+    }
 }

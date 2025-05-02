@@ -8,7 +8,7 @@ package Figuras;
  *
  * @author Andy Jan
  */
-public class Main {
+public class Ud1112Act1 {
     public static void main(String[] args) {
         FiguraGeometrica[] figuras = new FiguraGeometrica[5];
 
