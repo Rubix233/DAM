@@ -2,7 +2,8 @@
 <?xml-stylesheet type="text/xsl" href="XSLT.xsl"?>
 <Centro_FP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="EQUIPO2.xsd">
-    <Familia_Profesional nombre="Administración y Gestión">
+    <Familia_Profesional nombre="Administración y Gestión" 
+                         descripcion="El perfil profesional del título de Técnico Superior en Administración y Finanzas queda determinado por su competencia general, sus competencias profesionales, personales y sociales, y por la relación de cualificaciones y, en su caso, unidades de competencia del Catálogo Nacional de Cualificaciones Profesionales incluidas en el título.">
         <Titulo nombre="Administración y Finanzas" duracion="2000">
             <Modulos>
                 <Modulo cod="0179" nombre="Inglés profesional GS" creditos="5" horas_anuales="128"
@@ -2282,7 +2283,8 @@
             </Modulos>
         </Titulo>
     </Familia_Profesional>
-    <Familia_Profesional nombre="Másters FP">
+    <Familia_Profesional nombre="Másters FP" 
+                         descripcion="Un máster de Formación Profesional es una especialización oficial dirigida a titulados de FP de Grado Superior que desean ampliar sus competencias en áreas técnicas específicas, mejorar su empleabilidad y acceder a puestos de mayor responsabilidad. Son programas prácticos, orientados al mercado laboral y con una duración más breve que los estudios universitarios tradicionales.">
         <Titulo nombre="Desarrollo de Videojuegos y Realidad Virtual">
             <Modulos>
                 <Modulo cod="5071" nombre="Modelos de Inteligencia Artificial" creditos="4"

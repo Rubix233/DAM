@@ -8,7 +8,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 */
 body {
     font-family: sans-serif;
-    padding: 1em;
+    padding: 0px;
+    margin: 0px;
 }
 
 details {
@@ -28,13 +29,99 @@ ul {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    margin: 10px;
 }
-.Titulos{
+.PostHeader1{
+    background-color: #0195db;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+.PostHeader2{
+    background-color: #004aad;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+.TextoBanner{
+    margin: 0;
+    font-weight: bold;
+}
+.FamiliasBanner{
     flex: 1 1 auto;
     min-width:  100px;
     text-align: center;
     padding: 10px;
-    background-color: lightgrey;
+    /*background-color: lightgrey;*/
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
+.Cuerpo{
+    display: flex;
+    gap: 20px;
+    padding: 25px;
+    flex-wrap: wrap;
+}
+
+.familias{
+    flex: 1 1 45%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .familias {
+    flex: 1 1 100%;
+  }
+}
+
+.FamiliasContainer{
+    height: 525px;
+    width: 490px;
+    padding: 10px;
+    
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-color: rgba(1, 160, 240, 1); 
+    background-blend-mode: soft-light;
+
+    padding: 20px;
+    color: white;
+    border-radius: 20px; 
+}
+
+#Fam1{
+    background-image: url('../Imagenes/administracionMarketingYcomercio.png');
+
+}
+#Fam2{
+    background-image: url('../Imagenes/informaticayvideojuegos.png');
+}
+
+.ListaAzul{
+    color: white;
+    background-color: #004aad;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 20px; 
+    list-style-type: disc;
+    padding-left: 30px;
+}
+
+.ListaAzul li{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
 
 
