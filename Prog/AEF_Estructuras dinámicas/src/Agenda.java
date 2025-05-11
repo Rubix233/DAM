@@ -49,7 +49,7 @@ public class Agenda {
         System.out.print("\t Opción: ");
     }
 
-    private static int buscar(ListaTelefonos agenda, String sIntro, int pos) {
+    private static int buscar(ListaTelefonos2 agenda, String sIntro, int pos) {
         //Buscar
 
         if (agenda.longitud() != 0) {

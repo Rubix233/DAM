@@ -50,4 +50,14 @@ public class ListaTelefonos2 {
     public int longitud(){
         return this.nElementos;
     }
+    
+    public Persona valorEn(int pos){
+        Persona buscada = null;
+        if(pos > this.nElementos){
+            System.out.println("Indice fuera de rango");
+        } else {
+            buscada = this.listaTelefonos.get(pos);
+        }//Fin Si
+        return buscada;
+    }
 }
