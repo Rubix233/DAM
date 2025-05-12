@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+    <xsl:output method="html" encoding="UTF-8" indent="yes"/>
+    <xsl:param name="titulo"/>
+
+    <xsl:template match="/">
+        <html>
+            <head>
+                <title>ciclo.xsl</title>
+                <link rel="stylesheet" type="text/css" href="HojaEstilos.css"/> 
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+            </head>
+            <body>
+                <div class="Header">
+                    <div class="Titulos">
+                        
+                        <img src="../Imagenes/logo-cfp.png" alt=""/>
+                    </div>
+                    
+                    <xsl:for-each select = "//Familia_Profesional">
+                        
+                        <div class="FamiliasBanner">
+                            <p>
+                                <xsl:value-of select ="@nombre"/>
+                            </p>
+                            
+                        </div>
+                    </xsl:for-each>
+                    
+                    
+                </div>
+                <div class="PostHeader1">
+                    <p class="TextoBanner">Oferta academica</p>
+                </div>
+                <div class="PostHeader2">
+                    <p class="TextoBanner">Centro FP Superior -- Ciclos Grado Superior</p>
+                </div>
+                
+                <div class = "CuerpoTitulo">
+                    <div class = "Competencias">
+                        <div>
+                            <p>competencias</p>
+                        </div>
+                        <div>
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Accordion Item #1
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+            </body>
+        </html>
+    </xsl:template>
+
+</xsl:stylesheet>

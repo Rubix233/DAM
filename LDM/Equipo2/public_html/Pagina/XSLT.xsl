@@ -52,7 +52,14 @@
                             <ul class="ListaAzul">
                                 <xsl:for-each select = "//Familia_Profesional[1]/Titulo">   
                                     <li>
-                                        <xsl:value-of select ="@nombre"/>
+                                        <a>
+                                            <xsl:attribute name="href">
+                                                <xsl:text>ciclo.html?titulo=</xsl:text>
+                                                <xsl:value-of select ="@nombre"/>
+                                            </xsl:attribute>
+                                            <xsl:value-of select ="@nombre"/>
+                                        </a>
+                                        
                                     </li>
                                 </xsl:for-each>
                             </ul>
@@ -81,6 +88,33 @@
                         </div>
                         </div>
                     </div>
+                </div>
+                <div class = "Footer">
+                    <div class = "FooterSec">
+                        <div class = "FooterLogo">
+                            <img src="../Imagenes/logoCampusCamara.png" alt = "" />
+                        </div>
+                        <div class = "FooterRedes">
+                            <img src="../Imagenes/medios-de-comunicacion-social.png" alt = "" />
+                            <img src="../Imagenes/icons8-instagram-50.png" alt = "" />
+                            <img src="../Imagenes/logo-de-facebook.png" alt = "" />
+                            <img src="../Imagenes/icons8-youtube-50.png" alt = "" />
+                        </div>
+                    </div>
+                    <div class = "FooterSec">
+                        
+                    </div>
+                    <div class = "FooterSec">
+                        <div class = "Correo">
+                            <img src="../Imagenes/correo-electronico.png" alt = "" />
+                            <p>info@fpcampuscamara.es</p>
+                        </div>
+                        <div class = "Telefono">
+                            <img src="../Imagenes/llamada.png" alt = "" />
+                            <p>954238797</p>
+                        </div>
+                    </div>
+                    
                 </div>
                 
 

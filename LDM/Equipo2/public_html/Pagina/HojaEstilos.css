@@ -122,6 +122,48 @@ ul {
     margin-bottom: 5px;
     margin-top: 5px;
 }
+.Footer{
+    background-color: black;
+    color: white;
+    display: flex;
+}
 
+.FooterSec{
+    width: 33%;
+    display: grid;
+    justify-content: center;
+}
+.FooterLogo{
+    margin: 20px;
+}
+.FooterRedes{
+    background-color: grey;
+    border-radius: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    width: 85%;
+}
 
+.FooterRedes img{
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.Correo{
+    display: inline-flex;
+    justify-content: left;
+    align-items: center;
+}
+.Telefono{
+    display: inline-flex;
+    justify-content: left;
+    align-items: center;
+}
 
+.Footer p{
+    margin-left: 10px;
+}
