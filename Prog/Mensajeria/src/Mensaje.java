@@ -8,7 +8,6 @@
  * @author Andy Jan
  */
 import java.util.GregorianCalendar;
-import java.util.regex.Pattern;
 
 public class Mensaje {
     // Constante APIPA
