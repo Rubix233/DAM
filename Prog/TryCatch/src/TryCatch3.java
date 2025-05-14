@@ -18,6 +18,7 @@ public class TryCatch3 {
         } catch (NumberFormatException a) {
             System.out.println("No es un numero");
         }
+        System.out.println("N");
         
         
     }
