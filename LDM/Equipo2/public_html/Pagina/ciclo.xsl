@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:output method="html" encoding="UTF-8" indent="yes"/>
-    <xsl:param name="titulo"/>
+    <xsl:param name="tutu"/>
 
     <xsl:template match="/">
         <html>
@@ -106,7 +106,7 @@
                                                     Horas anuales: <xsl:value-of select="@horas_anuales"/>
                                                 </div>
                                                 <div>
-                                                    Mas informacion
+                                                    <a href="Modulo{$idNum}.html">Más información</a>
                                                 </div>
                                                 
                                             </div>
