@@ -45,7 +45,7 @@ public class Tablero {
         byte i = 0;
         if (col < 8) {
             if (this.matriz[col][0] == '.') {
-                while (this.matriz[col][i + 1] == '.') {
+                while (i < 5 && this.matriz[col][i + 1] == '.') {
                     i++;
                 }
             } else {
@@ -61,13 +61,13 @@ public class Tablero {
         boolean colocado = false;
 
         if (fila != -1 && columna >= 0 && columna < 8) {
-            if (this.matriz[columna][fila] == '.') {
+            //if (this.matriz[columna][fila] == '.') {
                 this.matriz[columna][fila] = ficha;
                 colocado = true;
                 this.ultimaColumna = columna;
                 this.ultimaFila = fila;
                 this.numeroFichasIntroducidas++;
-            }
+           // }
         }
 
         return colocado;

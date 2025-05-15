@@ -33,7 +33,7 @@ public class Main {
             do{
                 System.out.println("Jugador: "+ partida.getTurno()+" introduzca columna:");
                 intro = datoByte();
-            } while (partida.tirada(intro));
+            } while (partida.tirada(intro) || !partida.esFinPartida());
             
         }
     }

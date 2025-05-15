@@ -28,20 +28,22 @@ public class Partida {
         return this.esFinPartida;
     }
     public boolean tirada(byte col){
+        
         char ficha = fichas[getTurno()];
         boolean tiradaValida;
         
         if(this.tablero.colocaFicha(ficha, this.tablero.buscaVacio(col), col)){
             this.tablero.pintaTablero();
             tiradaValida = true;
-            if(this.tablero.haGanado(ficha)){
+            if(!this.tablero.haGanado(ficha)){
                 if(this.turno == 0){
                     this.turno++;
                 }else {
                     this.turno = 0;
                 }
-                this.esFinPartida = this.tablero.estaLleno() || this.tablero.haGanado(this.fichas[getTurno()]);
+                
             }
+            this.esFinPartida = this.tablero.estaLleno() || this.tablero.haGanado(this.fichas[getTurno()]);
         }else{
             System.out.println("Columna llena o no valida, prueba otra.");
             tiradaValida = false;
