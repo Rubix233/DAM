@@ -18,7 +18,10 @@ public class Cola {
     }
     
     public void meterEnCola(Object obj){
-        this.tCola.addLast(obj);
+        if(obj instanceof Mensaje){
+            this.tCola.addLast(obj);
+        }
+        
     }
     public Object sacarDeCola(){
         Object obj = null;

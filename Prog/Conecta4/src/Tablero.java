@@ -11,8 +11,8 @@ public class Tablero {
 
     private char[][] matriz;
     private byte numeroFichasIntroducidas;
-    private byte ultimaColumna;
-    private byte ultimaFila;
+    byte ultimaColumna;
+    byte ultimaFila;
 
     public Tablero() {
         this.matriz = new char[8][6];
@@ -24,21 +24,14 @@ public class Tablero {
         }
 
         this.numeroFichasIntroducidas = 0;
+        //System.out.println("Inicializando tablero. Fichas introducidas: " + this.numeroFichasIntroducidas);
+
     }
 
     public boolean estaLleno() {
-        /*boolean lleno = true;
-        int i = 0;
+        //System.out.println("Comprobando si el tablero está lleno. Fichas: " + this.numeroFichasIntroducidas);
 
-        while (i < 8 && lleno) {
-            if (this.matriz[i][0] == '.') {
-                lleno = false;
-            }
-        }
-        return lleno;
-        * */
-        return this.numeroFichasIntroducidas < 8*6;
-
+        return this.numeroFichasIntroducidas >= 8*6;
     }
 
     public byte buscaVacio(byte col) {
@@ -67,6 +60,8 @@ public class Tablero {
                 this.ultimaColumna = columna;
                 this.ultimaFila = fila;
                 this.numeroFichasIntroducidas++;
+                //System.out.println("Ficha colocada en columna: " + columna + ", fila: " + fila);
+                //System.out.println("Fichas introducidas: " + this.numeroFichasIntroducidas);
            // }
         }
 
@@ -80,86 +75,77 @@ public class Tablero {
     private boolean compruebaFila(char ficha) {
         byte posX = this.ultimaColumna;
         byte posY = this.ultimaFila;
-        byte cont = 1;
-        boolean ganado = false;
+        byte cont = 0;
+       
         //Buscamos la primera de la secuencia
         while (posX > 0 && this.matriz[posX - 1][posY] == ficha) {
             posX--;
         }
         //Contamos cuantos seguidos hay
-        while (posX < ultimaColumna && this.matriz[posX + 1][posY] == ficha) {
+        while (posX < 6 && this.matriz[posX][posY] == ficha) {
             posX++;
             cont++;
         }
-        if (cont > 3) {
-            ganado = true;
-        }
-        return ganado;
+
+        return cont >= 4;
     }
 
     private boolean compruebaColumna(char ficha) {
-        //Vertical
         byte posX = this.ultimaColumna;
         byte posY = this.ultimaFila;
-        byte cont = 1;
-        boolean ganado = false;
-        //Buscamos la primera de la secuencia
+        byte cont = 0;
+
+        // Buscar la primera ficha de la secuencia vertical
         while (posY > 0 && this.matriz[posX][posY - 1] == ficha) {
             posY--;
         }
-        //Contamos cuantos seguidos hay
-        while (posY < ultimaFila && this.matriz[posX][posY + 1] == ficha) {
-            posY++;
+
+        // Contar hacia abajo a partir de la primera ficha
+        while (posY < 6 && this.matriz[posX][posY] == ficha) {
             cont++;
+            posY++;
         }
-        if (cont > 3) {
-            ganado = true;
-        }
-        return ganado;
+
+        return cont >= 4;
     }
 
     private boolean compruebaDiagonalPrincipal(char ficha) {
         byte posX = this.ultimaColumna;
         byte posY = this.ultimaFila;
-        byte cont = 1;
-        boolean ganado = false;
+        byte cont = 0;
+
         //Buscamos la primera de la secuencia
         while (posX > 0 && posY > 0 && this.matriz[posX - 1][posY - 1] == ficha) {
             posX--;
             posY--;
         }
         //Contamos cuantos seguidos hay
-        while (posX < ultimaColumna && posY < ultimaFila && this.matriz[posX + 1][posY + 1] == ficha) {
+        while (posX < 8 && posY < 6 && this.matriz[posX][posY] == ficha) {
             posX++;
             posY++;
             cont++;
         }
-        if (cont > 3) {
-            ganado = true;
-        }
-        return ganado;
+        return cont >= 4;
     }
 
     private boolean compruebaDiagonalSecundaria(char ficha) {
         byte posX = this.ultimaColumna;
         byte posY = this.ultimaFila;
-        byte cont = 1;
-        boolean ganado = false;
+        byte cont = 0;
+
         //Buscamos la primera de la secuencia
-        while (posX > 0 && posY < ultimaFila && this.matriz[posX - 1][posY + 1] == ficha) {
+        while (posX > 0 && posY < 5 && this.matriz[posX - 1][posY + 1] == ficha) {
             posX--;
             posY++;
         }
         //Contamos cuantos seguidos hay
-        while (posX < ultimaColumna && posY > 0 && this.matriz[posX + 1][posY - 1] == ficha) {
+        while (posX < 8 && posY > 0 && this.matriz[posX][posY] == ficha) {
             posX++;
             posY--;
             cont++;
         }
-        if (cont > 3) {
-            ganado = true;
-        }
-        return ganado;
+       
+        return cont >= 4;
     }
 
     public void pintaTablero() {

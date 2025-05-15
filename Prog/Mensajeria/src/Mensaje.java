@@ -64,7 +64,7 @@ public class Mensaje {
     }
 
     public String getTexto() {
-        return this.texto;
+        return desencripta(this.texto);
     }
 
     //Compruebo si es valido con regex
