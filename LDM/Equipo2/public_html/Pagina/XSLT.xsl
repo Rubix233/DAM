@@ -31,7 +31,7 @@
                     
                 </div>
                 <div class="PostHeader1">
-                    <p class="TextoBanner">Oferta academica</p>
+                    <p class="TextoBanner">OFERTA ACADEMICA</p>
                 </div>
                 <div class="PostHeader2">
                     <p class="TextoBanner">Centro FP Superior -- Ciclos Grado Superior</p>

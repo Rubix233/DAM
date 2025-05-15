@@ -8,6 +8,7 @@
             <head>
                 <title>ciclo.xsl</title>
                 <link rel="stylesheet" type="text/css" href="HojaEstilos.css"/> 
+                <link rel="stylesheet" type="text/css" href="./Modulos/ModulosStyle.css"/> 
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
             </head>
@@ -40,21 +41,48 @@
                 
                 
                 <div class = "CuerpoTitulo">
-                    <div class = "Competencias">
-                        <div>
-                            <p>competencias</p>
+                    <div class="page-wrapper">
+                        <div class="left-panel">
+                            <div class="titulo-bloque">Competencias</div>
                         </div>
-                        <div>
-                            <div class="accordion" id="accordionCompetencias">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Accordion Item #1
-                                        </button>
-                                    </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <div class="right-panel">
+                            <div class="accordion-wrapper">
+                                <div class="accordion" id="accordionCompetencias">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseComp" aria-expanded="false" aria-controls="collapseComp">
+                                                Competencia general del ciclo
+                                            </button>
+                                        </h2>
+                                        <div id="collapseComp" class="accordion-collapse collapse" data-bs-parent="#accordionCompetencias">
+                                            <div class="accordion-body">
+                                                <strong>Lorem ipsum:</strong> texto descriptivo sobre las competencias del ciclo.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Objetivos -->
+                    <div class="page-wrapper">
+                        <div class="left-panel">
+                            <div class="titulo-bloque">Objetivos</div>
+                        </div>
+                        <div class="right-panel">
+                            <div class="accordion-wrapper">
+                                <div class="accordion" id="accordionObjetivos">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseObj" aria-expanded="false" aria-controls="collapseObj">
+                                                Objetivos generales del ciclo
+                                            </button>
+                                        </h2>
+                                        <div id="collapseObj" class="accordion-collapse collapse" data-bs-parent="#accordionObjetivos">
+                                            <div class="accordion-body">
+                                                <strong>Lorem ipsum:</strong> descripción de los objetivos generales.
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -62,35 +90,14 @@
                         </div>
                     </div>
                     
-                    <div class = "Competencias">
-                        <div>
-                            <p>Objetivos</p>
-                        </div>
-                        <div>
-                            <div class="accordion" id="accordionObjetivos">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                            Accordion Item #1
-                                        </button>
-                                    </h2>
-                                    <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     
-                    <div class = "Competencias">
-                        <div>
-                            <p>Modulos 1º</p>
+                    <div class="page-wrapper">
+                        <div class="left-panel">
+                            <div class="titulo-bloque">Modulos 1º</div>
                         </div>
-                        <div>
-                            
-                            <xsl:for-each select="//Familia_Profesional[1]/Titulo[1]/Modulos/Modulo[@curso = '1º']">
+                        <div class="right-panel">
+                            <div class="accordion-wrapper">
+                                <xsl:for-each select="//Familia_Profesional[1]/Titulo[1]/Modulos/Modulo[@curso = '1º']">
                                 <xsl:variable name="idNum" select="position()" />
     
                                 <div class="accordion" id="accordion1{$idNum}">
@@ -105,8 +112,8 @@
                                                 <div>
                                                     Horas anuales: <xsl:value-of select="@horas_anuales"/>
                                                 </div>
-                                                <div>
-                                                    <a href="Modulo{$idNum}.html">Más información</a>
+                                                <div class="Info">
+                                                    <a href="./Modulos/Modulo{@cod}.html">Más información</a>
                                                 </div>
                                                 
                                             </div>
@@ -115,16 +122,18 @@
                                     </div>
                                 </div>
                             </xsl:for-each>
-                            
+                            </div>
                         </div>
                     </div>
-                    <div class = "Competencias">
-                        <div>
-                            <p>Modulos 2º</p>
+                    
+                    
+                    <div class="page-wrapper">
+                        <div class="left-panel">
+                            <div class="titulo-bloque">Modulos 2º</div>
                         </div>
-                        <div>
-                            
-                            <xsl:for-each select="//Familia_Profesional[1]/Titulo[1]/Modulos/Modulo[@curso = '2º']">
+                        <div class="right-panel">
+                            <div class="accordion-wrapper">
+                                <xsl:for-each select="//Familia_Profesional[1]/Titulo[1]/Modulos/Modulo[@curso = '2º']">
                                 <xsl:variable name="idNum" select="position()" />
     
                                 <div class="accordion" id="accordion2{$idNum}">
@@ -140,7 +149,7 @@
                                                     Horas anuales: <xsl:value-of select="@horas_anuales"/>
                                                 </div>
                                                 <div>
-                                                    Mas informacion
+                                                    <a href="./Modulos/Modulo{@cod}.html">Más información</a>
                                                 </div>
                                                 
                                             </div>
@@ -149,9 +158,11 @@
                                     </div>
                                 </div>
                             </xsl:for-each>
-                            
+                            </div>
                         </div>
                     </div>
+
+                    
                 </div>
                 
                 

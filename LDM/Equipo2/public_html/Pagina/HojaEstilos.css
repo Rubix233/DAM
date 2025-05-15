@@ -11,7 +11,22 @@ body {
     padding: 0px;
     margin: 0px;
 }
+.ListaAzul a:link {
+  text-decoration: none;
+  color: white;
+}
 
+.ListaAzul a:visited {
+  text-decoration: none;
+}
+
+.ListaAzul a:hover {
+  text-decoration: underline;
+}
+
+.ListaAzul a:active {
+  text-decoration: underline;
+}
 details {
     margin-bottom: 1em;
 }
@@ -47,6 +62,9 @@ ul {
     padding-bottom: 5px;
 
 }
+.PostHeader2 p{
+    font-size: 20px;
+}
 .PostHeader3{
     background-color: orange;
     color: #ffffff;
@@ -68,6 +86,9 @@ ul {
     display: flex;
     align-items: flex-end;
     justify-content: center;
+}
+.FamiliasBanner p{
+    font-weight: bold;
 }
 .Cuerpo{
     display: flex;
@@ -107,7 +128,16 @@ ul {
     color: white;
     border-radius: 20px; 
 }
-
+.FamiliasContainer p{
+    font-weight: bold;
+    text-align: justify;
+    line-height: 20px;
+}
+.FamiliasContainer h2{
+    text-align: center;
+    margin-bottom: 200px;
+    margin-top: 50px;
+}
 #Fam1{
     background-image: url('../Imagenes/administracionMarketingYcomercio.png');
 
