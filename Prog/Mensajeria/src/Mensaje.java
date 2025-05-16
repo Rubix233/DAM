@@ -5,7 +5,7 @@
 
 /**
  *
- * @author Andy Jan
+ * @author Andy Jan y Jaime Martín
  */
 import java.util.GregorianCalendar;
 
@@ -52,7 +52,7 @@ public class Mensaje {
 
     public String getFecha() {
         int dia = fecha.get(GregorianCalendar.DAY_OF_MONTH);
-        int mes = fecha.get(GregorianCalendar.MONTH);
+        int mes = fecha.get(GregorianCalendar.MONTH)+1;
         int anio = fecha.get(GregorianCalendar.YEAR);
         
         
@@ -79,24 +79,26 @@ public class Mensaje {
 
         for (int i = 0; i < invertida.length(); i++) {
             char c = invertida.charAt(i);
-            
-            c = (char) ((c - 'A' - 3 + 26) % 26 + 'A');
+            if (c >= 'A' && c <= 'Z') {
+                c = (char) ((c - 'A' - 3 + 26) % 26 + 'A');
+            }
             resultado += c; 
         }
         return resultado;
-    }
+}
 
     private static String desencripta(String msg) {
         String desplazado = "";  
         msg = msg.toUpperCase();
-        
         for (int i = 0; i < msg.length(); i++) {
             char c = msg.charAt(i);
-            c = (char) ((c - 'A' + 3) % 26 + 'A');
-            desplazado += c;  
+            if (c >= 'A' && c <= 'Z') {
+                c = (char) ((c - 'A' + 3) % 26 + 'A');
+            }
+        desplazado += c;  
         }
-        return reverse(desplazado);  
-    }
+    return reverse(desplazado);  
+}
 
     private static String reverse(String cad) {
         String[] palabras = cad.split(" ");
