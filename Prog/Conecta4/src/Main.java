@@ -29,25 +29,16 @@ public class Main {
         Partida partida = new Partida();
         byte intro;
         
-        /*
-        while(!partida.esFinPartida()){
-            do{
-                System.out.println("Jugador: "+ partida.getTurno()+" introduzca columna:");
-                intro = datoByte();
-            } while (partida.tirada(intro) || !partida.esFinPartida());
-            
-        }
-        * */
         while (!partida.esFinPartida()) {
-        System.out.println("Jugador: " + partida.getTurno() + " introduzca columna:");
+        System.out.println("Jugador: " + (partida.getTurno()+1) + " introduzca columna:");
         intro = datoByte();
 
-        partida.tirada(intro);
+        partida.tirada((byte)(intro-1));
 
         if (partida.esFinPartida()) {
             System.out.println("Partida terminada.");
             if (partida.getGanador() != -1) {
-                System.out.println("El jugador " + partida.getGanador() + " ha ganado.");
+                System.out.println("El jugador " + (partida.getGanador()+1) + " ha ganado.");
             } else {
                 System.out.println("La partida terminó en empate.");
             }
