@@ -1,144 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
 
-    <xs:element name="Centro_FP">
-        <xs:complexType>
+  <xs:element name="Centro_FP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Familia_Profesional" maxOccurs="unbounded">
+          <xs:complexType>
             <xs:sequence>
-
-                <xs:element name="Familia_Profesional" maxOccurs="unbounded">
-                    <xs:complexType>
+              <xs:element name="Titulo" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Modulos">
+                      <xs:complexType>
                         <xs:sequence>
-
-                            <xs:element name="Titulo" maxOccurs="unbounded">
-                                <xs:complexType>
+                          <xs:element name="Modulo" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Contenido" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:attribute name="nombre" type="xs:string" use="required"/>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Objetivo" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:attribute name="nombre" type="xs:string" use="required"/>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Resultados_de_Aprendizaje">
+                                  <xs:complexType>
                                     <xs:sequence>
-
-                                        <xs:element name="Modulos">
-                                            <xs:complexType>
+                                      <xs:element name="Resultado_de_Aprendizaje" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="Criterios_de_Evaluacion">
+                                              <xs:complexType>
                                                 <xs:sequence>
-
-                                                    <xs:element name="Modulo" maxOccurs="unbounded">
-                                                        <xs:complexType>
-                                                            <xs:sequence>
-
-                                                                <xs:element name="Resultados_de_Aprendizaje">
-                                                                    <xs:complexType>
-                                                                        <xs:sequence>
-
-                                                                            <xs:element name="Resultado_de_Aprendizaje" maxOccurs="unbounded">
-                                                                                <xs:complexType>
-                                                                                    <xs:sequence>
-
-                                                                                        <xs:element name="Criterios_de_evaluacion">
-                                                                                            <xs:complexType>
-                                                                                                <xs:sequence>
-                                                                                                
-                                                                                                    <xs:element name="Criterio_de_Evaluacion" maxOccurs="unbounded">
-                                                                                                        <xs:complexType>
-                                                                                                            <xs:attribute name="cod">
-                                                                                                                <xs:simpleType>
-                                                                                                                    <xs:restriction base="xs:string">
-                                                                                                                        <xs:pattern value="\d{1}"/>
-                                                                                                                    </xs:restriction>
-                                                                                                                </xs:simpleType>
-                                                                                                            </xs:attribute>
-                                                                                                            <xs:attribute name="nombre">
-                                                                                                                <xs:simpleType>
-                                                                                                                    <xs:restriction base="xs:string">
-                                                                                                                        <xs:pattern value="[A-z][a-z]+\s[a-z\s]{0,250}"/>
-                                                                                                                    </xs:restriction>
-                                                                                                                </xs:simpleType>
-                                                                                                            </xs:attribute>
-                                                                                                        </xs:complexType>
-                                                                                                    </xs:element>
-                                                                                                </xs:sequence>
-                                                                                            </xs:complexType>
-                                                                                        </xs:element>
-                                                                                    </xs:sequence>
-                                                                                    <xs:attribute name="cod" type="xs:string" use="required"/>
-                                                                                    <xs:attribute name="nombre">
-                                                                                        <xs:simpleType>
-                                                                                            <xs:restriction base="xs:string">
-                                                                                                <xs:pattern value="[A-z][a-z]+\s[a-z\s]{0,300}"/>
-                                                                                            </xs:restriction>
-                                                                                        </xs:simpleType>
-                                                                                    </xs:attribute>
-                                                                                </xs:complexType>
-                                                                            </xs:element>
-                                                                        </xs:sequence>
-                                                                    </xs:complexType>
-                                                                </xs:element>
-                                                            </xs:sequence>
-                                                            <xs:attribute name="cod">
-                                                                <xs:simpleType>
-                                                                    <xs:restriction base="xs:string">
-                                                                        <xs:pattern value="\d{4}"/>
-                                                                    </xs:restriction>
-                                                                </xs:simpleType>
-                                                            </xs:attribute>
-                                                            <xs:attribute name="nombre">
-                                                                <xs:simpleType>
-                                                                    <xs:restriction base="xs:string">
-                                                                        <xs:pattern value="[A-Z][a-z]+\s[a-z\s]{0,40}"/>
-                                                                    </xs:restriction>
-                                                                </xs:simpleType>
-                                                            </xs:attribute>
-                                                            <xs:attribute name="creditos">
-                                                                <xs:simpleType>
-                                                                    <xs:restriction base="xs:integer">
-                                                                        <xs:pattern value="0[1-9]|1[0-9]|2[0-5]"/>
-                                                                    </xs:restriction>
-                                                                </xs:simpleType>
-                                                            </xs:attribute>
-                                                            <xs:attribute name="horas_anuales">
-                                                                <xs:simpleType>
-                                                                    <xs:restriction base="xs:integer">
-                                                                        <xs:pattern value="\d{1,3}"/>
-                                                                    </xs:restriction>
-                                                                </xs:simpleType>
-                                                            </xs:attribute>
-                                                            <xs:attribute name="horas_semanales">
-                                                                <xs:simpleType>
-                                                                    <xs:restriction base="xs:integer">
-                                                                        <xs:pattern value="\d{1,2}"/>
-                                                                    </xs:restriction>
-                                                                </xs:simpleType>
-                                                            </xs:attribute>
-                                                            <xs:attribute name="curso">
-                                                                <xs:simpleType>
-                                                                    <xs:restriction base="xs:string">
-                                                                        <xs:pattern value="(Primero|Segundo)"/>
-                                                                    </xs:restriction>
-                                                                </xs:simpleType>
-                                                            </xs:attribute>
-                                                        </xs:complexType>
-                                                    </xs:element>
+                                                  <xs:element name="Criterio_de_Evaluacion" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="cod" type="xs:string" use="required"/>
+                                                      <xs:attribute name="nombre" type="xs:string" use="required"/>
+                                                    </xs:complexType>
+                                                  </xs:element>
                                                 </xs:sequence>
-                                            </xs:complexType>
-                                        </xs:element>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="cod" type="xs:string" use="required"/>
+                                          <xs:attribute name="nombre" type="xs:string" use="required"/>
+                                        </xs:complexType>
+                                      </xs:element>
                                     </xs:sequence>
-                                    <xs:attribute name="competencia_general" type="xs:string" use="required"/>
-                                    <xs:attribute name="nombre">
-                                        <xs:simpleType>
-                                            <xs:restriction base="xs:string">
-                                                <xs:pattern value="[A-Z][a-z]+\s[a-z\s]{0,4}"/>
-                                            </xs:restriction>
-                                        </xs:simpleType>
-                                    </xs:attribute>
-                                    <xs:attribute name="duracion">
-                                        <xs:simpleType>
-                                            <xs:restriction base="xs:integer">
-                                                <xs:pattern value="2000"/>
-                                            </xs:restriction>
-                                        </xs:simpleType>
-                                    </xs:attribute>
-                                    <xs:attribute name="cod" type="xs:string" use="required"/>
-                                </xs:complexType>
-                            </xs:element>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="cod" type="xs:string" use="required"/>
+                              <xs:attribute name="nombre" type="xs:string" use="required"/>
+                              <xs:attribute name="creditos" type="xs:positiveInteger" use="required"/>
+                              <xs:attribute name="horas_anuales" type="xs:positiveInteger" use="required"/>
+                              <xs:attribute name="horas_semanales" type="xs:positiveInteger" use="required"/>
+                              <xs:attribute name="curso" type="xs:string" use="required"/>
+                              <xs:attribute name="contenidos_basicos" type="xs:string" use="optional"/>
+                              <xs:attribute name="objetivos" type="xs:string" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
                         </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="nombre" type="xs:string" use="required"/>
+                  <xs:attribute name="duracion" type="xs:positiveInteger" use="required"/>
+                </xs:complexType>
+              </xs:element>
             </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+            <xs:attribute name="nombre" type="xs:string" use="required"/>
+            <xs:attribute name="descripcion" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
 </xs:schema>

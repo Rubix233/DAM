@@ -54,8 +54,8 @@
                                     <li>
                                         <a>
                                             <xsl:attribute name="href">
-                                                <xsl:text>ciclo.html?titulo=</xsl:text>
-                                                <xsl:value-of select ="@nombre"/>
+                                                <xsl:text>ciclo0.html?titulo=</xsl:text>
+                                                
                                             </xsl:attribute>
                                             <xsl:value-of select ="@nombre"/>
                                         </a>
@@ -79,9 +79,17 @@
                         </div>
                         <div class="FamiliasTitulos">
                             <ul class="ListaAzul">
-                                <xsl:for-each select = "//Familia_Profesional[2]/Titulo">   
+                                <xsl:for-each select = "//Familia_Profesional[2]/Titulo">  
+                                    <xsl:variable name="tituloPos" select="position()" /> 
                                     <li>
-                                        <xsl:value-of select ="@nombre"/>
+                                        <a>
+                                            <xsl:attribute name="href">
+                                                <xsl:text>ciclo</xsl:text>
+                                                <xsl:value-of select="position()"/>
+                                                <xsl:text>.html</xsl:text>
+                                            </xsl:attribute>
+                                            <xsl:value-of select ="@nombre"/>
+                                        </a>
                                     </li>
                                 </xsl:for-each>
                             </ul>

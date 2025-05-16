@@ -24,7 +24,7 @@
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
             </head>
             <body>
-                <xsl:variable name="codigo" select="0647" />
+                <xsl:variable name="codigo" select="5052" />
                 <div class="Header">
                     <div class="Titulos">
                         
@@ -51,7 +51,7 @@
                 </div>
                 <div class="PostHeader3">
                     <p class="TextoBanner">
-                        <xsl:value-of select="//Familia_Profesional[1]/Titulo/Modulos/Modulo[@cod = $codigo]/@nombre"/>
+                        <xsl:value-of select="//Familia_Profesional[2]/Titulo[2]/Modulos/Modulo[@cod = $codigo]/@nombre"/>
                     </p>
                 </div>
                 
@@ -74,7 +74,11 @@
                                     </h2>
                                     <div id="objetivosCollapse" class="accordion-collapse collapse" data-bs-parent="#objetivosAcordeon">
                                         <div class="accordion-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat quam et nisi blandit, non consequat turpis tempus.
+                                            <ul>
+                                                <xsl:for-each select="//Familia_Profesional[2]/Titulo[2]/Modulos/Modulo[@cod = $codigo]/Contenido">
+                                                    <li><xsl:value-of select="@nombre"/></li>
+                                                </xsl:for-each>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -101,7 +105,11 @@
                                     </h2>
                                     <div id="objetivosCollapse2" class="accordion-collapse collapse" data-bs-parent="#objetivosAcordeon2">
                                         <div class="accordion-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat quam et nisi blandit, non consequat turpis tempus.
+                                            <ul>
+                                                <xsl:for-each select="//Familia_Profesional[2]/Titulo[2]/Modulos/Modulo[@cod = $codigo]/Objetivo">
+                                                    <li><xsl:value-of select="@nombre"/></li>
+                                                </xsl:for-each>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -124,7 +132,7 @@
                     <div class="right-panel">
                         <div class="accordion-wrapper">
                             
-                            <xsl:for-each select="//Familia_Profesional[1]/Titulo/Modulos/Modulo[@cod = $codigo]/Resultados_de_Aprendizaje/Resultado_de_Aprendizaje">
+                            <xsl:for-each select="//Familia_Profesional[2]/Titulo[2]/Modulos/Modulo[@cod = $codigo]/Resultados_de_Aprendizaje/Resultado_de_Aprendizaje">
                                 <xsl:variable name="idNum" select="position()" />
                                 <div class="accordion" id="ra1{$idNum}">
                                     <div class="accordion-item">

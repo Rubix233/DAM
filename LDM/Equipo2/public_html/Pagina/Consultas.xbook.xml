@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xpathBook xmlns="http://www.oxygenxml.com/xpath">
+  <entry expression="//Familia_Profesional/@nombre" comment="Obtener los nombres de cada familia profesional usando posición con corchetes"/>
+  <entry expression="//Familia_Profesional/@descripcion" comment="Obtener las descripciones de cada familia profesional usando posición con corchetes"/>
+  <entry expression="//Familia_Profesional[1]/Titulo" comment="Obtener todos los títulos de la primera familia profesional con un for-each"/>
+  <entry expression="//Familia_Profesional[1]/Titulo[1]/@nombre" comment="Obtener el nombre del primer título de la primera familia profesional"/>
+  <entry expression="//Familia_Profesional[1]/Titulo[1]/Modulos/Modulo[@curso = '1º']" comment="Obtener todos los módulos del título que tienen el curso igual a '1º' (for-each)"/>
+  <entry expression="//Familia_Profesional[2]/Titulo[2]/Modulos/Modulo[@cod = $codigo]/@nombre" comment="Obtener el nombre del módulo cuyo código coincide con la variable $codigo (familia 2, título 2)"/>
+  <entry expression="//Familia_Profesional[2]/Titulo[2]/Modulos/Modulo[@cod = $codigo]/Contenido" comment="Obtener los contenidos del módulo filtrado por código (familia 2, título 2)"/>
+  <entry expression="//Familia_Profesional[2]/Titulo[2]/Modulos/Modulo[@cod = $codigo]/Objetivo" comment="Obtener el objetivo del módulo filtrado por código (familia 2, título 2)"/>
+  <entry expression="//Familia_Profesional[2]/Titulo[2]/Modulos/Modulo[@cod = $codigo]/Resultados_de_Aprendizaje/Resultado_de_Aprendizaje" comment="Obtener los resultados de aprendizaje del módulo filtrado por código (for-each)"/>
+  <entry expression="Criterios_de_Evaluacion/Criterio_de_Evaluacion" comment="Obtener los criterios de evaluación de cada resultado de aprendizaje (usado dentro del for-each)"/>
+</xpathBook>
