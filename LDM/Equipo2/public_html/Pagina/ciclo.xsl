@@ -119,12 +119,12 @@
     
                                     <div class="accordion" id="accordion1{$idNum}">
                                         <div class="accordion-item">
-                                            <h2 class="accordion-header" id="heading{$idNum}">
-                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{$idNum}" aria-expanded="false" aria-controls="collapse{$idNum}">
+                                            <h2 class="accordion-header" id="heading1{$idNum}">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1{$idNum}" aria-expanded="false" aria-controls="collapse1{$idNum}">
                                                     <xsl:value-of select="@nombre"/>
                                                 </button>
                                             </h2>
-                                            <div id="collapse{$idNum}" class="accordion-collapse collapse" data-bs-parent="#accordion{$idNum}">
+                                            <div id="collapse1{$idNum}" class="accordion-collapse collapse" data-bs-parent="#accordion1{$idNum}">
                                                 <div class="accordion-body">
                                                     <div>
                                                         Horas anuales: <xsl:value-of select="@horas_anuales"/>
