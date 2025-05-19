@@ -1,5 +1,6 @@
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -23,7 +24,7 @@ public class LeeFile {
         String linea;
 
         try {
-            file = new BufferedReader(new FileReader("C:\\Documents and Settings\\Administrador\\Escritorio\\DAM\\Prog\\Flujos\\src\\ArchivoPrueba.txt"));
+            file = new BufferedReader(new FileReader(("C:/Documents and Settings/Administrador/Escritorio/DAM/Prog/Flujos/src/ArchivoPrueba.txt").replace('/', File.separatorChar)));
             try {
                 while ((linea = file.readLine()) != null) {
                     System.out.println(linea);
