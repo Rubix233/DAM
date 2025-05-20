@@ -31,19 +31,11 @@ public class Partida {
         
         char ficha = fichas[getTurno()];
         boolean tiradaValida;
-        
-        //System.out.println("Intentando colocar ficha en columna: " + col);
 
         if(this.tablero.colocaFicha(ficha, this.tablero.buscaVacio(col), col)){
             this.tablero.pintaTablero();
             tiradaValida = true;
  
-            //System.out.println("Ficha: " + ficha);
-            //System.out.println("haGanado: " + this.tablero.haGanado(ficha));
-            //System.out.println("estaLleno: " + this.tablero.estaLleno());
-            //System.out.println("ultimaFila: " + this.tablero.ultimaFila + ", ultimaColumna: " + this.tablero.ultimaColumna);
-
-            
             this.esFinPartida = this.tablero.estaLleno() || this.tablero.haGanado(this.fichas[getTurno()]);
             
             if(!this.esFinPartida){

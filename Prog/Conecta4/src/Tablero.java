@@ -33,10 +33,14 @@ public class Tablero {
 
         return this.numeroFichasIntroducidas >= 8*6;
     }
-
+/**
+ * 
+ * @param col
+ * @return 
+ */
     public byte buscaVacio(byte col) {
         byte i = 0;
-        if (col < 8) {
+        if (col < 8 && col >= 0) {
             if (this.matriz[col][0] == '.') {
                 while (i < 5 && this.matriz[col][i + 1] == '.') {
                     i++;
