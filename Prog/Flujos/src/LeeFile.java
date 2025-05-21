@@ -1,8 +1,10 @@
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 /*
@@ -21,10 +23,21 @@ public class LeeFile {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
         BufferedReader file = null;
+
+        FileWriter bWriter;
         String linea;
 
+       
+        bWriter = new FileWriter("Prueba/Prueba.txt",true);
+        bWriter.append("aaa\n");
+        bWriter.flush();
+        bWriter.append("bbb");
+        bWriter.append("ccc");
+        bWriter.flush();
+        //bWriter.close();
+        
         try {
-            file = new BufferedReader(new FileReader(("C:/Documents and Settings/Administrador/Escritorio/DAM/Prog/Flujos/src/ArchivoPrueba.txt").replace('/', File.separatorChar)));
+            file = new BufferedReader(new FileReader(("src/ArchivoPrueba.txt").replace('/', File.separatorChar)));
             try {
                 while ((linea = file.readLine()) != null) {
                     System.out.println(linea);
@@ -38,8 +51,10 @@ public class LeeFile {
             }//Fin Try
 
 
-        } catch (IOException e) {
+        } catch (FileNotFoundException e) {
             System.err.println("Error al leer archivo");
         }//Fin Try
+        
+        
     }
 }
