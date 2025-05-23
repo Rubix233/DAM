@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
  *
  * @author Andy Jan
  */
-public class Saltador implements Comparable {
+public class Saltador implements Comparable<Saltador> {
 
     private int dorsal;
     private String nombre;
@@ -68,12 +68,12 @@ public class Saltador implements Comparable {
 
         return fechaString;
     }
-    
-    public boolean anotarSalto(double[] juez){
+
+    public boolean anotarSalto(double[] juez) {
         double mediaPuntos = 0;
         //Por si en algun momento hay mas jueces
-        int puntuacionesValidas = juez.length -2;
-        int limite = juez.length-1;
+        int puntuacionesValidas = juez.length - 2;
+        int limite = juez.length - 1;
 
         //Intercambio sort
         for (int i = 0; i < limite; i++) {
@@ -88,40 +88,70 @@ public class Saltador implements Comparable {
             juez[i] = aux;
         }
         //Sumamos los puntos validos obviando el mas grande y el mas chico
-        for(int i = 1; i < limite; i++){
+        for (int i = 1; i < limite; i++) {
             mediaPuntos += juez[i];
         }
         //Sacamos la media
-        mediaPuntos = mediaPuntos/puntuacionesValidas;
+        mediaPuntos = mediaPuntos / puntuacionesValidas;
         //Miramos si es mayor a los puntos que ya tiene
-        if(this.puntos < mediaPuntos){
+        if (this.puntos < mediaPuntos) {
             this.puntos = mediaPuntos;
         }
         //Sumamos al numero de saltos
         this.numeroSaltos++;
         return this.numeroSaltos < 3;
     }
-    
-    @Override
-    public boolean equals(Object obj){
-        return obj instanceof Saltador && ((Saltador)obj).getDorsal() == this.dorsal; 
-    }
-    
-    @Override
-    public String toString(){
-        String datosDelSaltador = "";
-        
-        datosDelSaltador += this.dorsal +" * "+ this.nombre +" * "+ 
-                this.pais +" * "+ this.sexo +" * "+ 
-                "Saltos: "+this.numeroSaltos+" * "+
-                "Puntos: "+this.puntos+" * "+getFecha();
- 
-        return datosDelSaltador;
-    }
-    
 
     @Override
-    public int compareTo(Object t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean equals(Object obj) {
+        return obj instanceof Saltador && ((Saltador) obj).getDorsal() == this.dorsal;
+    }
+
+    @Override
+    public String toString() {
+        String datosDelSaltador = "";
+
+        datosDelSaltador += this.dorsal + " * " + this.nombre + " * "
+                + this.pais + " * " + this.sexo + " * "
+                + "Saltos: " + this.numeroSaltos + " * "
+                + "Puntos: " + this.puntos + " * " + getFecha();
+
+        return datosDelSaltador;
+    }
+
+    @Override
+    public int compareTo(Saltador otro) {
+        int resultado = 0;
+
+        //Pasamos todo a lower case para que notenga en cuenta mayusculas
+        String paisThis = this.pais.toLowerCase();
+        String paisOtro = otro.pais.toLowerCase();
+
+        String nombreThis = this.nombre.toLowerCase();
+        String nombreOtro = this.nombre.toLowerCase();
+
+        //Primero miramos si los paises son iguales
+        if (paisThis.equals(paisOtro)) {
+
+            //Miramos si los nombres son iguales
+            if (nombreThis.equals(nombreOtro)) {
+                resultado = 0;
+            } else {
+                //Miramos si el nombre de THIS viene antes o despues del pasado por parametro
+                if (nombreThis.compareTo(nombreOtro) < 0) {
+                    resultado = -1;//Si viene antes
+                } else {
+                    resultado = 1;//Si viene despues
+                }
+            }
+        } else {
+            //Miramos si el pais de THIS viene antes o despues del pasado por parametro
+            if (paisThis.compareTo(paisOtro) < 0) {
+                resultado = -1;//Si viene antes
+            } else {
+                resultado = 1;//Si viene despues
+            }
+        }
+        return resultado;
     }
 }
