@@ -8,7 +8,9 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.io.IOException;
+import java.util.GregorianCalendar;
 import java.util.Iterator;
+import java.util.Locale;
 
 /**
  *
@@ -27,6 +29,7 @@ public class Campeonato {
         double[] juez;
         BufferedReader reader;
         FileWriter fWriter = null;
+        GregorianCalendar fechaHoraLog;
         boolean valido;
         clasificacion = new Clasificacion();
         reader = new BufferedReader(new InputStreamReader(System.in));
@@ -214,12 +217,12 @@ public class Campeonato {
                         }
                     }
                     puntosPais = clasificacion.getPuntosPais(paisConsulta, sexoConsulta);
-                    if(Double.isNaN(puntosPais)){
+                    if (Double.isNaN(puntosPais)) {
                         System.out.println("No existen saltadores de este Pais con ese sexo");
                     } else {
                         System.out.printf("La media es: %.2f\n", puntosPais);
                     }
-                    
+
 
 
                     break;
@@ -248,11 +251,30 @@ public class Campeonato {
                 case 6:
                     // Mostrar todos
                     if (clasificacion.haySaltador()) {
+                        fechaHoraLog = new GregorianCalendar();
                         //Establecemos archivo
                         if (fWriter == null) {
                             try {
                                 try {
                                     fWriter = new FileWriter("Ficheros/Saltadores.txt", true);
+                                    
+                                    int hora = fechaHoraLog.get(GregorianCalendar.HOUR);
+                                    if (hora == 0) {
+                                        hora = 12; // Para que no aparezca "0" a las 12 en punto
+                                    }
+                                    int minuto = fechaHoraLog.get(GregorianCalendar.MINUTE);
+                                    String ampm = "";
+                                    if(fechaHoraLog.get(GregorianCalendar.AM_PM) == GregorianCalendar.AM){
+                                        ampm = "AM";
+                                    }else{
+                                        ampm = "PM";
+                                    }
+
+                                    fWriter.write("Fecha y hora del log: "
+                                            + fechaHoraLog.get(GregorianCalendar.DAY_OF_MONTH) + "/"
+                                            + (fechaHoraLog.get(GregorianCalendar.MONTH) + 1) + "/"
+                                            + fechaHoraLog.get(GregorianCalendar.YEAR) + "\t"
+                                            + String.format("%d:%02d", hora, minuto) + " " + ampm + "\n\r");
                                 } catch (FileNotFoundException a) {
                                     System.out.println("Error al buscar ruta");
                                 }
