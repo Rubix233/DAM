@@ -10,7 +10,7 @@ import java.util.Collections;
  *
  * @author Jaime Martín
  */
-public class Clasificacion implements Iterable{
+public class Clasificacion implements Iterable<Saltador>{
     //Atributos
     private List<Saltador> lista;
     //Constructores
@@ -41,7 +41,7 @@ public class Clasificacion implements Iterable{
             while (it.hasNext()) {
                 Saltador existente = it.next();
                 if (existente.getDorsal() == s.getDorsal()) {
-                    return false;
+                    return false;  
                 }
             }
         lista.add(s);
@@ -77,7 +77,7 @@ public class Clasificacion implements Iterable{
     }
     public void ordena(){
         //Collections.sort(lista);
-        List<Saltador> listaOrdenada = new LinkedList();
+        List<Saltador> listaOrdenada = new LinkedList<Saltador>();
            while (!lista.isEmpty()) {
                Iterator<Saltador> it = lista.iterator();
                Saltador menor = it.next();

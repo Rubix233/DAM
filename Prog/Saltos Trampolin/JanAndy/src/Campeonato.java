@@ -2,28 +2,42 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.io.IOException;
+import java.util.Iterator;
+
 /**
  *
- * @author Jaime Martín
+ * @author Jaime Martín && Andy Jan
  */
 public class Campeonato {
-     public static void main(String[] args) {
-         Saltador creado;
-         Clasificacion clasificacion;
-         int opcion;
-         int dorsal=0;
-         String nombre= "";
-         String pais="";
-         char sexo = 'H';
-         double[] juez;
-         BufferedReader reader;
-         boolean valido;
-         clasificacion = new Clasificacion();
-         reader = new BufferedReader(new InputStreamReader(System.in));
-         
+
+    public static void main(String[] args) {
+        Saltador creado;
+        Clasificacion clasificacion;
+        int opcion;
+        int dorsal = 0;
+        String nombre = "";
+        String pais = "";
+        char sexo = 'H';
+        double[] juez;
+        BufferedReader reader;
+        FileWriter fWriter = null;
+        boolean valido;
+        clasificacion = new Clasificacion();
+        reader = new BufferedReader(new InputStreamReader(System.in));
+
+        clasificacion.aniadir(new Saltador(12, "dani", "bulgaria", 'H'));
+        clasificacion.aniadir(new Saltador(13, "gonzalo", "andorra", 'H'));
+        clasificacion.aniadir(new Saltador(14, "andy", "bulgaria", 'H'));
+        clasificacion.aniadir(new Saltador(15, "ana", "dinamarca", 'H'));
+        clasificacion.aniadir(new Saltador(16, "blanca", "bulgaria", 'H'));
+        
+        
         do {
             System.out.println("1. Inscribir saltador.");
             System.out.println("2. Eliminar saltador.");
@@ -33,18 +47,18 @@ public class Campeonato {
             System.out.println("6. Mostrar todos");
             System.out.println("7. Salir");
             System.out.print("\n    Opción: ");
-            
+
             valido = false;
             opcion = 0;
-            while(!valido){
-               try {
-                  String linea = reader.readLine();
-                  opcion = Integer.parseInt(linea);
-                  valido = true;
+            while (!valido) {
+                try {
+                    String linea = reader.readLine();
+                    opcion = Integer.parseInt(linea);
+                    valido = true;
                 } catch (IOException ioe) {
-                   System.out.println("Error al leer la entrada.");
+                    System.out.println("Error al leer la entrada.");
                 } catch (NumberFormatException nfe) {
-                   System.out.println("No se ha introducido un número válido.");
+                    System.out.println("No se ha introducido un número válido.");
                 }
             }
 
@@ -53,7 +67,7 @@ public class Campeonato {
                     //Leer dorsal
                     System.out.print("Dorsal:");
                     valido = false;
-                    while(!valido){
+                    while (!valido) {
                         try {
                             String linea = reader.readLine();
                             dorsal = Integer.parseInt(linea);
@@ -69,7 +83,7 @@ public class Campeonato {
                     System.out.print("Nombre:");
                     System.out.flush();
                     valido = false;
-                    while(!valido){
+                    while (!valido) {
                         try {
                             nombre = reader.readLine();
                             valido = true;
@@ -82,7 +96,7 @@ public class Campeonato {
                     System.out.print("Pais:");
                     System.out.flush();
                     valido = false;
-                    while(!valido){
+                    while (!valido) {
                         try {
                             pais = reader.readLine();
                             valido = true;
@@ -94,31 +108,32 @@ public class Campeonato {
                     System.out.println();
                     System.out.print("Sexo (H/M):");
                     valido = false;
-                    while(!valido){
+                    while (!valido) {
                         try {
                             String linea = reader.readLine();
-                            if(linea.length()== 1 && linea.charAt(0) =='H' || linea.charAt(0) =='M'){
+                            if (linea.length() == 1 && linea.charAt(0) == 'H' || linea.charAt(0) == 'M') {
                                 sexo = linea.charAt(0);
                                 valido = true;
-                            }else{
-                                    System.out.println("Has introducido un dato invalido");
+                            } else {
+                                System.out.println("Has introducido un dato invalido");
                             }
                         } catch (IOException ioe) {
                             System.out.println("Error al leer la entrada.");
                         }
                     }
                     //Crear el saltador
-                    creado = new Saltador(dorsal,nombre,pais,sexo);
-                    if(clasificacion.aniadir(creado)){
+                    creado = new Saltador(dorsal, nombre, pais, sexo);
+                    if (clasificacion.aniadir(creado)) {
                         System.out.println("Saltador inscrito");
-                    }else{
+                    } else {
                         System.out.println("Saltador ya estaba inscrito");
-                    };
+                    }
+                    ;
                     break;
                 case 2:
                     System.out.print("Dorsal:");
                     valido = false;
-                    while(!valido){
+                    while (!valido) {
                         try {
                             String linea = reader.readLine();
                             dorsal = Integer.parseInt(linea);
@@ -129,9 +144,9 @@ public class Campeonato {
                             System.out.println("No se ha introducido un número válido.");
                         }
                     }
-                    if(clasificacion.borrar(dorsal)){
+                    if (clasificacion.borrar(dorsal)) {
                         System.out.println("Saltador borrado");
-                    }else{
+                    } else {
                         System.out.println("Saltador no encontrado");
                     }
                     break;
@@ -139,7 +154,7 @@ public class Campeonato {
                     juez = new double[5];
                     System.out.println("Introduce el dorsal");
                     valido = false;
-                    while(!valido){
+                    while (!valido) {
                         try {
                             String linea = reader.readLine();
                             dorsal = Integer.parseInt(linea);
@@ -150,11 +165,11 @@ public class Campeonato {
                             System.out.println("No se ha introducido un número válido.");
                         }
                     }
-                    if(clasificacion.buscar(dorsal)!=null){
-                        for(int i = 0 ; i<5; i++){
-                            System.out.println("Introduce los puntos del salto nº"+i);
+                    if (clasificacion.buscar(dorsal) != null) {
+                        for (int i = 0; i < 5; i++) {
+                            System.out.println("Introduce los puntos del salto nº" + i);
                             valido = false;
-                            while(!valido){
+                            while (!valido) {
                                 try {
                                     String linea = reader.readLine();
                                     juez[i] = Double.parseDouble(linea);
@@ -166,18 +181,20 @@ public class Campeonato {
                                 }
                             }
                         }
-                     clasificacion.buscar(dorsal).anotarSalto(juez);
-                    }else{
+                        clasificacion.buscar(dorsal).anotarSalto(juez);
+                    } else {
                         System.out.println("No existe el saltador");
                     }
                     break;
                 case 4:
                     // Código para puntos país
+                    
+                    
                     break;
                 case 5:
                     System.out.print("Dorsal:");
                     valido = false;
-                    while(!valido){
+                    while (!valido) {
                         try {
                             String linea = reader.readLine();
                             dorsal = Integer.parseInt(linea);
@@ -188,18 +205,51 @@ public class Campeonato {
                             System.out.println("No se ha introducido un número válido.");
                         }
                     }
-                    if(clasificacion.buscar(dorsal)!=null){
+                    if (clasificacion.buscar(dorsal) != null) {
                         System.out.println("***********************");
                         System.out.println(clasificacion.buscar(dorsal).toString());
                         System.out.println("***********************");
-                    }else{
+                    } else {
                         System.out.println("Saltador no encontrado");
                     }
                     break;
                 case 6:
                     // Mostrar todos
-                    break;
-                case 7:
+                    //Establecemos archivo
+                    if (fWriter == null) {
+                        try {
+                            try {
+                                fWriter = new FileWriter("Ficheros/Saltadores.txt", true);
+                            } catch (FileNotFoundException a) {
+                                System.out.println("Error al buscar ruta");
+                            }
+                        } catch (IOException b) {
+                        }
+                    }
+
+                    clasificacion.ordena();
+                    
+                    for(Saltador s: clasificacion){
+                        try {
+                            fWriter.write(s.toString()+"\n\r");
+                            System.out.println(s.toString());
+                        } catch (IOException a){
+                            System.out.println("Error E/S al escribir");
+                        }        
+                    }
+                    if(fWriter != null){
+                        try {
+                            fWriter.write("****************************************************************************************\n\r");
+                            fWriter.close();
+                        } catch (IOException b){
+                            System.out.println("Error E/S al cerrar");
+                        } 
+                    }
+
+                        break;
+                    
+            
+            case 7:
                     break;
                 default:
                     System.out.println("Opción no válida. Intenta de nuevo.");
@@ -207,5 +257,6 @@ public class Campeonato {
             }
 
         } while (opcion != 7);
+        }
+
     }
-}

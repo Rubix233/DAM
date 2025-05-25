@@ -99,6 +99,7 @@ public class Saltador implements Comparable<Saltador> {
         }
         //Sumamos al numero de saltos
         this.numeroSaltos++;
+        this.ultimoSalto = new GregorianCalendar();
         return this.numeroSaltos < 3;
     }
 
@@ -128,7 +129,7 @@ public class Saltador implements Comparable<Saltador> {
         String paisOtro = otro.pais.toLowerCase();
 
         String nombreThis = this.nombre.toLowerCase();
-        String nombreOtro = this.nombre.toLowerCase();
+        String nombreOtro = otro.nombre.toLowerCase();
 
         //Primero miramos si los paises son iguales
         if (paisThis.equals(paisOtro)) {
