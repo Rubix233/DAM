@@ -36,7 +36,7 @@ public class Campeonato {
         reader = new BufferedReader(new InputStreamReader(System.in,"UTF-8"));
 
         do {
-            System.out.println("1. ññInscribir saltador");
+            System.out.println("1. Inscribir saltador");
             System.out.println("2. Eliminar saltador");
             System.out.println("3. Nuevo salto");
             System.out.println("4. Puntos país");
