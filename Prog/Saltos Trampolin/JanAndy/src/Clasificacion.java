@@ -18,8 +18,8 @@ public class Clasificacion implements Iterable<Saltador>{
         lista = new LinkedList();
     }
     //Metodos
-    public boolean haySaldador(){
-        if(lista.isEmpty()){
+    public boolean haySaltador(){
+        if(!lista.isEmpty()){
             return true;
         }else{
             return false;
@@ -59,7 +59,7 @@ public class Clasificacion implements Iterable<Saltador>{
         }
         return false;
     }
-    public double gerPuntosPais(String pais,char sexo){
+    public double getPuntosPais(String pais,char sexo){
         double puntos;
         int personas = 0;
         puntos = 0;

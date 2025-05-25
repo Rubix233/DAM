@@ -31,18 +31,11 @@ public class Campeonato {
         clasificacion = new Clasificacion();
         reader = new BufferedReader(new InputStreamReader(System.in));
 
-        clasificacion.aniadir(new Saltador(12, "dani", "bulgaria", 'H'));
-        clasificacion.aniadir(new Saltador(13, "gonzalo", "andorra", 'H'));
-        clasificacion.aniadir(new Saltador(14, "andy", "bulgaria", 'H'));
-        clasificacion.aniadir(new Saltador(15, "ana", "dinamarca", 'H'));
-        clasificacion.aniadir(new Saltador(16, "blanca", "bulgaria", 'H'));
-        
-        
         do {
-            System.out.println("1. Inscribir saltador.");
-            System.out.println("2. Eliminar saltador.");
-            System.out.println("3. Nuevo salto.");
-            System.out.println("4. Puntos país.");
+            System.out.println("1. Inscribir saltador");
+            System.out.println("2. Eliminar saltador");
+            System.out.println("3. Nuevo salto");
+            System.out.println("4. Puntos país");
             System.out.println("5. Mostrar saltador");
             System.out.println("6. Mostrar todos");
             System.out.println("7. Salir");
@@ -110,7 +103,7 @@ public class Campeonato {
                     valido = false;
                     while (!valido) {
                         try {
-                            String linea = reader.readLine();
+                            String linea = reader.readLine().trim().toUpperCase();
                             if (linea.length() == 1 && linea.charAt(0) == 'H' || linea.charAt(0) == 'M') {
                                 sexo = linea.charAt(0);
                                 valido = true;
@@ -188,8 +181,47 @@ public class Campeonato {
                     break;
                 case 4:
                     // Código para puntos país
+                    String paisConsulta = "";
+                    char sexoConsulta = 'H';
+                    double puntosPais = 0;
+
+                    // Leer país
+                    System.out.print("Introduce el país: ");
+                    valido = false;
+                    while (!valido) {
+                        try {
+                            paisConsulta = reader.readLine().trim();
+                            valido = true;
+                        } catch (IOException ioe) {
+                            System.out.println("Error al leer el país.");
+                        }
+                    }
+
+                    // Leer sexo
+                    System.out.print("Introduce el sexo (H/M): ");
+                    valido = false;
+                    while (!valido) {
+                        try {
+                            String linea = reader.readLine().trim().toUpperCase();
+                            if (linea.length() == 1 && (linea.charAt(0) == 'H' || linea.charAt(0) == 'M')) {
+                                sexoConsulta = linea.charAt(0);
+                                valido = true;
+                            } else {
+                                System.out.println("Sexo inválido. Debe ser H o M.");
+                            }
+                        } catch (IOException a) {
+                            System.out.println("Error al leer el sexo.");
+                        }
+                    }
+                    puntosPais = clasificacion.getPuntosPais(paisConsulta, sexoConsulta);
+                    if(Double.isNaN(puntosPais)){
+                        System.out.println("No existen saltadores de este Pais con ese sexo");
+                    } else {
+                        System.out.printf("La media es: %.2f\n", puntosPais);
+                    }
                     
-                    
+
+
                     break;
                 case 5:
                     System.out.print("Dorsal:");
@@ -215,41 +247,47 @@ public class Campeonato {
                     break;
                 case 6:
                     // Mostrar todos
-                    //Establecemos archivo
-                    if (fWriter == null) {
-                        try {
+                    if (clasificacion.haySaltador()) {
+                        //Establecemos archivo
+                        if (fWriter == null) {
                             try {
-                                fWriter = new FileWriter("Ficheros/Saltadores.txt", true);
-                            } catch (FileNotFoundException a) {
-                                System.out.println("Error al buscar ruta");
+                                try {
+                                    fWriter = new FileWriter("Ficheros/Saltadores.txt", true);
+                                } catch (FileNotFoundException a) {
+                                    System.out.println("Error al buscar ruta");
+                                }
+                            } catch (IOException b) {
                             }
-                        } catch (IOException b) {
                         }
+                        //Ordenamos
+                        clasificacion.ordena();
+                        //Iteramos
+                        if (clasificacion.haySaltador()) {
+                            for (Saltador s : clasificacion) {
+                                try {
+                                    fWriter.write(s.toString() + "\n\r");
+                                    System.out.println(s.toString());
+                                } catch (IOException a) {
+                                    System.out.println("Error E/S al escribir");
+                                }
+                            }
+                        }
+                        //Cerramos archivo
+                        if (fWriter != null) {
+                            try {
+                                fWriter.write("****************************************************************************************\n\r");
+                                fWriter.close();
+                            } catch (IOException b) {
+                                System.out.println("Error E/S al cerrar");
+                            }
+                        }
+                    } else {
+                        System.out.println("No hay saltadores.");
                     }
+                    break;
 
-                    clasificacion.ordena();
-                    
-                    for(Saltador s: clasificacion){
-                        try {
-                            fWriter.write(s.toString()+"\n\r");
-                            System.out.println(s.toString());
-                        } catch (IOException a){
-                            System.out.println("Error E/S al escribir");
-                        }        
-                    }
-                    if(fWriter != null){
-                        try {
-                            fWriter.write("****************************************************************************************\n\r");
-                            fWriter.close();
-                        } catch (IOException b){
-                            System.out.println("Error E/S al cerrar");
-                        } 
-                    }
 
-                        break;
-                    
-            
-            case 7:
+                case 7:
                     break;
                 default:
                     System.out.println("Opción no válida. Intenta de nuevo.");
@@ -257,6 +295,5 @@ public class Campeonato {
             }
 
         } while (opcion != 7);
-        }
-
     }
+}

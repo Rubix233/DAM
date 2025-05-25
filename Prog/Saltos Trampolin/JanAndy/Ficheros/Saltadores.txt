@@ -1,13 +1,3 @@
-13 * gonzalo * andorra * H * Saltos: 0 * Puntos: 0.0 * Este saltador aun no ha saltado.
-14 * andy * bulgaria * H * Saltos: 0 * Puntos: 0.0 * Este saltador aun no ha saltado.
-16 * blanca * bulgaria * H * Saltos: 0 * Puntos: 0.0 * Este saltador aun no ha saltado.
-12 * dani * bulgaria * H * Saltos: 0 * Puntos: 0.0 * Este saltador aun no ha saltado.
-15 * ana * dinamarca * H * Saltos: 0 * Puntos: 0.0 * Este saltador aun no ha saltado.
-****************************************************************************************
-13 * gonzalo * andorra * H * Saltos: 0 * Puntos: 0.0 * Este saltador aun no ha saltado.
-14 * andy * bulgaria * H * Saltos: 0 * Puntos: 0.0 * Este saltador aun no ha saltado.
-16 * blanca * bulgaria * H * Saltos: 0 * Puntos: 0.0 * Este saltador aun no ha saltado.
-12 * dani * bulgaria * H * Saltos: 0 * Puntos: 0.0 * Este saltador aun no ha saltado.
-15 * ana * dinamarca * H * Saltos: 0 * Puntos: 0.0 * Este saltador aun no ha saltado.
+11 * Andy * Bulgaria * H * Saltos: 0 * Puntos: 0.0 * Este saltador aun no ha saltado.
 ****************************************************************************************
 

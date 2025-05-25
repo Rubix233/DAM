@@ -112,8 +112,11 @@ public class Saltador implements Comparable<Saltador> {
     public String toString() {
         String datosDelSaltador = "";
 
-        datosDelSaltador += this.dorsal + " * " + this.nombre + " * "
-                + this.pais + " * " + this.sexo + " * "
+        datosDelSaltador += this.dorsal + " * " 
+                + this.nombre.substring(0, 1).toUpperCase()+this.nombre.substring(1).toLowerCase()
+                + " * "
+                + this.pais.substring(0, 1).toUpperCase()+this.pais.substring(1).toLowerCase()
+                + " * " + this.sexo + " * "
                 + "Saltos: " + this.numeroSaltos + " * "
                 + "Puntos: " + this.puntos + " * " + getFecha();
 
