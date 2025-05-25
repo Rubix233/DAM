@@ -8,6 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.Locale;
@@ -18,7 +19,7 @@ import java.util.Locale;
  */
 public class Campeonato {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)throws UnsupportedEncodingException {
         Saltador creado;
         Clasificacion clasificacion;
         int opcion;
@@ -32,10 +33,10 @@ public class Campeonato {
         GregorianCalendar fechaHoraLog;
         boolean valido;
         clasificacion = new Clasificacion();
-        reader = new BufferedReader(new InputStreamReader(System.in));
+        reader = new BufferedReader(new InputStreamReader(System.in,"UTF-8"));
 
         do {
-            System.out.println("1. Inscribir saltador");
+            System.out.println("1. ññInscribir saltador");
             System.out.println("2. Eliminar saltador");
             System.out.println("3. Nuevo salto");
             System.out.println("4. Puntos país");
