@@ -275,7 +275,7 @@ public class Campeonato {
                                             + fechaHoraLog.get(GregorianCalendar.DAY_OF_MONTH) + "/"
                                             + (fechaHoraLog.get(GregorianCalendar.MONTH) + 1) + "/"
                                             + fechaHoraLog.get(GregorianCalendar.YEAR) + "\t"
-                                            + String.format("%d:%02d", hora, minuto) + " " + ampm + "\n\r");
+                                            + String.format("%d:%02d", hora, minuto) + " " + ampm + "\n");
                                 } catch (FileNotFoundException a) {
                                     System.out.println("Error al buscar ruta");
                                 }
@@ -288,7 +288,7 @@ public class Campeonato {
                         if (clasificacion.haySaltador()) {
                             for (Saltador s : clasificacion) {
                                 try {
-                                    fWriter.write(s.toString() + "\n\r");
+                                    fWriter.write(s.toString() + "\n");
                                     System.out.println(s.toString());
                                 } catch (IOException a) {
                                     System.out.println("Error E/S al escribir");
