@@ -37,10 +37,22 @@ public class Ud1Act4 {
                 System.out.println("Ese no gañan");
             } else {
                 archivos = directorio.listFiles();
+
                 if (archivos.length > 0) {
+                    boolean todoArch = true;
                     for (File archivo : archivos) {
-                        archivo.delete();
+                        if (archivo.isDirectory()) {
+                            todoArch = false;
+                        }
                     }
+                    if (todoArch) {
+                        for (File archivo : archivos) {
+                            archivo.delete();
+                        }
+                    } else {
+                        System.out.println("Este directorio contiene carpetas y no se puede eliminar.");
+                    }
+
                 }
                 directorio.delete();
                 System.out.println("Eliminado");
