@@ -25,7 +25,8 @@ public class Ud1Act2 {
         File[] archivos;
 
         teclado = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Introduzca directorio a buscar relativo a " + System.getProperty("user.dir"));
+        System.out.println("Introduzca directorio a buscar relativo a " + 
+                System.getProperty("user.dir"));
         introducido = teclado.readLine();
 
         directorio = new File(introducido);
@@ -33,7 +34,9 @@ public class Ud1Act2 {
         if (directorio.exists()) {
             if (archivos.length > 0) {
                 for (File archivo : archivos) {
-                    System.out.println(archivo.getName()+ "\t" + (archivo.isDirectory() ? "<Dir>" : archivo.length() + " bytes"));
+                    System.out.println(archivo.getName()+ "\t" + 
+                            (archivo.isDirectory() ? "<Dir>" : 
+                                    archivo.length() + " bytes"));
                 }
             } else {
                 System.out.println("Directorio vacio.");
