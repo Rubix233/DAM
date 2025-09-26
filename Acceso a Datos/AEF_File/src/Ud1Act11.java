@@ -49,6 +49,7 @@ public class Ud1Act11 {
                             System.out.println(linea);
                             linea = lector.readLine();
                         } else {
+                            System.out.println("*******************************");
                             System.out.println("Final del documento");
                             finalizado = true;
                             break;
