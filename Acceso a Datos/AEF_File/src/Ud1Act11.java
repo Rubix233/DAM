@@ -63,6 +63,7 @@ public class Ud1Act11 {
                     }
 
                 } while (!finalizado);
+                lector.close();
             } else {
                 System.out.println("Archivo no existe o esta vacio");
             }

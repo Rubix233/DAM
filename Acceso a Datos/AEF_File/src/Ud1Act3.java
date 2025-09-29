@@ -22,7 +22,8 @@ public class Ud1Act3 {
         File archivo1;
         File archivo2;
         File directorio;
-        PrintStream escritor;
+        PrintStream escritor;//Uso printstream por probar con distintos flujos. 
+                             //En otros ejercicios uso FileWriter
 
         directorio = new File("NUEVODIR");
         directorio.mkdirs();

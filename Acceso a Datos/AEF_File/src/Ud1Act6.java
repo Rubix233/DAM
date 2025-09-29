@@ -37,6 +37,7 @@ public class Ud1Act6 {
                         escritor.write(caracter);
                         caracter = lector.read();
                     } while (caracter != -1);
+                    lector.close();
                     escritor.close();
                     System.out.println("Archivo copiado");
                 } else {

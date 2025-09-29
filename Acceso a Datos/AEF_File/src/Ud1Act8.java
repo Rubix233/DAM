@@ -41,6 +41,7 @@ public class Ud1Act8 {
                         escritor.newLine();
                         linea = lector.readLine();
                     } while (linea != null);
+                    lector.close();
                     escritor.close();
                     System.out.println("Archivo copiado");
                 } else {
