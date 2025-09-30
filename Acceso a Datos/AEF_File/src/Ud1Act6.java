@@ -5,10 +5,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 /**
  * Hacer una aplicación Java que al escribir java copia fic1.txt fic2.txt
  * realice una copia de fic1 en fic2 carácter a carácter.
