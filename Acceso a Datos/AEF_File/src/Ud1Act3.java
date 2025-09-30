@@ -3,7 +3,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintStream;
+
+import java.io.PrintWriter;
 
 /*
  * To change this template, choose Tools | Templates
@@ -22,8 +23,7 @@ public class Ud1Act3 {
         File archivo1;
         File archivo2;
         File directorio;
-        PrintStream escritor;//Uso printstream por probar con distintos flujos. 
-                             //En otros ejercicios uso FileWriter
+        PrintWriter escritor;
 
         directorio = new File("NUEVODIR");
         directorio.mkdirs();
@@ -36,7 +36,7 @@ public class Ud1Act3 {
         } else {
             System.out.println("fichero1.txt ya existe.");
         }
-        escritor = new PrintStream(archivo1);
+        escritor = new PrintWriter(archivo1);
         escritor.println("Prueba");
         escritor.close();
         
