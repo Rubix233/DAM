@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="actividadB1S2.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <h2>Entrada General: 50 Eur</h2>
+            <button onclick="anadirEntrada('general')">+</button>
+            <span id="contador-general">0</span>
+            <button onclick="restarEntrada('general')">-</button>
+        </div>
+        <div>
+            <h2>Entrada VIP: 100 Eur</h2>
+            <button onclick="anadirEntrada('vip')">+</button>
+            <span id="contador-vip">0</span>
+            <button onclick="restarEntrada('vip')">-</button>
+        </div>
+        <div>
+            <h2>Entrada Infantil: 25 Eur</h2>
+            <button onclick="anadirEntrada('infantil')">+</button>
+            <span id="contador-infantil">0</span>
+            <button onclick="restarEntrada('infantil')">-</button>
+        </div>
+        <div>
+            <button onclick="calcularTotal()">Pagar</button>
+        </div>
+    </div>
+    <div id="gracias" style="display:none;">
+        <h2>Gracias por su compra</h2>
+        <p id="total-pagado"></p>
+    </div>
+</body>
+</html>
