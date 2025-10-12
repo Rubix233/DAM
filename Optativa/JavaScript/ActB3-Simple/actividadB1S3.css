@@ -1,0 +1,110 @@
+  /* Mantener las cajas uniforme con los paddings y los bordes*/
+   * { box-sizing: border-box; }
+
+    body {
+    backdrop-filter: blur(20px);
+    background: rgba(235, 235, 235, 0.199);
+    border: 1px solid rgba(0, 0, 0, 0.178);
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+    }
+
+    .controls {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .controls input[type="text"] {
+      flex: 1;
+      padding: 8px 10px;
+      font-size: 16px;
+    }
+    .controls button {
+      padding: 8px 12px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .eliminar {
+      background-color: #ff00007e;
+      margin-left: 10px;
+    }
+    .completar {
+      margin-left: 10px;
+    }
+
+    h3 { margin: 18px 0 8px; }
+
+    /* Grid compartido para ambas listas */
+    .grid {
+      display: grid;
+      /* columnas fluidas: mínimo 220px por tarjeta, crece hasta 1fr */
+      grid-template-columns: repeat(auto-fit, minmax(220px, 300px));
+      gap: 16px;
+      align-items: start; /* evita que tarjetas con distinto alto se alineen de forma extraña */
+    }
+
+    /* Tarjeta base */
+    .tarjeta {
+      background: white;
+      border: 1px solid #d0d0d0;
+      border-radius: 8px;
+      padding: 12px;
+      margin: 10px;;
+      /* IMPORTANTE: permitir encoger en grid */
+      width: 100%;
+      min-width: 0; /* evita overflow en grid */
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .tarjeta .info {
+      font-size: 14px;
+      color: #333;
+      word-break: break-word; /* rompe palabras largas para evitar overflow */
+    }
+
+    .tarjeta .actions {
+      margin-top: auto; /* empuja el botón al final si hay contenido variable */
+      display: flex;
+      gap: 8px;
+    }
+
+    .completada {
+      border-color: #4caf50;
+      background: #eaf7ea;
+    }
+    .atrasada {
+      border-color: #f44336;
+      background: #fdecea;
+    }
+
+    /* botón pequeño */
+    .btn {
+      padding: 6px 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    /* estado cuando la entrada está vacía */
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    #nuevaTarea {
+        width: 50%;
+        min-height: 100px; /* altura mínima */
+        min-width: 200px; 
+        max-height: 200px; /* opcional, evita que crezca demasiado */
+        padding: 8px 10px;
+        font-size: 16px;
+        resize: none; /* evita que el usuario cambie el tamaño manualmente */
+        overflow: hidden; /* evita scroll interno */
+        box-sizing: border-box;
+}

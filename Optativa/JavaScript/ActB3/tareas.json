@@ -1,0 +1,20 @@
+{
+  "tareas": [
+    {
+      "nombre": "tarea con nydia",
+      "fechaPrevista": null
+    }
+  ],
+  "completas": [
+    {
+      "nombre": "tarea 1",
+      "fechaPrevista": null,
+      "fechaCompletada": "2025-10-09T14:12:40.822Z"
+    },
+    {
+      "nombre": "tarea 2",
+      "fechaPrevista": null,
+      "fechaCompletada": "2025-10-09T15:08:09.786Z"
+    }
+  ]
+}

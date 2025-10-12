@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <link rel="stylesheet" href="actividadB1S3.css">
+    <script src="actividadB1S3.js" defer></script> <!-- defer para que espere a cargar el HTML -->
+</head>
+<body>
+    <div>
+        <h2>Agrega una nueva tarea</h2>
+        <div>
+            <textarea type="text" id="nuevaTarea" placeholder="Ingresa una tarea" rows="1"></textarea>
+        </div>
+    
+        <input type="date" id="fechaEntrega" placeholder="Ingresa una tarea">
+        <button id="agregar">Agregar Tarea</button>
+    </div>
+    
+    
+    <div id="incompletas" style="display: none;">
+        <h3 id="mensaje" style="font-weight: bold; text-decoration: underline;">Lista de tareas</h3>
+        <div id="listaTareas" class="grid"></div>
+    </div>
+    
+
+    <div id="completas" style="display: none;">
+        <h3 style="font-weight: bold; text-decoration: underline; margin-top: 20px;">Tareas Completadas</h3>
+        <div id="listaTareasCompletas" class="grid"></div>
+    </div>
+    
+
+    
+</body>
+</html>
