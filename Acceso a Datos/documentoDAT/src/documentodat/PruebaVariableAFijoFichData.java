@@ -9,30 +9,41 @@ import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  *
- * @author andyj
+ * @author AndyJ
  */
-public class PruebaFichData {
-     public static void main(String[] args) {
+public class PruebaVariableAFijoFichData {
+    public static void main(String[] args) {
         FileInputStream fileInput = null;
         DataInputStream dataInput = null;
+        InputStreamReader is = null;
         
         String nombreLeido;
         byte edadLeida;
+        final byte tamNombre = 30;
         boolean finFichero = false; 
 
         try {
-            fileInput = new FileInputStream("Ficheros/FichData.dat");
+            fileInput = new FileInputStream("Ficheros/FichDataFijo.dat");
             dataInput = new DataInputStream(fileInput);
+            
 
             while (!finFichero) {
                 try {
-                    nombreLeido = dataInput.readUTF();
+                    nombreLeido = "";
+                    
+                    //Escribo el nombre
+                    for(byte i = 0; i < tamNombre; i++){
+                        nombreLeido += dataInput.readChar();
+                    }
+                    
                     edadLeida = dataInput.readByte();
-                    System.out.println(nombreLeido);
-                    System.out.println(edadLeida);
+                    System.out.println(nombreLeido.trim() + " " + edadLeida);
+                    
+
                     
                 } catch (EOFException eof) {
                     finFichero = true;
@@ -49,9 +60,11 @@ public class PruebaFichData {
             try {
                 if (dataInput != null) {
                     dataInput.close();
+
                 }
                 if (fileInput != null) {
                     fileInput.close();
+
                 }
             } catch (IOException e) {
                 System.out.println("Error al cerrar el archivo.");
