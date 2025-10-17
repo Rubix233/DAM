@@ -1,7 +1,6 @@
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /*
@@ -27,19 +26,16 @@ public class Ejemplo2 {
 
         int salidaP1;
 
-        ProcessBuilder compilador = new ProcessBuilder(compilar[0], compilar[1], rutaClases, rutaJava);
-        ProcessBuilder ejecutor = new ProcessBuilder(ejecutar[0], ejecutar[1], rutaClases, nombreCompilado);
-
         Process proceso1 = null;
         Process proceso2 = null;
 
         try {
-            proceso1 = compilador.start();
+            proceso1 = Runtime.getRuntime().exec(compilar[0]+" "+compilar[1] + " " +rutaClases + " "+rutaJava);
             salidaP1 = proceso1.waitFor();
             if (salidaP1 != 0) {
                 System.out.println("Error al compilar");
             } else {
-                proceso2 = ejecutor.start();
+                proceso2 = Runtime.getRuntime().exec(ejecutar[0]+" "+ejecutar[1] + " " +rutaClases + " "+nombreCompilado);
                 lectorPrograma = new BufferedReader(new InputStreamReader(proceso2.getInputStream()));
                 linea = lectorPrograma.readLine();
                 while (linea != null) {
