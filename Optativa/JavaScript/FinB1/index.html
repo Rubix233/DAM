@@ -5,26 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="index.js" defer></script>
-    <style>
-        .pagina {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-        }
-      #productos {
-        background-color: blue;
-        width: 60%;
-      }
-        .carrito {
-            background-color: green;
-            width: 35%;
-            padding: 10px;
-        }
-        .productImg {
-            width: 200px;
-            height: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
     <div class="pagina">
@@ -32,12 +13,12 @@
         
       </div>
       <div class="carrito">
-        <h2>Carrito de Compras</h2>
+        <h2>Shopping Cart</h2>
         <div id="lista-carrito">
             
         </div>
-        <button id="vaciar-carrito" onclick="clearCart()">Vaciar Carrito</button>
-        <button id="checkout" onclick="checkout()">Checkout</button>
+        <button id="vaciar-carrito" onclick="clearCart()">Empty Cart</button>
+        <button id="checkout" onclick="checkout()"></button>
       </div>
     </div>
   </body>

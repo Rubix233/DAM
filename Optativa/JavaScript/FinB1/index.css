@@ -1,0 +1,204 @@
+/* === Base Styling === */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0e0e0e, #252525 70%);
+  color: #f1f1f1;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+/* === Layout === */
+.pagina {
+  display: flex;
+  width: 90%;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Product Grid (2/3 width) */
+#productos {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 20px;
+}
+
+/* Cart (1/3 width) */
+.carrito {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+  position: sticky;
+  top: 20px;
+  height: auto;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* === Product Card === */
+.producto {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: linear-gradient(135deg, rgba(0, 255, 170, 0.1), rgba(0, 150, 255, 0.08));
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.producto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 255, 200, 0.25);
+}
+
+/* Product Image */
+.productImg {
+  height: 150px;
+  width: auto;
+  border-radius: 12px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+/* Product Info container */
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+/* Text styling */
+.product-info h3 {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+  color: #00e6b8;
+}
+
+.product-info p {
+  margin: 4px 0;
+  font-size: 0.9em;
+  color: #cfcfcf;
+}
+
+/* Keep the button at the bottom of the info section */
+.product-info button {
+  align-self: flex-start;
+}
+
+/* === General Button Styling === */
+button {
+  background: linear-gradient(90deg, rgba(0, 200, 255, 0.25), rgba(0, 255, 180, 0.25));
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  color: #fff;
+  padding: 8px 14px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, rgba(0, 255, 220, 0.35), rgba(0, 200, 255, 0.35));
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0, 255, 220, 0.4);
+}
+
+/* === Specific Buttons for Cart Actions === */
+#checkout {
+  background: linear-gradient(90deg, rgba(0, 255, 140, 0.4), rgba(0, 200, 100, 0.5));
+  border-color: rgba(0, 255, 140, 0.5);
+}
+
+#checkout:hover {
+  background: linear-gradient(90deg, rgba(0, 255, 170, 0.6), rgba(0, 200, 120, 0.6));
+  box-shadow: 0 0 14px rgba(0, 255, 150, 0.5);
+}
+
+#vaciar-carrito {
+  background: linear-gradient(90deg, rgba(255, 80, 80, 0.35), rgba(255, 0, 0, 0.35));
+  border-color: rgba(255, 100, 100, 0.4);
+}
+
+#vaciar-carrito:hover {
+  background: linear-gradient(90deg, rgba(255, 100, 100, 0.55), rgba(255, 0, 0, 0.55));
+  box-shadow: 0 0 14px rgba(255, 90, 90, 0.5);
+}
+
+/* === Cart Items === */
+.productoCarro {
+  background: linear-gradient(135deg, rgba(150, 0, 255, 0.12), rgba(0, 150, 255, 0.08));
+  border-radius: 14px;
+  padding: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.productoCarro h3 {
+  font-size: 1em;
+  color: #c8a6ff;
+}
+
+.productoCarro img {
+  height: 80px;
+  width: auto;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+/* === Scrollbar for cart === */
+.carrito::-webkit-scrollbar {
+  width: 6px;
+}
+.carrito::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+/* === Responsive === */
+@media (max-width: 900px) {
+  .pagina {
+    flex-direction: column;
+  }
+
+  .carrito {
+    position: static;
+    max-height: none;
+    width: 100%;
+  }
+
+  #productos {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .producto {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .product-info {
+    align-items: center;
+  }
+
+  .product-info button {
+    align-self: center;
+  }
+  
+}
