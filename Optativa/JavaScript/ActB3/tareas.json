@@ -3,6 +3,10 @@
     {
       "nombre": "tarea con nydia",
       "fechaPrevista": null
+    },
+    {
+      "nombre": "hola pablo",
+      "fechaPrevista": "2025-10-23T21:59:00.000Z"
     }
   ],
   "completas": [
