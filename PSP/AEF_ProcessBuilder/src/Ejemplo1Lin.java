@@ -13,7 +13,7 @@ import java.io.IOException;
 public class Ejemplo1Lin {
     public static void main(String[] args) throws IOException{
         
-        Process notePad = new ProcessBuilder("gedit.exe").start();     
+        Process notePad = new ProcessBuilder("gedit").start();     
         
     }
 }
