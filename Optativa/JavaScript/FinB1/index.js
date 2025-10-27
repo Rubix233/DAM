@@ -130,7 +130,6 @@ function removeFromCart(drink) {
     updateCartDisplay();
     updateProductDisplay();
 }
-
 //Funcion para vaciar el carrito
 function clearCart() {
     carrito.forEach((quantity, drink) => {
@@ -149,9 +148,9 @@ function calculateTotal() {
     carrito.forEach((quantity, drink) => {
         total += drink.price * quantity;
     });
+    
     return total;
 }
-
 //Funcion para proceder al pago
 function checkout() {
     //En teoria nunca deberia estar vacio al llamar a esta funcion ya que el boton se oculta
