@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.calculadora.imc.controller.IMCController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Label fx:id="lblClasificacion" layoutX="254.0" layoutY="243.0" text="Categoria" />
+            <Label fx:id="lblResultado" layoutX="254.0" layoutY="213.0" text="Resultado" />
+            <Button fx:id="btnCalcular" layoutX="255.0" layoutY="170.0" mnemonicParsing="false" onAction="#handleCalcular" text="Button" />
+            <VBox layoutX="130.0" layoutY="17.0" prefHeight="102.0" prefWidth="269.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Peso" textAlignment="CENTER" wrappingWidth="301.119140625" />
+                  <TextField fx:id="txtPeso" prefHeight="25.0" prefWidth="216.0" />
+               </children>
+            </VBox>
+            <VBox layoutX="131.0" layoutY="68.0" prefHeight="102.0" prefWidth="300.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Altura" textAlignment="CENTER" wrappingWidth="299.78125" />
+                  <TextField fx:id="txtAltura" prefWidth="300.0" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
