@@ -28,36 +28,18 @@ class TableroFlutter extends StatelessWidget {
         backgroundColor: Colors.blueAccent,
         centerTitle: true,
       ),
-
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.blueAccent,
-        child: const Padding(
-          padding: EdgeInsets.all(12.0),
-          child: Text(
-            'Pie de página',
-            textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
-      ),
-
       body: Column(
         children: [
-          // ===== Row 1 =====
+          //  1
           Expanded(
             child: Row(
               children: [
-
-
                 Expanded(
                   child: Container(
                     color: Colors.red[200],
-                    child: const Center(
-                      child: Text('Texto simple'),
-                    ),
+                    child: const Center(child: Text('Texto simple')),
                   ),
                 ),
-
 
                 const SizedBox(width: 8),
                 Expanded(
@@ -68,7 +50,6 @@ class TableroFlutter extends StatelessWidget {
                     ),
                   ),
                 ),
-
 
                 const SizedBox(width: 8),
                 Expanded(
@@ -82,15 +63,13 @@ class TableroFlutter extends StatelessWidget {
                     ),
                   ),
                 ),
-
-
               ],
             ),
           ),
 
           const SizedBox(height: 8),
 
-          // ===== Row 2 =====
+          //  2
           Expanded(
             child: Row(
               children: [
@@ -116,9 +95,7 @@ class TableroFlutter extends StatelessWidget {
                 Expanded(
                   child: Container(
                     color: Colors.teal[200],
-                    child: const Center(
-                      child: Text('Otro texto'),
-                    ),
+                    child: const Center(child: Text('Otro texto')),
                   ),
                 ),
               ],
@@ -127,7 +104,7 @@ class TableroFlutter extends StatelessWidget {
 
           const SizedBox(height: 8),
 
-          // ===== Row 3 =====
+          // 3
           Expanded(
             child: Row(
               children: [
@@ -155,15 +132,24 @@ class TableroFlutter extends StatelessWidget {
                 Expanded(
                   child: Container(
                     color: Colors.cyan[200],
-                    child: const Center(
-                      child: Text('Celda final'),
-                    ),
+                    child: const Center(child: Text('Celda final')),
                   ),
                 ),
               ],
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.blueAccent,
+        child: const Padding(
+          padding: EdgeInsets.all(12.0),
+          child: Text(
+            'Pie de página',
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
       ),
     );
   }
