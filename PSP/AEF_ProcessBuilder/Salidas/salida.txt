@@ -1,0 +1,15 @@
+ El volumen de la unidad E es VBOX_CarpetaVB
+ El n£mero de serie del volumen es: 1058-2E85
+
+ Directorio de E:\DAM\PSP\AEF_ProcessBuilder
+
+31/10/2025  14:38    <DIR>          .
+30/10/2025  08:52    <DIR>          ..
+24/10/2025  13:11    <DIR>          build
+24/10/2025  13:09             3.749 build.xml
+24/10/2025  13:09                85 manifest.mf
+24/10/2025  13:09    <DIR>          nbproject
+31/10/2025  14:33    <DIR>          Salidas
+31/10/2025  14:04    <DIR>          src
+               2 archivos          3.834 bytes
+               6 dirs  613.508.673.536 bytes libres

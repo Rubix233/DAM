@@ -8,7 +8,16 @@ import java.util.Map;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-/**
+/**Realizar aplicación Java UnSaludo que muestra el saludo proporcionado como
+argumento en la llamada. Realizar una aplicación Ejemplo2 que lance el proceso
+anterior pasándole como argumento Hola mundo!!! mostrando entorno de
+ejecución, lista de argumentos y ejecución de la siguiente forma:
+Variables de entorno
+Propiedad: NOMBRE --> VALOR
+...
+Comando:
+las cadenas que componen el comando, una por línea.
+Mostrar la salida de la ejecución del comando.
  *
  * @author Andy Jan
  */

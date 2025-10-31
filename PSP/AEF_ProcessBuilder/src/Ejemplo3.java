@@ -7,7 +7,7 @@ import java.io.IOException;
  */
 
 /**
- *
+ *Lanza el proceso AccesoAJVM.class usando ProcessBuilder.
  * @author AndyJan
  */
 public class Ejemplo3 {
