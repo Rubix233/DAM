@@ -26,7 +26,7 @@ public class PruebaConsola {
 
 
     public static void main(String[] args) {
-        //args = new String[] {"E:\\PSP\\JanAndy\\Prueba.txt"};
+        //args = new String[] {"E:\\PSP\\AEE_UD1\\JanAndy\\Prueba.txt"};
         String listar,mostrar,os;
         File ruta;
 
