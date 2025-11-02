@@ -1,0 +1,23 @@
+
+C:\Documents and Settings\Administrador\Escritorio>MD NUEVO 
+
+C:\Documents and Settings\Administrador\Escritorio>CD NUEVO 
+
+C:\Documents and Settings\Administrador\Escritorio\NUEVO>ECHO CREO FICHERO  1>mifichero.txt 
+
+C:\Documents and Settings\Administrador\Escritorio\NUEVO>DIR
+ El volumen de la unidad C no tiene etiqueta.
+ El n£mero de serie del volumen es: 78AD-AF62
+
+ Directorio de C:\Documents and Settings\Administrador\Escritorio\NUEVO
+
+02/11/2025  15:20    <DIR>          .
+02/11/2025  15:20    <DIR>          ..
+02/11/2025  15:20                15 mifichero.txt
+               1 archivos             15 bytes
+               2 dirs  24.733.032.448 bytes libres
+
+C:\Documents and Settings\Administrador\Escritorio\NUEVO>DIRR
+
+C:\Documents and Settings\Administrador\Escritorio\NUEVO>ECHO FIN COMANDOS 
+FIN COMANDOS
