@@ -25,7 +25,7 @@ public class PruebaConsolaPB {
 
 
     public static void main(String[] args) {
-        //args = new String[] {"E:\\PSP\\JanAndy\\Prueba.txt"};
+        //args = new String[] {"E:\\DAM\\PSP\\AEE_UD1\\JanAndy\\Prueba.txt"};
         String listar = "DIR";
         String mostrar = "TYPE";
         File ruta;
