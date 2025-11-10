@@ -30,7 +30,8 @@ public class Traductor {
     public static void main(String args[]){
 
         args = new String[] {"7", "en-es"};
-        final String rutaNavegador = "C:\\Archivos de programa\\Internet Explorer\\iexplore.exe";
+        final String rutaNavegador = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
+        //final String rutaNavegador = "C:\\Archivos de programa\\Internet Explorer\\iexplore.exe";
         //final String rutaNavegador = "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe";
         
         String idioma1, idioma2, frase,continuar;
