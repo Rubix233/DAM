@@ -39,6 +39,8 @@ public class NombreRegistro {
     public void setSueldo(float sueldo){
         this.sueldo = sueldo;
     }
-    
+    public boolean equals(NombreRegistro nr){
+        return nr.getNombre().equals(this.nombre) && nr.getApellido().equals(this.apellidos);
+    }
     
 }
