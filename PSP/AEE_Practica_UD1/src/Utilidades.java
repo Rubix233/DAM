@@ -3,8 +3,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.URISyntaxException;
-import java.nio.file.Paths;
 
 /*
  * To change this template, choose Tools | Templates
@@ -18,7 +16,7 @@ public class Utilidades {
     static String ficheroErrores = "ficheros\\ERRORES.DAT";   
 
     public static void main(String args[]){
-        //args = new String[]{"E:\\PSP\\AEE_Practica_UD1\\ficheros\\fichero1.txt", "E:\\PSP\\AEE_Practica_UD1\\ficheros\\fichero3.txt"};
+        //args = new String[]{"E:\\DAM\\PSP\\AEE_Practica_UD1\\ficheros\\fichero1.txt", "E:\\DAM\\PSP\\AEE_Practica_UD1\\ficheros\\fichero3.txt"};
         //args = new String[]{"Administror"};
 
         if (args.length == 2) {
@@ -38,7 +36,7 @@ public class Utilidades {
         String so = System.getProperty("os.name").toLowerCase();
         Process p;
         File errores = new File(ficheroErrores);
-
+        
         if (arch1.isFile() && arch2.isFile()) {
             try {
                 if (so.contains("win")) {

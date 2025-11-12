@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>10x10 Logo Viewer</title>
+  <script src="logo.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <h3>10×10 Logo Viewer</h3>
+
+    <div id="grid" class="grid" aria-hidden="true"></div>
+
+    <div class="controls">
+      <label>Color for 1:
+        <input id="color1" type="color" value="#1f77b4">
+      </label>
+      <label>Color for 0:
+        <input id="color0" type="color" value="#ffffff">
+      </label>
+      <button id="regenerate">Regenerate</button>
+      <button id="download">Download as PNG</button>
+    </div>
+
+    <small>Generated with the Logo class logic.</small>
+  </div>
+</body>
+</html>

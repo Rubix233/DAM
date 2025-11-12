@@ -1,0 +1,53 @@
+ :root{
+      --cell-size: 28px;
+      --gap: 0px;
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:#f7f7f7;
+    }
+
+    .container{
+      text-align:center;
+    }
+
+    .grid {
+  display: grid;
+  grid-template-columns: repeat(10, var(--cell-size));
+  grid-auto-rows: var(--cell-size);
+  gap: var(--gap);
+
+  background: transparent;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 12px auto;
+
+  /* Add these two lines to center the grid */
+  justify-content: center; /* centers grid horizontally */
+  justify-items: center;   /* optional: centers items inside each cell */
+}
+
+    .cell {
+      width: var(--cell-size);
+      height: var(--cell-size);
+      transition: background-color 120ms ease;
+    }
+
+    .controls{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      justify-content:center;
+      margin-top:8px;
+      flex-wrap:wrap;
+    }
+
+    label { font-size: 13px; color: #333; }
+    input[type="color"] { width:40px; height:32px; border:0; padding:0; background:transparent; cursor:pointer; }
+    button { padding:6px 10px; border-radius:6px; border:1px solid #ccc; background:white; cursor:pointer; }
+    small { display:block; color:#666; margin-top:6px; font-size:12px; }
