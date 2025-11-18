@@ -1,24 +1,25 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
 
 /**
  *
- * @author andyj
+ * @author Andy Jan
  */
 public class PainterThread extends Thread{
+
     String mensaje;
-    
-    public PainterThread(String mensaje){
+
+    public PainterThread(String mensaje) {
         this.mensaje = mensaje;
     }
-    
-    
+
     @Override
     public void run() {
-        for(int i = 0; i < 1000;i++){
+        for (int i = 0; i < 10; i++) {
             System.out.println(mensaje);
+            Thread.yield();
         }
     }
 }

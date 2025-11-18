@@ -1,30 +1,33 @@
 
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
+
 /**
  *
- * @author andyj
+ * @author Andy Jan
  */
-public class RetardoThread extends Thread {
-
-    Random r = new Random();
+public class RetardoThread  extends Thread{
+        Random r = new Random();
     int min = 1;
     int max = 2000;
     int generado = min + r.nextInt(max - min + 1);
 
     @Override
     public void run() {
-        
-        try {
-            Thread.sleep(generado);
-            System.out.println("Hola mundo! Thread "+ Thread.currentThread().getName()+" "+(generado));
-        } catch (InterruptedException ex) {
-            System.getLogger(RetardoThread.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
-        }
+            try {
+                Thread.sleep(generado);
+                System.out.println("Hola mundo! Thread "+ Thread.currentThread().getName()+" "+(generado));
+            } catch (InterruptedException ex) {
+                Logger.getLogger(RetardoThread.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
 
     }
+    
 }
