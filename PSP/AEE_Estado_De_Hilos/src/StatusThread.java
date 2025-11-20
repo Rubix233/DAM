@@ -11,31 +11,41 @@ import java.util.logging.Logger;
  * @author Andy Jan
  */
 public class StatusThread extends Thread {
-
+    Thread t = null;
+    boolean haSidoInterrumpido = false;
+    
     public StatusThread() {
     }
 
     public StatusThread(String name) {
         this.setName(name);
     }
+    public StatusThread(String name, Thread t) {
+        this.setName(name);
+        this.t = t;
+    }
 
     @Override
     public void run() {
         int i = 0;
         try {
-            while (!this.isInterrupted() && i < 10000) {
+            while (i < 10000) {
 
                 i++;
                 Thread.sleep(1);
 
             }
         } catch (InterruptedException ex) {
-            Logger.getLogger(StatusThread.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("El hilo " + this.getName() + " ha sido interrumpido por " + i);
+            haSidoInterrumpido = true;
         } finally {
-            if (this.isInterrupted()) {
-                System.out.println("El hilo " + this.getName() + " ha sido interrumpido por " + i);
-            } else {
-                System.out.println("El hilo " + this.getName() + " ha terminado sin interrupciones ");
+            try {
+                if (!haSidoInterrumpido) {
+                    System.out.println("El hilo " + this.getName() + " ha terminado sin interrupciones ");
+                }
+                if(t != null)t.join();
+            } catch (InterruptedException ex) {
+                Logger.getLogger(StatusThread.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
