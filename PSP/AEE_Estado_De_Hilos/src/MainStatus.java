@@ -15,28 +15,27 @@ public class MainStatus {
     public static void main(String[] args) {
         StatusThread t1 = new StatusThread("T1");
         StatusThread t2 = new StatusThread("T2", t1);
-
+        
         //Mostramos el estado despues de crearlo pero antes de iniciarlo
-        System.out.println("State of " + t2.getName() + ": " + t2.getState().toString());
+        System.out.println("State of " + t2.getName() + ": " + t2.getState().toString() + " ->Despues de crearlo");
 
         //Iniciamos el hilo
         t1.start();
         t2.start();
 
         //Mostramos el estado despues de lanzarlo
-        System.out.println("State of " + t2.getName() + ": " + t2.getState().toString());
+        System.out.println("State of " + t2.getName() + ": " + t2.getState().toString() + " ->Despues de iniciarlo");
 
         //Esperamos un poco para que tenga tiempo para ejecutar algo
         try {
             Thread.sleep(200);
         } catch (InterruptedException e) {
         }
-
         //Interrumpimos el hilo
         t2.interrupt();
 
         //Mostramos el estado justo al interrumpirlo
-        System.out.println("State of " + t2.getName() + ": " + t2.getState().toString());
+        System.out.println("State of " + t2.getName() + ": " + t2.getState().toString()+ " ->Despues de interrumpirlo");
 
         //Esperamos ligeramente para que se pueda ejecutar el finally de t2
         try {
@@ -45,7 +44,7 @@ public class MainStatus {
         }
         
         //Mostramos estado despues del finally de t2
-        System.out.println("State of " + t2.getName() + ": " + t2.getState().toString());
+        System.out.println("State of " + t2.getName() + ": " + t2.getState().toString() + " ->Cuando acabe el codigo finally");
         
         //Esperamos a que acabe t1 al que esta tambien esperando t2
         try {
@@ -57,7 +56,7 @@ public class MainStatus {
         }
 
         //Mostramos el estado cuando t1 termine su ejecucion
-        System.out.println("State of " + t2.getName() + ": " + t2.getState().toString());
+        System.out.println("State of " + t2.getName() + ": " + t2.getState().toString() + " ->Despues de que termine el hilo que esperaba");
         
         //Damos un poco de tiempo para que t2 termine su Finally
         try {
@@ -65,7 +64,7 @@ public class MainStatus {
         } catch (InterruptedException e) {
         }
         //Mostramos su estado cuando haya acabado
-        System.out.println("State of " + t2.getName() + ": " + t2.getState().toString());
+        System.out.println("State of " + t2.getName() + ": " + t2.getState().toString()+ " ->Al final de todo");
         
         
         /*

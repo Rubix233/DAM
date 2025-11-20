@@ -29,11 +29,8 @@ public class StatusThread extends Thread {
     public void run() {
         int i = 0;
         try {
-            while (i < 10000) {
-
-                i++;
+            for(i = 0; i < 10000; i++){         
                 Thread.sleep(1);
-
             }
         } catch (InterruptedException ex) {
             System.out.println("El hilo " + this.getName() + " ha sido interrumpido por " + i);
