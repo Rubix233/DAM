@@ -2,12 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:prueba_endpoint/controller.dart'; // El controlador
 import 'package:prueba_endpoint/data_fetcher.dart'; // ¡El nuevo widget!
+import 'package:prueba_endpoint/user_provider.dart';
 
 void main() {
-  // 1. Inicializa el controlador y lo provee a toda la aplicación
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => RecipeController(),
+    // Utilizamos MultiProvider para inyectar ambos controladores
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => RecipeController()),
+        ChangeNotifierProvider(
+          create: (_) => UserProvider(),
+        ), // <-- Nuevo proveedor
+      ],
       child: const MyApp(),
     ),
   );
