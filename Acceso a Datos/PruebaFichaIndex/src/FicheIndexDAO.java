@@ -103,29 +103,32 @@ public class FicheIndexDAO {
         RandomAccessFile raf = null;
         long posicion;
 
-        //usamos try para poder cerrar con finally si ocurre algun error
-        try {
-            raf = new RandomAccessFile(archivoRuta, "rw");
-            //Buscamos si hay hueco libre y asignamos posicion de puntero
-            if (!huecosLibres.isEmpty()) {
-                posicion = huecosLibres.remove(0);
-                raf.seek(posicion);
-            } else {
-                posicion = raf.length();
-                raf.seek(posicion);
-            }
-            //Escribimos el empleado
-            escribirEmpleado(emple, raf);
+        if (!indice.containsKey(emple.getDNI())) {
+            //usamos try para poder cerrar con finally si ocurre algun error
+            try {
+                raf = new RandomAccessFile(archivoRuta, "rw");
+                //Buscamos si hay hueco libre y asignamos posicion de puntero
+                if (!huecosLibres.isEmpty()) {
+                    posicion = huecosLibres.remove(0);
+                    raf.seek(posicion);
+                } else {
+                    posicion = raf.length();
+                    raf.seek(posicion);
+                }
+                //Escribimos el empleado
+                escribirEmpleado(emple, raf);
 
-            //actualizamos indice
-            indice.put(emple.getDNI(), (int) (posicion));
-            guardarObjetos();
-        } finally {
-            //cerramos archivo
-            if (raf != null) {
-                raf.close();
+                //actualizamos indice
+                indice.put(emple.getDNI(), (int) (posicion));
+                guardarObjetos();
+            } finally {
+                //cerramos archivo
+                if (raf != null) {
+                    raf.close();
+                }
             }
         }
+
     }
 
     public boolean borrarEmpleado(String DNI) throws IOException {

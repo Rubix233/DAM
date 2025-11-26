@@ -105,6 +105,7 @@ public class Empleado {
     public String toString() {
         return String.format(
                 "Empleado {%n"
+                + "  DNI: %s%n"
                 + "  Nombre: %s%n"
                 + "  Sexo: %s%n"
                 + "  Salario: %.2f€%n"
@@ -114,7 +115,7 @@ public class Empleado {
                 + "  Tipo: %s%n"
                 + "  Provincia: %s%n"
                 + "}",
-                nomApe, sexo, salario, getSueldo(),
+                dni,nomApe, sexo, salario, getSueldo(),
                 fechaIngreso, fechaIngreso.aniosTranscurridos(),
                 tipo, provincia);
     }
