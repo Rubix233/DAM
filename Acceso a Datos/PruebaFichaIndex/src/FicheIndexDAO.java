@@ -1,4 +1,5 @@
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -31,10 +32,20 @@ public class FicheIndexDAO {
     private List<Integer> huecosLibres;
 
     public FicheIndexDAO() {
-        indice = new TreeMap<>();
-        huecosLibres = new LinkedList<>();
+        File f = new File(indiceRuta);
+
+        //miramos si existen ya el mapa y la lista
+        if (f.exists()) {
+            // cargar objetos
+            leerObjetos();
+        } else {
+            // crear objetos vacios
+            indice = new TreeMap<>();
+            huecosLibres = new LinkedList<>();
+        }
     }
-    public FicheIndexDAO(String archivoRuta, String indiceRuta){
+
+    public FicheIndexDAO(String archivoRuta, String indiceRuta) {
         this.archivoRuta = archivoRuta;
         this.indiceRuta = indiceRuta;
         leerObjetos();
@@ -144,7 +155,6 @@ public class FicheIndexDAO {
             raf.writeChar(' ');
             raf.writeByte(-1);
 
-
             // actualizamos huecos ibres
             huecosLibres.add((int) posicion);
 
@@ -245,17 +255,16 @@ public class FicheIndexDAO {
             }
         }
     }
-    
-    private void leerObjetos(){
+
+    private void leerObjetos() {
         FileInputStream fis = null;
         try {
             fis = new FileInputStream(indiceRuta);
             ObjectInputStream ois = new ObjectInputStream(fis);
-            
-            this.indice = (TreeMap<String, Integer> )ois.readObject();
-            this.huecosLibres = (List<Integer>)ois.readObject();
-            
-            
+
+            this.indice = (TreeMap<String, Integer>) ois.readObject();
+            this.huecosLibres = (List<Integer>) ois.readObject();
+
         } catch (FileNotFoundException ex) {
             Logger.getLogger(FicheIndexDAO.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
