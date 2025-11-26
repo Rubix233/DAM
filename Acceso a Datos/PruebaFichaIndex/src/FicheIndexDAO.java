@@ -189,8 +189,7 @@ public class FicheIndexDAO {
                     raf.skipBytes(tamEntrada - (tamDNI * 2));
                 }
 
-                // If not deleted, read the rest normally
-                // (Note: we already read the passport, so we pass it to a helper)
+                // Si esta leemos el resto normal
                 Empleado emple = leerRestoEmple(dni, raf);
                 System.out.println(emple.toString());
             }
