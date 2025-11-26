@@ -10,7 +10,17 @@
 public class AmigosMain {
 
     public static void main(String[] args) {
-        HiloAmigos t1 = new HiloAmigos("T1", 1, 100000);
-        t1.start();
+        int max = 100000;
+        int hilos = 1;
+        
+        for(int i = 0; i < hilos; i++){
+            int rango = max/hilos;
+            int start = i*rango;
+            int finish = start+rango;
+            
+            new HiloAmigos(Integer.toString(i),start,finish).start();
+        }
+        
+
     }
 }
