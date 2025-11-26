@@ -283,4 +283,62 @@ public class FicheIndexDAO {
             }
         }
     }
+
+    public Empleado leerRegistroPorClave(Empleado emple) throws FileNotFoundException, IOException {
+        RandomAccessFile raf = null;
+        if (!indice.containsKey(emple.getDNI())) {
+            return null;
+        } else {
+            try {
+                raf = new RandomAccessFile(archivoRuta, "r");
+
+                // Get position from Map
+                long posicion = indice.get(emple.getDNI());
+
+                // Go to that position
+                raf.seek(posicion);
+
+                Empleado empleado;
+                Fecha fecha;
+                // leemos el resto para construir objeto empleado
+                String dni = leerStringFijo(tamDNI, raf);
+                String nombre = leerStringFijo(tamNombre, raf);
+                char sexo = raf.readChar();
+                float salario = raf.readFloat();
+                short year = raf.readShort();
+                byte month = raf.readByte();
+                byte day = raf.readByte();
+                char tipo = raf.readChar();
+                byte prov = raf.readByte();
+
+                //Construimos el empleado
+                fecha = new Fecha(year, month, day);
+                empleado = new Empleado(dni, nombre, Sexo.fromCodigo(sexo), salario, fecha, Tipo.fromCodigo(tipo), Provincia.fromCodigo(prov));
+                return empleado;
+
+            } finally {
+                if (raf != null) {
+                    raf.close();
+                }
+            }
+        }
+    }
+    
+    public boolean borrarRegistro(Object clave) throws IOException{
+        RandomAccessFile raf = new RandomAccessFile(archivoRuta, "rw");
+        if(!indice.containsKey(clave)){
+            return false;
+        }else{
+            byte[] bytes = new byte[tamEntrada];
+            for(int i = 0;i<tamEntrada;i++){
+                bytes[i] = '\0';
+            }
+            long posicion = indice.get(clave);
+            raf.seek(posicion);
+            raf.write(bytes);
+            return true;
+        }
+    }
+    
+
 }

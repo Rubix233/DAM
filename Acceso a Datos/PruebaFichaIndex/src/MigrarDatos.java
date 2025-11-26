@@ -51,18 +51,6 @@ public class MigrarDatos {
         
     }
 
-    private static List<Empleado> leerFichero(DataInputStream data) throws FileNotFoundException, IOException {
-        List<Empleado> lista = new LinkedList();
-        Empleado emple;
-        while (!ff) {
-            emple = leerRegistro(data);
-            if (emple != null) {
-                lista.add(emple);
-            }
-        }
-        return lista;
-    }
-
     private static Empleado leerRegistro(DataInputStream data)
             throws FileNotFoundException, IOException {
         String dni;
