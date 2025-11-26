@@ -10,7 +10,7 @@
 public class AmigosMain {
 
     public static void main(String[] args) {
-        HiloAmigos t1 = new HiloAmigos("T1", 1, 500);
+        HiloAmigos t1 = new HiloAmigos("T1", 1, 100000);
         t1.start();
     }
 }

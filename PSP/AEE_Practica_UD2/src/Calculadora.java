@@ -33,4 +33,12 @@ public class Calculadora {
         
         return resultado;
     }
+    
+    public static int sonAmigos(int n1){
+        int n2 = sumarDivisores(calcularDivisores(n1));
+        if (Calculadora.sumarDivisores(Calculadora.calcularDivisores(n2)) == n1){
+            return n2;
+        }
+        return -1;
+    }
 }
