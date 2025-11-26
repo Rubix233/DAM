@@ -11,14 +11,15 @@ public class AmigosMain {
 
     public static void main(String[] args) {
         int max = 100000;
-        int hilos = 1;
+        int hilos = 16;
+        int rango = (int) Math.ceil((double) max / hilos);
+        int puntero = 0;
         
         for(int i = 0; i < hilos; i++){
-            int rango = max/hilos;
-            int start = i*rango;
-            int finish = start+rango;
-            
-            new HiloAmigos(Integer.toString(i),start,finish).start();
+            int start = puntero +1;
+            int finish = Math.min(start + rango - 1, max);
+            puntero = finish;
+            if(start < max) new HiloAmigos(Integer.toString(i),start,finish).start();
         }
         
 

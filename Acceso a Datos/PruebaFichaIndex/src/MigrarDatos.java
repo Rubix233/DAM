@@ -29,22 +29,26 @@ public class MigrarDatos {
         fiche = new File("fiche.dat");
         List<Empleado> listaEmples = null;
         FicheIndexDAO fid = new FicheIndexDAO();
+        DataInputStream dis = null;
         try {
-            listaEmples = leerFichero(new DataInputStream(new FileInputStream(fiche)));
+            dis = new DataInputStream(new FileInputStream(fiche));
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MigrarDatos.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(MigrarDatos.class.getName()).log(Level.SEVERE, null, ex);
         }
-        if (listaEmples != null) {
-            for (Empleado emple : listaEmples) {
-                try {
-                    fid.crearEmpleado(emple);
-                } catch (IOException ex) {
-                    Logger.getLogger(MigrarDatos.class.getName()).log(Level.SEVERE, null, ex);
-                }
+        
+        if(dis != null){
+          while(!ff){
+            try {
+                Empleado emple = leerRegistro(dis);
+                if(emple != null)fid.crearEmpleado(emple);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(MigrarDatos.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(MigrarDatos.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }  
         }
+        
     }
 
     private static List<Empleado> leerFichero(DataInputStream data) throws FileNotFoundException, IOException {

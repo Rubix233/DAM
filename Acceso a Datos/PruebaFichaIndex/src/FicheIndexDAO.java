@@ -145,15 +145,15 @@ public class FicheIndexDAO {
             raf.seek(posicion);
 
             //sobreescribimos con elementos vacios o negatvos
-            escribirStringFijo("", tamDNI, raf);
-            escribirStringFijo("", tamNombre, raf);
-            raf.writeChar(' ');
-            raf.writeFloat(-1);
-            raf.writeShort(-1);
-            raf.writeByte(-1);
-            raf.writeByte(-1);
-            raf.writeChar(' ');
-            raf.writeByte(-1);
+            escribirStringFijo(null, tamDNI, raf);
+            escribirStringFijo(null, tamNombre, raf);
+            raf.writeChar('\0');
+            raf.writeFloat(0);
+            raf.writeShort(0);
+            raf.writeByte(0);
+            raf.writeByte(0);
+            raf.writeChar('\0');
+            raf.writeByte(0);
 
             // actualizamos huecos ibres
             huecosLibres.add((int) posicion);
@@ -178,7 +178,6 @@ public class FicheIndexDAO {
             raf = new RandomAccessFile(archivoRuta, "r");
 
             while (raf.getFilePointer() < raf.length()) {
-                long currentPos = raf.getFilePointer();
 
                 // miramos primero el DNI
                 String dni = leerStringFijo(tamDNI, raf);
@@ -187,11 +186,11 @@ public class FicheIndexDAO {
                 if (dni.trim().isEmpty()) {
                     //Si esta borrado nos saltamos el resto de la entrada
                     raf.skipBytes(tamEntrada - (tamDNI * 2));
+                } else {
+                    // Si esta leemos el resto normal
+                    Empleado emple = leerRestoEmple(dni, raf);
+                    System.out.println(emple.toString());
                 }
-
-                // Si esta leemos el resto normal
-                Empleado emple = leerRestoEmple(dni, raf);
-                System.out.println(emple.toString());
             }
         } finally {
             if (raf != null) {
@@ -221,15 +220,18 @@ public class FicheIndexDAO {
     }
 
     private void escribirStringFijo(String str, int length, RandomAccessFile raf) throws IOException {
-        StringBuffer sBuffer;
+        StringBuilder sBuilder;
         if (str != null) {
-            sBuffer = new StringBuffer(str);
+            sBuilder = new StringBuilder(str);
         } else {
-            sBuffer = new StringBuffer(length);
+            sBuilder = new StringBuilder();
+            for (int i = 0; i < length; i++) {
+                sBuilder.append('\0');
+            }
         }
 
-        sBuffer.setLength(length);
-        raf.writeChars(sBuffer.toString());
+        sBuilder.setLength(length);
+        raf.writeChars(sBuilder.toString());
     }
 
     private String leerStringFijo(int length, RandomAccessFile raf) throws IOException {
