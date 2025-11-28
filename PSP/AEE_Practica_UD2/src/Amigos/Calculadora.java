@@ -1,15 +1,18 @@
-package amigos;
+package Amigos;
 
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
-
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author Andy Jan
  */
 public class Calculadora {
+    
+    
     
     public static int sumarDivisores(int numero){
         if (numero <= 1) return 0;

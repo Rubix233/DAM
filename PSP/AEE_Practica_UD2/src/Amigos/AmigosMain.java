@@ -1,11 +1,12 @@
-package amigos;
+package Amigos;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
 
 /**
@@ -15,10 +16,10 @@ import java.util.List;
 public class AmigosMain {
 
     public static void main(String[] args) {
-        //System.out.println(Runtime.getRuntime().availableProcessors());
+        System.out.println(Runtime.getRuntime().availableProcessors());
 
-        int max = 1000000;
-        int hilos = 8;
+        int max = 50000;
+        int hilos = 1;
         
         long empezamos = System.currentTimeMillis();
         
