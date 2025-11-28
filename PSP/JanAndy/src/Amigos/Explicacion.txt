@@ -1,0 +1,12 @@
+Habia hecho yo mi propia logica para sacar los numeros amigos, 
+deberia seguir por Calculadora.java pero tardaba mucho y al hacer pruebas 
+no sabia si el problema eran los numeros de hilos o mi algoritmo. 
+
+He buscado el mejor algoritmo posible usando la IA adaptado para el uso de hilos 
+y he creado una clase Iterator que ejecuta el programa multiples veces 
+probando con distinta cantidad de hilos.
+
+He llegado a la misma conclusion, 
+en la maquina virtual solo tenemos 1 cpu y meterle mas hilos no hace nada, 
+solo que esta version del algoritmo tarda unos 250ms 
+en llegar a 1 millon en vez de 1,2s que tardaba mi algoritmo.

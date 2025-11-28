@@ -11,7 +11,11 @@ package Carrera;
 public class CarreraMain {
     public static void main(String[] args) {
         Liebre liebre = new Liebre();
+        Tortuga tortuga = new Tortuga();
+        Observador observador = new Observador(liebre, tortuga);
         
         liebre.start();
+        tortuga.start();
+        observador.start();
     }
 }

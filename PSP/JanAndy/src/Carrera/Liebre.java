@@ -19,8 +19,8 @@ public class Liebre extends Thread {
     static final int resbalonGrande = -12;
     static final int pequenoSalto = 1;
     static final int resbalonPequeno = -2;
+    
     int posicion = 0;
-    char[] pista = new char[70];
     Random r = new Random();
 
     @Override
@@ -28,12 +28,17 @@ public class Liebre extends Thread {
         do {
             moverse(movimiento());
             pintarse();
-            Thread.yield();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Liebre.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } while (posicion < 70);
-
+        System.out.println("Soy la liebre y he llegado");
     }
 
     private void moverse(int movimiento) {
+        //System.out.println(movimiento);
         switch (movimiento) {
             case 1:
                 try {
@@ -44,26 +49,25 @@ public class Liebre extends Thread {
                 break;
 
             case 2:
-                posicion += 9;
+                posicion += granSalto;
                 break;
 
             case 3:
-                posicion -= 12;
-                if (posicion < 0) {
-                    posicion = 0;
+                posicion += resbalonGrande;
+                if (posicion < 1) {
+                    posicion = 1;
                 }
                 break;
 
             case 4:
-                posicion += 1;
+                posicion += pequenoSalto;
                 break;
 
             case 5:
-                posicion -= 2;
-                if (posicion < 0) {
-                    posicion = 0;
+                posicion += resbalonPequeno;
+                if (posicion < 1) {
+                    posicion = 1;
                 }
-                break;
         }
     }
 
@@ -97,8 +101,5 @@ public class Liebre extends Thread {
             }
         }
         System.out.println(pista.toString());
-        if (posicion >= 70) {
-            System.out.println("Soy la liebre y he llegado");
-        }
     }
 }

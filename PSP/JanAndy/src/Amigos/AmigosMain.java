@@ -18,18 +18,27 @@ public class AmigosMain {
     public static void main(String[] args) {
         System.out.println(Runtime.getRuntime().availableProcessors());
 
-        int max = 50000;
+        int max = 1000000;
         int hilos = 1;
+        
+        int tamanoBase = max / hilos; 
+        int resto = max % hilos;
+        int inicioActual = 1;
         
         long empezamos = System.currentTimeMillis();
         
         List<HiloAmigos> listaHilos = new ArrayList<>();
 
         for(int i = 0; i < hilos; i++){
-            HiloAmigos h = new HiloAmigos(Integer.toString(i), i + 1, max, hilos);
+            int tamanoHilo = tamanoBase + (i < resto ? 1 : 0);
+            int finActual = inicioActual + tamanoHilo - 1;
+            
+            HiloAmigos h = new HiloAmigos(Integer.toString(i), inicioActual, finActual);
             listaHilos.add(h);
             h.start();
+            inicioActual = finActual + 1;
         }
+        
         for (HiloAmigos h : listaHilos) {
             try {
                 h.join();
