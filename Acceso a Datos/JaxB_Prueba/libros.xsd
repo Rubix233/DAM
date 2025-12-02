@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Libros">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Libro" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Libro">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Titulo" type="xs:string"/>
+                <xs:element name="Autor" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="publicado_en" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minInclusive value="1000"/>
+                        <xs:maxInclusive value="9999"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    </xs:schema>
