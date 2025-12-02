@@ -16,10 +16,10 @@ import java.util.List;
 public class AmigosMain {
 
     public static void main(String[] args) {
-        System.out.println(Runtime.getRuntime().availableProcessors());
+        //System.out.println(Runtime.getRuntime().availableProcessors());
 
         int max = 1000000;
-        int hilos = 1;
+        int hilos = Runtime.getRuntime().availableProcessors();
         
         int tamanoBase = max / hilos; 
         int resto = max % hilos;

@@ -93,7 +93,7 @@ public class HiloAmigos extends Thread {
 
 
                 if (sumaDeB == numA) {
-                    //System.out.println("Hilo [" + inicio + "-" + fin + "] encontró: " + numA + " y " + numB);
+                    System.out.println("Amigos: " + numA + " y " + numB);
                 }
             }
         }
