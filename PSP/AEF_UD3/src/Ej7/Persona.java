@@ -9,7 +9,6 @@ package Ej7;
  * @author Andy
  */
 public class Persona extends Thread{
-    private int id;
     private int origen;
     private int destino;
     private Ascensor ascensor;

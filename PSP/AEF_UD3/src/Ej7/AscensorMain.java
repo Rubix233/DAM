@@ -12,7 +12,7 @@ import java.util.logging.Logger;
  *
  * @author Andy
  */
-public class Main {
+public class AscensorMain {
     public static void main(String[] args) {
         Ascensor ascensor = new Ascensor();
         Thread[] personas = new Thread[4];
@@ -24,7 +24,7 @@ public class Main {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AscensorMain.class.getName()).log(Level.SEVERE, null, ex);
         }
         for (int i = 0; i < personas.length; i++) {
             personas[i].start();
