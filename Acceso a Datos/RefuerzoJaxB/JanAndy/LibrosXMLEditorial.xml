@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Libros>
+    <Libro>
+        <Titulo>El Capote</Titulo>
+        <Autor>Nikolai Gogol</Autor>
+        <Editorial>a1</Editorial>
+    </Libro>
+    <Libro>
+        <Titulo>El sanador de caballos</Titulo>
+        <Autor>Gonzalo Giner</Autor>
+        <Editorial>b2</Editorial>
+    </Libro>
+    <Libro>
+        <Titulo>El Nombre de la Rosa</Titulo>
+        <Autor>Umberto Eco</Autor>
+        <Editorial>c3</Editorial>
+    </Libro>
+    <Libro>
+        <Titulo>Cien años de soledad</Titulo>
+        <Autor>Gabriel García Márquez</Autor>
+        <Editorial>d4</Editorial>
+    </Libro>
+    <Libro>
+        <Titulo>Cien años de soledad</Titulo>
+        <Autor>Gabriel García Márquez</Autor>
+        <Editorial>e5</Editorial>
+    </Libro>
+</Libros>

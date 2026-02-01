@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<schemas xmlns='http://xml.netbeans.org/schema/JAXBWizConfig' destdir='build/generated-sources/jaxb' projectName='JanAndy' version='1.0'>
+	<schema type='-xmlschema' package='datos.libros' name='LibrosBinding'>
+		<xjc-options>
+		</xjc-options>
+		<schema-sources>
+			<schema-source location='xml-resources/jaxb/LibrosBinding/LibrosEsquemasEditorial.xsd' origLocation='E:\Acceso a Datos\RefuerzoJaxB\JanAndy\LibrosEsquemasEditorial.xsd'/>
+		</schema-sources>
+		<bindings>
+		</bindings>
+		<catalog/>
+	</schema>
+</schemas>
