@@ -1,23 +1,29 @@
 import express from "express";
 import { sequelize } from "./config/db.js";
 
-// Import Routes
-import productoRoutes from "./routes/productos.routes.js";
-import categoriaRoutes from "./routes/categorias.routes.js";
-import clienteRoutes from "./routes/clientes.routes.js";
-import pedidoRoutes from "./routes/pedidos.routes.js";
-import detallePedidoRoutes from "./routes/detalles_pedido.routes.js";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
 app.use(express.json());
 
-// Register API Routes
-app.use("/api/productos", productoRoutes);
-app.use("/api/categorias", categoriaRoutes);
-app.use("/api/clientes", clienteRoutes);
-app.use("/api/pedidos", pedidoRoutes);
-app.use("/api/detalles-pedidos", detallePedidoRoutes);
+// Dynamic API Routes Registration
+const routesPath = path.join(__dirname, "routes");
+const routeFiles = fs.readdirSync(routesPath).filter(file => file.endsWith(".routes.js"));
+
+for (const file of routeFiles) {
+    const routeName = file.split(".")[0]; // e.g., "productos"
+    const { default: router } = await import(`./routes/${file}`);
+    app.use(`/api/${routeName}`, router);
+    console.log(`✅ Ruta registrada: /api/${routeName}`);
+}
+
+
 
 // Sincronizar base de datos
 (async () => {
@@ -29,5 +35,6 @@ app.use("/api/detalles-pedidos", detallePedidoRoutes);
     }
 })();
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
+
 app.listen(PORT, () => console.log(`🚀 Servidor en http://localhost:${PORT}`));

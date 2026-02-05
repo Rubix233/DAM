@@ -9,4 +9,6 @@ export const {
     detalles_pedido: DetallesPedido,
     pedidos: Pedidos,
     productos: Productos,
+    Log: Log
 } = models;
+

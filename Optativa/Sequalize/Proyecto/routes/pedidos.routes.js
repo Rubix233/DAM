@@ -1,18 +1,12 @@
-import express from "express";
-import {
-    crearPedido,
-    obtenerPedidos,
-    obtenerPedido,
-    actualizarPedido,
-    eliminarPedido
-} from "../controllers/pedidos.controller.js";
+import express from 'express';
+import controller from '../controllers/pedidos.controller.js';
 
 const router = express.Router();
 
-router.post("/", crearPedido);
-router.get("/", obtenerPedidos);
-router.get("/:id", obtenerPedido);
-router.put("/:id", actualizarPedido);
-router.delete("/:id", eliminarPedido);
+router.get('/', (req, res) => controller.getAll(req, res));
+router.get('/:id', (req, res) => controller.getById(req, res));
+router.post('/', (req, res) => controller.create(req, res));
+router.put('/:id', (req, res) => controller.update(req, res));
+router.delete('/:id', (req, res) => controller.delete(req, res));
 
 export default router;
