@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -9,49 +5,65 @@ import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 /**
  *
  * @author Andy
  */
-public class Cliente {
+public class HiloConsumidor extends Thread {
 
-    public static void main(String[] args) {
+    private int id;
+    private String tipo = "consumidor";
+
+    public HiloConsumidor(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public void run() {
+
         int puerto = 50000;
         String host = "localhost";
 
         try {
-            InetAddress miAddress = InetAddress.getLocalHost();
-            String myIP = miAddress.getHostAddress();
-
             Socket socket = new Socket(host, puerto);
-
 
             ObjectOutputStream salida = new ObjectOutputStream(socket.getOutputStream());
             ObjectInputStream entrada = new ObjectInputStream(socket.getInputStream());
 
-            salida.writeUTF("Hola, soy el cliente con IP: " + myIP);
-            salida.flush();
-            
-            Usuario usuario = (Usuario) entrada.readObject();
-            usuario.setIP(myIP);
-            usuario.setNombre("Andy Cliente");
-            
-            salida.writeObject(usuario);
-            salida.flush();
+            salida.writeObject((String) "CONSUMIDOR");
 
-            salida.close();
+            boolean seguir = true;
+
+            do {
+                try {
+                    int num = (int) entrada.readObject();
+                    System.out.println(num);
+                } catch (ClassCastException e) {
+                    seguir = false;
+                }
+
+            } while (seguir);
+            
             entrada.close();
+            salida.close();
             socket.close();
+
+
 
         } catch (UnknownHostException ex) {
             Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(HiloConsumidor.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

@@ -29,16 +29,16 @@ public class Servidor {
             System.out.println("Conexion establecida con cliente");
 
             ObjectOutputStream salida = new ObjectOutputStream(socket.getOutputStream());
-            salida.flush();
+            //salida.flush();
             ObjectInputStream entrada = new ObjectInputStream(socket.getInputStream());
             
 
-            String mensaje = entrada.readUTF();
+            String mensaje = (String)entrada.readObject();
 
             System.out.println("Mensaje recibido: " + mensaje);
 
             salida.writeObject(new Usuario(null,generarPassword(),null));
-            salida.flush();
+            //salida.flush();
             
             System.out.println(((Usuario) entrada.readObject()).toString());
 
