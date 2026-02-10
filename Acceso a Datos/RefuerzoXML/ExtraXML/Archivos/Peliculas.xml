@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<peliculas>
+    <pelicula id="PELI01">
+        <titulo>El retorno del Jedi</titulo>
+        <duracion>125</duracion>
+        <veces>2</veces>
+    </pelicula>
+    <pelicula id="PELI02">
+        <titulo>Inception</titulo>
+        <duracion>148</duracion>
+        <veces>1</veces>
+    </pelicula>
+</peliculas>

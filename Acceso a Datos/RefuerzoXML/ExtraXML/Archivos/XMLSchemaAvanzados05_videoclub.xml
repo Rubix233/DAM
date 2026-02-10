@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns1:facturas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="facturas XMLSchemaAvanzados05_videoclub.xsd"
+               xmlns:ns1="facturas">
+    
+    <ns1:factura>
+        <ns1:datos_cliente ident="abcd">
+            <ns1:nombre>Juan</ns1:nombre>
+            <ns1:apellido>López</ns1:apellido>
+            <ns1:apellido>Jiménez</ns1:apellido>
+            <ns1:dni>11111111N</ns1:dni>
+            <ns1:tfno>123456789</ns1:tfno>
+        </ns1:datos_cliente>
+        <ns1:datos_factura>
+            <ns1:resguardo>
+                <ns1:forma_pago>Efectivo</ns1:forma_pago>
+                <ns1:importe_total>10.50</ns1:importe_total>
+            </ns1:resguardo>
+            <ns1:alquileres>
+                <ns1:fecha>2026-02-10</ns1:fecha>
+                <ns1:peliculas>
+                    <ns1:pelicula id_pelicula="PELI01" valoracion="buena">
+                        <ns1:titulo>El retorno del Jedi</ns1:titulo>
+                        <ns1:genero>Ciencia Ficción</ns1:genero>
+                        <ns1:duracion>125</ns1:duracion>
+                        <ns1:actores>
+                            <ns1:actor>
+								<ns1:nombre>Mark</ns1:nombre>
+								<ns1:apellido>Hamill</ns1:apellido>
+								<ns1:apellido>S.</ns1:apellido>
+							</ns1:actor>
+                            <ns1:actor>
+								<ns1:nombre>Harrison</ns1:nombre>
+								<ns1:apellido>Ford</ns1:apellido>
+								<ns1:apellido>T.</ns1:apellido>
+							</ns1:actor>
+                            <ns1:actor>
+								<ns1:nombre>Carrie</ns1:nombre>
+								<ns1:apellido>Fisher</ns1:apellido>
+								<ns1:apellido>L.</ns1:apellido>
+							</ns1:actor>
+                        </ns1:actores>
+                    </ns1:pelicula>
+                </ns1:peliculas>
+            </ns1:alquileres>
+        </ns1:datos_factura>
+    </ns1:factura>
+
+    <ns1:factura>
+        <ns1:datos_cliente ident="efgh">
+            <ns1:nombre>Maria</ns1:nombre>
+            <ns1:apellido>Garcia</ns1:apellido>
+            <ns1:apellido>Sanz</ns1:apellido>
+            <ns1:dni>22222222A</ns1:dni>
+            <ns1:tfno>987654321</ns1:tfno>
+        </ns1:datos_cliente>
+        <ns1:datos_factura>
+            <ns1:resguardo>
+                <ns1:forma_pago>Tarjeta</ns1:forma_pago>
+                <ns1:importe_total>25.00</ns1:importe_total>
+            </ns1:resguardo>
+            <ns1:alquileres>
+                <ns1:fecha>2026-02-11</ns1:fecha>
+                <ns1:peliculas>
+                    <ns1:pelicula id_pelicula="PELI01" valoracion="buena">
+                        <ns1:titulo>El retorno del Jedi</ns1:titulo>
+                        <ns1:genero>Ciencia Ficción</ns1:genero>
+                        <ns1:duracion>125</ns1:duracion>
+                        <ns1:actores>
+                            <ns1:actor>
+								<ns1:nombre>A1</ns1:nombre>
+								<ns1:apellido>Ap1</ns1:apellido>
+								<ns1:apellido>Ap2</ns1:apellido>
+							</ns1:actor>
+                            <ns1:actor>
+								<ns1:nombre>A2</ns1:nombre>
+								<ns1:apellido>Ap1</ns1:apellido>
+								<ns1:apellido>Ap2</ns1:apellido>
+							</ns1:actor>
+                            <ns1:actor>
+								<ns1:nombre>A3</ns1:nombre>
+								<ns1:apellido>Ap1</ns1:apellido>
+								<ns1:apellido>Ap2</ns1:apellido>
+							</ns1:actor>
+                        </ns1:actores>
+                    </ns1:pelicula>
+                    <ns1:pelicula id_pelicula="PELI02" valoracion="excelente">
+                        <ns1:titulo>Inception</ns1:titulo>
+                        <ns1:genero>Thriller</ns1:genero>
+                        <ns1:duracion>148</ns1:duracion>
+                        <ns1:actores>
+                            <ns1:actor>
+								<ns1:nombre>Leonardo</ns1:nombre>
+								<ns1:apellido>Di</ns1:apellido>
+								<ns1:apellido>Caprio</ns1:apellido>
+							</ns1:actor>
+                            <ns1:actor>
+								<ns1:nombre>Tom</ns1:nombre>
+								<ns1:apellido>Hardy</ns1:apellido>
+								<ns1:apellido>E.</ns1:apellido>
+							</ns1:actor>
+                            <ns1:actor>
+								<ns1:nombre>Cillian</ns1:nombre>
+								<ns1:apellido>Murphy</ns1:apellido>
+								<ns1:apellido>M.</ns1:apellido>
+							</ns1:actor>
+                        </ns1:actores>
+                    </ns1:pelicula>
+                </ns1:peliculas>
+            </ns1:alquileres>
+        </ns1:datos_factura>
+    </ns1:factura>
+
+    <ns1:factura>
+        <ns1:datos_cliente ident="ijkl">
+            <ns1:nombre>Carlos</ns1:nombre>
+            <ns1:apellido>Ruiz</ns1:apellido>
+            <ns1:apellido>Gomez</ns1:apellido>
+            <ns1:dni>33333333B</ns1:dni>
+            <ns1:tfno>666555444</ns1:tfno>
+        </ns1:datos_cliente>
+        <ns1:datos_factura>
+            <ns1:resguardo>
+                <ns1:forma_pago>Efectivo</ns1:forma_pago>
+                <ns1:importe_total>50.00</ns1:importe_total>
+            </ns1:resguardo>
+            <ns1:alquileres_compras>
+                <ns1:alquileres>
+                    <ns1:fecha>2026-02-12</ns1:fecha>
+                    <ns1:peliculas>
+                        <ns1:pelicula id_pelicula="PELI02" valoracion="media">
+                            <ns1:titulo>Inception</ns1:titulo>
+                            <ns1:genero>Thriller</ns1:genero>
+                            <ns1:duracion>148</ns1:duracion>
+                            <ns1:actores>
+                                <ns1:actor>
+									<ns1:nombre>A1</ns1:nombre>
+									<ns1:apellido>Ap1</ns1:apellido>
+									<ns1:apellido>Ap2</ns1:apellido>
+								</ns1:actor>
+                                <ns1:actor>
+									<ns1:nombre>A2</ns1:nombre>
+									<ns1:apellido>Ap1</ns1:apellido>
+									<ns1:apellido>Ap2</ns1:apellido>
+								</ns1:actor>
+                                <ns1:actor>
+									<ns1:nombre>A3</ns1:nombre>
+									<ns1:apellido>Ap1</ns1:apellido>
+									<ns1:apellido>Ap2</ns1:apellido>
+								</ns1:actor>
+                            </ns1:actores>
+                        </ns1:pelicula>
+                    </ns1:peliculas>
+                </ns1:alquileres>
+                <ns1:compras>
+                    <ns1:dvds>
+                        <ns1:dvd>
+                            <ns1:titulo>The Matrix</ns1:titulo>
+                            <ns1:fecha_salida_mercado>1999-03-31</ns1:fecha_salida_mercado>
+                        </ns1:dvd>
+                    </ns1:dvds>
+                </ns1:compras>
+            </ns1:alquileres_compras>
+        </ns1:datos_factura>
+    </ns1:factura>
+</ns1:facturas>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/E:/Acceso%20a%20Datos/RefuerzoXML/ExtraXML/XMLResource/XMLSchemaAvanzados05_videoclub.xsd" uri="xml-resources/jaxb/PeliculasBinding/XMLSchemaAvanzados05_videoclub.xsd"/>
+</catalog>

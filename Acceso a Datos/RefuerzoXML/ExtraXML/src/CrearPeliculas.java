@@ -1,29 +1,22 @@
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.xml.parsers.DocumentBuilder;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Result;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Text;
-import org.xml.sax.SAXException;
 
 
 /*
@@ -37,82 +30,109 @@ import org.xml.sax.SAXException;
 public class CrearPeliculas {
 
     public static void main(String[] args) {
-        DocumentBuilderFactory factory;
-        DocumentBuilder builderOrigin, builderDestino;
-        Document documentoOrigin, documentoDestino;
-
-        Node raiz, titulo, duracion, veces;
-
-        NodeList peliculas;
-        Map<String, Integer> mapaPeliculas = new HashMap<String, Integer>();
-        Map<String, Element> datosPeliculas = new HashMap<String, Element>();
-
-
         try {
-            factory = DocumentBuilderFactory.newInstance();
-            factory.setNamespaceAware(true);
-            //Archivo original
-            builderOrigin = factory.newDocumentBuilder();
-            documentoOrigin = builderOrigin.parse("XMLSchemaAvanzados05_videoclub.xml");
-            //DOM nuevo
-            builderDestino = factory.newDocumentBuilder();
-            documentoDestino = builderDestino.newDocument();
+            //La fabrica
+            TransformerFactory factory = TransformerFactory.newInstance();
+            Transformer transformer = factory.newTransformer();
 
-            peliculas = documentoOrigin.getElementsByTagNameNS("*", "pelicula");
-            //Guardamos el numero de veces de una peli
-            for (int i = 0; i < peliculas.getLength(); i++) {
-                Element peli = (Element) peliculas.item(i);
-                String id = peli.getAttribute("id_pelicula");
+            //Para guardar las pelis que hemos visto. Era esto o un xpath para hacer el conteo
+            HashMap<String, Element> pelisProcesadas = new HashMap<String, Element>();
 
-                if (mapaPeliculas.containsKey(id)) {
-                    mapaPeliculas.put(id, mapaPeliculas.get(id) + 1);
-                } else {
-                    mapaPeliculas.put(id, 1);
-                    datosPeliculas.put(id, peli);
+            //parametros para luego transoformar
+            DOMSource source;
+            StreamResult result;
+            File salida = new File("Archivos/Peliculas.xml");
+
+            //El DOM
+            Document documento = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
+            Element raizPelis;
+
+            //El contexto del JAXB
+            JAXBContext contexto = JAXBContext.newInstance(javaPeliculas.Facturas.class);
+            Unmarshaller unmarshall = contexto.createUnmarshaller();
+
+
+            //Volcamos el xml usando el jaxb para crear los objetos
+            javaPeliculas.Facturas raizFacturas = (javaPeliculas.Facturas) unmarshall.unmarshal(new File("Archivos/XMLSchemaAvanzados05_videoclub.xml"));
+            
+            //Creamos nodo raiz para el nuevo xml
+            raizPelis = documento.createElement("peliculas");
+            documento.appendChild(raizPelis);
+
+            //Miramos cada factura
+            for (javaPeliculas.Factura factura : raizFacturas.getFactura()) {
+                //Si la factura tiene alquileres
+                if (factura.getDatosFactura().getAlquileres() != null) {
+                    //Miramos cada pelicula de la factura
+                    for (javaPeliculas.Pelicula pelicula : factura.getDatosFactura().getAlquileres().getPeliculas().getPelicula()) {
+                        //Si no se ha procesado ya
+                        if (!pelisProcesadas.containsKey(pelicula.getTitulo())) {
+
+                            //Se crea elemento peli y se va rellenando
+                            Element peli = creaElementoVacio(documento, "pelicula", raizPelis);
+                            peli.setAttribute("id", pelicula.getIdPelicula());
+
+                            creaElementoLleno(documento, "titulo", pelicula.getTitulo(), peli);
+                            creaElementoLleno(documento, "duracion", pelicula.getDuracion().toString(), peli);
+                            creaElementoLleno(documento, "veces", "1", peli);
+
+                            //Se registra en nuestro hashmap
+                            pelisProcesadas.put(pelicula.getTitulo(), peli);
+                        } else {
+                            //Si ya la hemos procesado, obtenemos el nodo "veces" y le sumamos 1
+                            Node veces = pelisProcesadas.get(pelicula.getTitulo()).getElementsByTagName("veces").item(0);
+                            int conteo = Integer.parseInt(veces.getTextContent());
+                            veces.setTextContent(String.valueOf(conteo + 1));
+                        }
+                    }
                 }
+
             }
+            //Establecemos los parametros para transformar luego
+            source = new DOMSource(documento);
+            result = new StreamResult(salida);
 
-            raiz = documentoDestino.createElement("peliculas");
-            documentoDestino.appendChild(raiz);
+            transformer.setOutputProperty(javax.xml.transform.OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+            transformer.transform(source, result);
 
-            for (String id : mapaPeliculas.keySet()) {
-                // 1. Crear el contenedor principal <Pelicula>
-                Element nuevaPeli = documentoDestino.createElement("Pelicula");
-                raiz.appendChild(nuevaPeli);
-
-                // 2. Extraer info del mapa y del elemento original
-                Element peliActual = datosPeliculas.get(id);
-                String tituloStr = peliActual.getElementsByTagNameNS("*", "titulo").item(0).getTextContent();
-                String duracionStr = peliActual.getElementsByTagNameNS("*", "duracion").item(0).getTextContent();
-                int vecesInt = mapaPeliculas.get(id);
-
-                // 3. Crear el elemento <Id> 
-                Element elId = documentoDestino.createElement("Id");
-                elId.appendChild(documentoDestino.createTextNode(id));
-                nuevaPeli.appendChild(elId);
-
-                // 4. Crear el elemento <Titulo>
-                Element elTitulo = documentoDestino.createElement("Titulo");
-                elTitulo.appendChild(documentoDestino.createTextNode(tituloStr));
-                nuevaPeli.appendChild(elTitulo);
-
-                // 5. Crear el elemento <Duracion>
-                Element elDuracion = documentoDestino.createElement("Duracion");
-                elDuracion.appendChild(documentoDestino.createTextNode(duracionStr));
-                nuevaPeli.appendChild(elDuracion);
-
-                // 6. Crear el elemento <Veces>
-                Element elVeces = documentoDestino.createElement("Veces");
-                elVeces.appendChild(documentoDestino.createTextNode(String.valueOf(vecesInt)));
-                nuevaPeli.appendChild(elVeces);
-            }
-
+        } catch (JAXBException ex) {
+            Logger.getLogger(CrearPeliculas.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ParserConfigurationException ex) {
             Logger.getLogger(CrearPeliculas.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SAXException ex) {
+        } catch (TransformerConfigurationException ex) {
             Logger.getLogger(CrearPeliculas.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
+        } catch (TransformerException ex) {
             Logger.getLogger(CrearPeliculas.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+
     }
+
+    public static org.w3c.dom.Element creaElementoVacio(Document dom, String nombreElemento, org.w3c.dom.Element padre) {
+        org.w3c.dom.Element creado;
+
+
+        creado = dom.createElement(nombreElemento);
+        padre.appendChild(creado);
+        return creado;
+    }
+
+    public static org.w3c.dom.Element creaElementoLleno(Document dom, String nombreElemento, String contenido, org.w3c.dom.Element padre) {
+        org.w3c.dom.Element creado;
+
+        creado = dom.createElement(nombreElemento);
+        creado.setTextContent(contenido);
+        padre.appendChild(creado);
+        return creado;
+    }
+    
+    /*
+     *  Source xsl = new StreamSource(new File("PeliculasMas120.xsl"));
+        Source xml = new StreamSource(new File("Archivos/Peliculas.xml"));
+        Result html = new StreamResult(new File("PeliculasMas120.html"));
+
+        Transformer trans = TransformerFactory.newInstance().newTransformer(xsl);
+        trans.transform(xml, html);
+     */
 }
