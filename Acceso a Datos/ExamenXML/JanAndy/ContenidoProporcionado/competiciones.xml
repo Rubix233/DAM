@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<competiciones
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='competicionesEsquema.xsd'>
+    <competicion>
+        <participante>
+            <nombre>Manuel</nombre>
+            <apellidos>González Díaz</apellidos>
+            <direccion>
+                <calle>Andalucía</calle>
+                <numero>023</numero>
+                <poblacion>Medina del campo</poblacion>
+                <provincia>Cádiz</provincia>
+                <codigoPostal>40876</codigoPostal>
+            </direccion>
+        </participante>
+        <fecha>2020-01-23</fecha>
+        <pruebas>
+            <prueba numero="5">
+                <nombrePrueba>Oficial</nombrePrueba>
+                <puntuacion>5.7</puntuacion>
+                <peso>50</peso>
+				<tipo>técnica</tipo>
+            </prueba>
+            <prueba numero="3">
+                <nombrePrueba>Autonómica</nombrePrueba>
+                <puntuacion>8</puntuacion>
+                <peso>20</peso>
+				<tipo>técnica</tipo>				
+            </prueba>
+            <prueba numero="1">
+                <nombrePrueba>Entrenamiento</nombrePrueba>
+                <puntuacion>7.8</puntuacion>
+                <peso>10</peso>
+				<tipo>habilidad</tipo>				
+            </prueba>            
+        </pruebas>
+    </competicion>
+    <competicion>
+        <participante>
+            <nombre>Saray</nombre>
+            <apellidos>Alavez Mora</apellidos>
+            <direccion>
+                <calle>Aurora Boreal</calle>
+                <numero>012</numero>
+                <poblacion>Mairena del Aljarafe</poblacion>
+                <provincia>Sevilla</provincia>
+                <codigoPostal>41927</codigoPostal>
+            </direccion>
+        </participante>
+        <fecha>2020-01-10</fecha>
+        <pruebas>
+            <prueba numero="2">
+                <nombrePrueba>Local</nombrePrueba>
+                <puntuacion>8.6</puntuacion>
+                <peso>15</peso>
+				<tipo>habilidad</tipo>
+            </prueba>
+            <prueba numero="3">
+                <nombrePrueba>Autonómica</nombrePrueba>
+                <puntuacion>4.5</puntuacion>
+                <peso>20</peso>
+				<tipo>técnica</tipo>				
+            </prueba>
+            <prueba numero="1">
+                <nombrePrueba>Entrenamiento</nombrePrueba>
+                <puntuacion>6.75</puntuacion>
+                <peso>10</peso>
+				<tipo>habilidad</tipo>				
+            </prueba>            
+        </pruebas>
+    </competicion>    
+    <competicion>
+        <participante>
+            <nombre>Javier</nombre>
+            <apellidos>Soto del Real</apellidos>
+            <direccion>
+                <calle>Nueva</calle>
+                <numero>032</numero>
+                <poblacion>San Juan del Aznalfarache</poblacion>
+                <provincia>Sevilla</provincia>
+                <codigoPostal>41926</codigoPostal>
+            </direccion>
+        </participante>
+        <fecha>2020-02-02</fecha>
+        <pruebas>
+            <prueba numero="4">
+                <nombrePrueba>Benéfico</nombrePrueba>
+                <puntuacion>6.4</puntuacion>
+                <peso>40</peso>
+				<tipo>técnica</tipo>				
+            </prueba>
+            <prueba numero="2">
+                <nombrePrueba>Local</nombrePrueba>
+                <puntuacion>9.2</puntuacion>
+                <peso>15</peso>
+				<tipo>habilidad</tipo>			
+            </prueba>
+        </pruebas>
+    </competicion>   
+    <competicion>
+        <participante>
+            <nombre>Nuria</nombre>
+            <apellidos>Fuentes Pérez</apellidos>
+            <direccion>
+                <calle>Isabela</calle>
+                <numero>002</numero>
+                <poblacion>Sevilla</poblacion>
+                <provincia>Sevilla</provincia>
+                <codigoPostal>41013</codigoPostal>
+            </direccion>
+        </participante>
+        <fecha>2020-02-02</fecha>
+        <pruebas>
+            <prueba numero="1">
+                <nombrePrueba>Entrenamiento</nombrePrueba>
+                <puntuacion>7.75</puntuacion>
+                <peso>10</peso>
+				<tipo>habilidad</tipo>					
+            </prueba>              
+            <prueba numero="4">
+                <nombrePrueba>Benéfico</nombrePrueba>
+                <puntuacion>8.4</puntuacion>
+                <peso>40</peso>
+				<tipo>técnica</tipo>				
+            </prueba>
+            <prueba numero="5">
+                 <nombrePrueba>Oficial</nombrePrueba>
+                <puntuacion>8.25</puntuacion>
+                <peso>50</peso>
+				<tipo>técnica</tipo>		
+            </prueba>
+        </pruebas>
+    </competicion>            
+</competiciones>

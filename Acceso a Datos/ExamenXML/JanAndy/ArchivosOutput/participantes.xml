@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<participantes>
+    <participante>
+        <nombre>Manuel González Díaz</nombre>
+        <totalPruebas>3</totalPruebas>
+        <puntuacionMedia>7.1666665</puntuacionMedia>
+    </participante>
+    <participante>
+        <nombre>Saray Alavez Mora</nombre>
+        <totalPruebas>3</totalPruebas>
+        <puntuacionMedia>6.616667</puntuacionMedia>
+    </participante>
+    <participante>
+        <nombre>Javier Soto del Real</nombre>
+        <totalPruebas>2</totalPruebas>
+        <puntuacionMedia>7.8</puntuacionMedia>
+    </participante>
+    <participante>
+        <nombre>Nuria Fuentes Pérez</nombre>
+        <totalPruebas>3</totalPruebas>
+        <puntuacionMedia>8.133333</puntuacionMedia>
+    </participante>
+</participantes>
