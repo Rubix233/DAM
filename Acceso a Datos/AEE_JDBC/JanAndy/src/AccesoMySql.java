@@ -8,29 +8,33 @@ import java.util.Random;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Andy
  */
 public class AccesoMySql {
-     public static void main(String[] args) {
+
+    public static void main(String[] args) {
         Random random;
         Prueba gestor;
         /*
-        String nombreDriver = "sun.jdbc.odbc.JdbcOdbcDriver";
-        String urlConexion = "jdbc:mysql://172.22.103.6:3306/prueba";
-        String usuario = "DAM2";
-        String contra = "DAM2";
-        */
+         String nombreDriver = "sun.jdbc.odbc.JdbcOdbcDriver";
+         String urlConexion = "jdbc:mysql://172.22.103.6:3306/prueba";
+         String usuario = "DAM2";
+         String contra = "DAM2";
+         */
         Properties propiedades = new Properties();
         try {
-            propiedades.load(new FileInputStream("src/MySql.properties"));
+            //propiedades.load(new FileInputStream("src/MySql.properties"));
+            propiedades.load(AccesoMySql.class.getClassLoader().getResourceAsStream("MySql.properties"));
         } catch (IOException e) {
             System.out.println("Error al cargar archivo de propiedades: " + e.getMessage());
             return;
+        } catch (Exception e) {
+            System.err.println("Error durante la ejecución automática: " + e.getClass().getName() + ": " + e.getMessage());
+            e.printStackTrace(); // <-- esto muestra el stack trace completo
         }
-        
+
         String nombreDriver = propiedades.getProperty("driver");
         String urlConexion = propiedades.getProperty("url");
         String usuario = propiedades.getProperty("usuario");

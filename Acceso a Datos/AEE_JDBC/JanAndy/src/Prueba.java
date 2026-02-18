@@ -2,11 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 /**
  *
  * @author Andy
@@ -26,15 +28,15 @@ public class Prueba {
         this.usuario = usuario;
         this.password = password;
         try {
-            try {
-                Class.forName(driver);
-            } catch (ClassNotFoundException ex) {
-                System.out.println("Clase no encontrada");
-            }
+            Class.forName(driver);
+        } catch (ClassNotFoundException ex) {
+            throw new RuntimeException("Driver no encontrado: " + driver, ex);
+        }
+        try {
             conexion = DriverManager.getConnection(url, usuario, password);
-            System.out.println("Conexion exitosa");
+            System.out.println("Conexión exitosa");
         } catch (SQLException ex) {
-            System.out.println("No se pudo realizar la conexion: " + ex.getMessage());
+            throw new RuntimeException("No se pudo conectar: " + ex.getMessage(), ex);
         }
     }
 
@@ -71,13 +73,13 @@ public class Prueba {
                     + "VALUES (?, ?, ?, ?, ?, ?)";
 
             PreparedStatement pStatement = conexion.prepareStatement(sql);
-            
+
             pStatement.setInt(1, idEmple);
-            
+
             pStatement.setString(2, nombre);
-            
+
             pStatement.setString(3, apellido);
-            
+
             pStatement.setInt(4, idDepart);
 
             if (idJefe != null) {
@@ -110,11 +112,11 @@ public class Prueba {
                     + "WHERE id_emple = ?";
 
             PreparedStatement pStatement = conexion.prepareStatement(sql);
-            
+
             pStatement.setString(1, nuevoNombre);
-            
+
             pStatement.setString(2, nuevoApellido);
-            
+
             pStatement.setString(3, nuevoPuesto);
 
             if (nuevoIdJefe != null) {
@@ -165,7 +167,7 @@ public class Prueba {
 
     public void eliminarDepartamento(int idDepart) {
         try {
-            
+
             String verificarSQL = "SELECT COUNT(*) as cantidad FROM empleado "
                     + "WHERE id_depart = ?";
             PreparedStatement pStatmentVer = conexion.prepareStatement(verificarSQL);
