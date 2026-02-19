@@ -45,22 +45,22 @@ public class AccesoOracle {
             String nomDep = "DEP_" + idDep;
 
             System.out.println("\n[DEP] Insertando: " + nomDep);
-            gestor.insertarDepartamento(idDep, nomDep);
+            gestor.insertarDepartamento(idDep, nomDep,"sevilla");
 
             System.out.println("[DEP] Actualizando nombre...");
-            gestor.actualizarDepartamento(idDep, nomDep + "_MOD");
+            gestor.actualizarDepartamento(idDep, nomDep + "_MOD","sevilla");
 
             // 2. Crear y actualizar EMPLE
             int idEmp = random.nextInt(1000) + 1;
             String nombre = "Empleado" + idEmp;
             String apellido = "Apellido" + idEmp;
-            String puesto = "Tester";
+            String oficio = "Tester";
 
             System.out.println("\n[EMP] Insertando empleado: " + nombre);
-            gestor.insertarEmpleado(idEmp, nombre, apellido, idDep, null, puesto);
+            gestor.insertarEmpleado(idEmp,apellido,oficio, 2000, idDep, null);
 
             System.out.println("[EMP] Modificando puesto...");
-            gestor.actualizarEmpleado(idEmp, nombre, apellido, "Senior Tester", null);
+            gestor.actualizarEmpleado(idEmp, apellido, "Senior Tester",3000, null);
 
             // 3. Borrado
             System.out.println("\n--- FINALIZANDO PRUEBAS Y LIMPIANDO ---");
